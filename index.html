@@ -1,0 +1,2512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevated Language Services LLC: Professional Interpretation & Translation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-deep: #0f1a30;
+      --navy-mid: #243258;
+      --gold: #c9a84c;
+      --gold-light: #e0c278;
+      --gold-pale: #f5e9c8;
+      --cream: #faf7f2;
+      --white: #ffffff;
+      --text-dark: #1a2744;
+      --text-mid: #4a5568;
+      --text-light: #8a9ab5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4rem;
+      height: 72px;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      transition: box-shadow 0.3s;
+    }
+
+    nav.scrolled { box-shadow: 0 2px 24px rgba(26,39,68,0.08); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      padding: 0.55rem 1.4rem;
+      transition: all 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    /* PAGES */
+    .page { display: none; min-height: 100vh; padding-top: 72px; }
+    .page.active { display: block; }
+
+    /* =================== HOME =================== */
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4rem 6rem 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-tag::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 4.5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 2rem;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      max-width: 420px;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--gold); }
+
+    .btn-secondary {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.2s;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .btn-secondary:hover { color: var(--gold); }
+    .btn-secondary::after { content: '→'; font-style: normal; }
+
+    .hero-right {
+      background: var(--navy-deep);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-right-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(201,168,76,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 70%, rgba(201,168,76,0.06) 0%, transparent 50%);
+    }
+
+    .hero-quote-block {
+      position: relative;
+      z-index: 2;
+      padding: 4rem;
+      text-align: center;
+    }
+
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+
+    .hero-quote-attr {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-credentials {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .cred-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* TRUST STRIP */
+    .trust-strip {
+      background: var(--navy);
+      padding: 2rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .trust-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+    }
+
+    /* MISSION SECTION */
+    .mission {
+      padding: 8rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-top: 0.5rem;
+    }
+
+    .mission-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 1.2rem;
+    }
+
+    /* SERVICES PREVIEW */
+    .services-preview {
+      background: var(--navy-deep);
+      padding: 7rem 4rem;
+    }
+
+    .services-preview-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      margin-bottom: 4rem;
+      gap: 2rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 360px;
+      margin-left: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(201,168,76,0.15);
+    }
+
+    .service-card {
+      background: var(--navy-deep);
+      padding: 2.5rem;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover { background: var(--navy-mid); }
+
+    .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.1em;
+    }
+
+    .service-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* DIFFERENCE SECTION */
+    .difference {
+      padding: 8rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .difference h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 4rem;
+      max-width: 520px;
+      line-height: 1.2;
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .compare-table th {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .compare-table th:first-child { color: var(--text-mid); }
+    .compare-table th:nth-child(2) { color: var(--navy); background: var(--gold-pale); }
+    .compare-table th:last-child { color: var(--text-light); }
+
+    .compare-table td {
+      padding: 1rem 1.5rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(26,39,68,0.08);
+      line-height: 1.5;
+    }
+
+    .compare-table td:first-child { color: var(--text-mid); font-weight: 400; }
+    .compare-table td:nth-child(2) { background: var(--gold-pale); color: var(--navy); font-weight: 500; }
+    .compare-table td:last-child { color: var(--text-light); }
+
+    /* HOME CTA */
+    .home-cta {
+      background: var(--navy);
+      padding: 7rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+    }
+
+    .home-cta-inner { position: relative; z-index: 2; }
+
+    .home-cta h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .home-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy-deep);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      font-weight: 500;
+      transition: background 0.2s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-gold:hover { background: var(--gold-light); }
+
+    /* =================== SERVICES PAGE =================== */
+    .page-hero {
+      background: var(--navy-deep);
+      padding: 6rem 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.08) 0%, transparent 60%);
+    }
+
+    .page-hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-hero-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .page-hero-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .page-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 640px;
+    }
+
+    .page-hero p {
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 480px;
+      line-height: 1.7;
+    }
+
+    /* SERVICES FULL */
+    .services-full {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+
+    .service-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      padding: 4rem 0;
+      border-bottom: 1px solid rgba(26,39,68,0.1);
+    }
+
+    .service-section:last-child { border-bottom: none; }
+
+    .service-section-left h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-section-left .service-type {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .service-section-right p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .rate-callout {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .rate-callout .rate-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .rate-callout .rate-detail {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      margin-top: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .rate-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .rate-row .rate-callout { flex: 1; min-width: 140px; }
+
+    .detail-list {
+      list-style: none;
+      margin-top: 1.2rem;
+    }
+
+    .detail-list li {
+      font-size: 0.84rem;
+      color: var(--text-mid);
+      padding: 0.4rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      border-bottom: 1px solid rgba(26,39,68,0.06);
+    }
+
+    .detail-list li::before {
+      content: '—';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* SECTORS */
+    .sectors {
+      background: var(--navy);
+      padding: 6rem 4rem;
+    }
+
+    .sectors-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .sectors h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 3rem;
+    }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .sector-card {
+      border-top: 1px solid rgba(201,168,76,0.3);
+      padding-top: 1.5rem;
+    }
+
+    .sector-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .sector-card p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* COMPLIANCE */
+    .compliance {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .compliance h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .compliance p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+
+    .compliance-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .comp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+      background: var(--white);
+      border: 1px solid rgba(26,39,68,0.08);
+    }
+
+    .comp-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .comp-item h5 {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .comp-item p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* =================== ABOUT PAGE =================== */
+    .about-intro {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-intro h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .about-intro h2 em { font-style: italic; color: var(--gold); }
+
+    .about-intro p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 1.2rem;
+    }
+
+    .about-sidebar {
+      padding-top: 0.5rem;
+    }
+
+    .credentials-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(26,39,68,0.1);
+    }
+
+    .cred-card {
+      background: var(--white);
+      padding: 1.5rem;
+    }
+
+    .cred-card-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .cred-card-title {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+
+    .cred-card-sub {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.2rem;
+    }
+
+    /* TIMELINE */
+    .timeline-section {
+      background: var(--navy-deep);
+      padding: 7rem 4rem;
+    }
+
+    .timeline-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 4rem;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-left: 1px solid rgba(201,168,76,0.25);
+      padding-left: 2.5rem;
+    }
+
+    .tl-item {
+      padding-bottom: 3rem;
+      position: relative;
+    }
+
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem;
+      top: 0.35rem;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      transform: translateX(-3px);
+    }
+
+    .tl-year {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .tl-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .tl-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    /* PHILOSOPHY */
+    .philosophy {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8rem 4rem;
+      text-align: center;
+    }
+
+    .philosophy .section-label { justify-content: center; display: flex; margin-bottom: 1.5rem; }
+
+    .philosophy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .philosophy p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text-mid);
+      margin-bottom: 1.2rem;
+    }
+
+    /* EXPERIENCE GRID */
+    .experience-section {
+      background: var(--cream);
+      border-top: 1px solid rgba(26,39,68,0.08);
+      padding: 6rem 4rem;
+    }
+
+    .experience-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .experience-inner h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 3rem;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: rgba(26,39,68,0.1);
+    }
+
+    .exp-item {
+      background: var(--cream);
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    .exp-item::before {
+      content: '—';
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+    }
+
+    /* =================== CONTACT PAGE =================== */
+    .contact-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+    }
+
+    .contact-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3.2rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      font-size: 1rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-item-text {
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+      font-weight: 400;
+    }
+
+    .contact-item-text a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item-text a:hover { color: var(--gold); }
+
+    /* FORM */
+    .contact-form {
+      background: var(--white);
+      padding: 3rem;
+      border: 1px solid rgba(26,39,68,0.08);
+    }
+
+    .contact-form h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid rgba(26,39,68,0.15);
+      background: var(--cream);
+      padding: 0.75rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.88rem;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea { min-height: 120px; resize: vertical; }
+
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+
+    .form-note {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy-deep);
+      padding: 4rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-brand span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.4);
+      max-width: 300px;
+    }
+
+    .footer-col h5 {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col ul li a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .footer-col ul li a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* FORM SUCCESS */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+    }
+
+    .form-success h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .form-success p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { min-height: 320px; }
+      .hero-left { padding: 3rem 1.5rem; }
+
+      .mission, .about-intro, .contact-layout, .compliance {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 1.5rem;
+      }
+
+      .services-grid, .sectors-grid, .exp-grid { grid-template-columns: 1fr; }
+      .section-header { grid-template-columns: 1fr; }
+      .services-full { padding: 4rem 1.5rem; }
+      .service-section { grid-template-columns: 1fr; gap: 1.5rem; }
+      .trust-strip { gap: 1.5rem; padding: 1.5rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .timeline-section, .experience-section, .sectors { padding: 4rem 1.5rem; }
+      .philosophy { padding: 5rem 1.5rem; }
+      .page-hero { padding: 4rem 1.5rem; }
+      .contact-form { padding: 2rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer { padding: 3rem 1.5rem; }
+      .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* ANIMATIONS */
+
+
+    /* STAKES SECTION */
+    .stakes {
+      background: var(--navy-deep);
+      padding: 8rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .stakes::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .stakes-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .stakes-header {
+      max-width: 720px;
+      margin-bottom: 5rem;
+    }
+    .stakes-header .section-label {
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .stakes-header h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .stakes-header p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+    }
+    .stakes-tracks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: rgba(201,168,76,0.12);
+      margin-bottom: 5rem;
+    }
+    .stakes-track {
+      background: var(--navy-deep);
+      padding: 2.5rem;
+    }
+    .stakes-track-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(201,168,76,0.2);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+    .stakes-track h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .stakes-track p {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .stakes-track p:last-child { margin-bottom: 0; }
+    .stakes-track .track-risk {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.6);
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    .ramirez-block {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .ramirez-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .ramirez-stat {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .ramirez-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+    .ramirez-text h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .ramirez-text p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+    }
+    .ramirez-source {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.25);
+      margin-top: 1rem;
+      font-style: italic;
+    }
+    .stakes-addl {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .stakes-stat {
+      border-top: 1px solid rgba(201,168,76,0.25);
+      padding-top: 1.5rem;
+    }
+    .stakes-stat .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .stakes-stat p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.55;
+    }
+    @media(max-width:900px) {
+      .stakes { padding: 5rem 1.5rem; }
+      .stakes-tracks { grid-template-columns: 1fr; }
+      .ramirez-block { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
+      .stakes-addl { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* LANGUAGE TOGGLE */
+    .lang-toggle{display:flex;border:1px solid rgba(201,168,76,0.4);overflow:hidden;margin-right:1rem}
+    .lang-btn{font-size:0.68rem;letter-spacing:0.1em;padding:0.35rem 0.65rem;cursor:pointer;border:none;background:transparent;color:var(--text-mid);transition:all 0.2s;font-family:"DM Sans",sans-serif}
+    .lang-btn.active{background:var(--gold);color:var(--navy-deep);font-weight:500}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .page.active .hero-tag { animation: fadeUp 0.6s ease both; }
+    .page.active .hero-headline { animation: fadeUp 0.6s 0.1s ease both; }
+    .page.active .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+    .page.active .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+    .page.active .hero-quote { animation: fadeUp 0.8s 0.4s ease both; }
+
+
+    /* ATHLETE SECTION */
+    .athlete-section {
+      background: var(--cream);
+      padding: 8rem 4rem;
+      border-top: 1px solid rgba(26,39,68,0.08);
+    }
+    .athlete-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 7rem;
+      align-items: start;
+    }
+    .athlete-left {
+      position: sticky;
+      top: 100px;
+    }
+    .athlete-left .section-label {
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .athlete-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3.8rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+    .athlete-left h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .athlete-results {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: rgba(26,39,68,0.1);
+      margin-top: 2.5rem;
+    }
+    .athlete-result {
+      background: var(--white);
+      padding: 1.2rem 1.5rem;
+    }
+    .athlete-result-year {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .athlete-result-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.35;
+    }
+    .athlete-result-detail {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.2rem;
+    }
+    .athlete-right p {
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--text-mid);
+      margin-bottom: 1.4rem;
+    }
+    .athlete-right p:last-child { margin-bottom: 0; }
+    .athlete-pullquote {
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      background: var(--white);
+    }
+    .athlete-pullquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.4;
+      margin: 0 !important;
+    }
+    @media(max-width:900px) {
+      .athlete-section { padding: 5rem 1.5rem; }
+      .athlete-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .athlete-left { position: static; }
+    }
+
+    /* COLLABORATION SECTION */
+    .collab-section {
+      background: var(--navy);
+      padding: 6rem 4rem;
+    }
+    .collab-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .collab-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .collab-text h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .collab-text p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1rem;
+    }
+    .collab-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      margin-top: 2rem;
+    }
+    .collab-pillar {
+      background: var(--navy-mid);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .collab-pillar-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .collab-pillar h4 {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+      letter-spacing: 0.04em;
+    }
+    .collab-pillar p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .collab-form-wrap {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2.5rem;
+    }
+    .collab-form-wrap h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .collab-form-wrap .collab-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+    .collab-form-wrap .form-group label {
+      color: rgba(255,255,255,0.5);
+    }
+    .collab-form-wrap .form-group input,
+    .collab-form-wrap .form-group select,
+    .collab-form-wrap .form-group textarea {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(201,168,76,0.2);
+      color: var(--white);
+    }
+    .collab-form-wrap .form-group input:focus,
+    .collab-form-wrap .form-group select:focus,
+    .collab-form-wrap .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .collab-form-wrap .form-group input::placeholder,
+    .collab-form-wrap .form-group textarea::placeholder {
+      color: rgba(255,255,255,0.25);
+    }
+    .collab-form-wrap .form-group select option {
+      background: var(--navy-deep);
+      color: var(--white);
+    }
+    .collab-form-wrap .form-note {
+      color: rgba(255,255,255,0.3);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      width: 100%;
+      text-align: center;
+      display: block;
+      margin-top: 0.5rem;
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--navy-deep);
+    }
+    @media(max-width:900px) {
+      .collab-section { padding: 4rem 1.5rem; }
+      .collab-inner { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" href="#" onclick="showPage('home')">Elevated <span>Language</span> Services</a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" data-en="Home" data-es="Inicio">Home</a></li>
+    <li><a href="#" onclick="showPage('services')" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="#" onclick="showPage('about')" data-en="About" data-es="Sobre mí">About</a></li>
+    <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+    <div style="display:flex;align-items:center;gap:0.8rem"><div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    <a class="nav-cta" href="#" onclick="showPage('contact')" data-en="Get in Touch" data-es="Contáctame">Get in Touch</a></div>
+</nav>
+
+<!-- =================== HOME PAGE =================== -->
+<div class="page active" id="home">
+
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-tag" data-en="Language Justice in Practice" data-es="Justicia lingüística en acción">Language Justice in Practice</p>
+      <h1 class="hero-headline">
+        <span data-en="Every voice" data-es="Cada voz">Every voice</span><br/>
+        <em data-en="heard," data-es="escuchada,">heard,</em><br/>
+        <span data-en="respected," data-es="respetada,">respected,</span><br/>
+        <span data-en="and empowered." data-es="y empoderada.">and empowered.</span>
+      </h1>
+      <p class="hero-sub">
+        Professional English-Spanish interpretation and translation for healthcare, legal, nonprofit, and community settings. Personally performed by a CHI-certified interpreter with 15 years of experience.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#" onclick="showPage('services')" data-en="View Services" data-es="Ver servicios">View Services</a>
+        <button class="btn-secondary" onclick="showPage('contact')" data-en="Schedule a Consultation" data-es="Agendar una consulta">Schedule a Consultation</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-bg"></div>
+      <div class="hero-quote-block">
+        <p class="hero-quote" data-en="&ldquo;Language differences should never become power imbalances.&rdquo;" data-es="&ldquo;Las diferencias lingüísticas nunca deben convertirse en desequilibrios de poder.&rdquo;">&ldquo;Language differences should never become power imbalances.&rdquo;</p>
+        <p class="hero-quote-attr">Miguel Medina y Cruz Portillo, CHI</p>
+        <div class="hero-credentials">
+          <div class="cred-item"><span class="cred-dot"></span> Certified Healthcare Interpreter (CHI): Spanish</div>
+          <div class="cred-item"><span class="cred-dot"></span> 15+ years professional experience</div>
+          <div class="cred-item"><span class="cred-dot"></span> Native bilingual English &amp; Spanish</div>
+          <div class="cred-item"><span class="cred-dot"></span> NCIHC &amp; CCHI ethics adherence</div>
+          <div class="cred-item"><span class="cred-dot"></span> Durango, CO: serving clients nationwide<span style="display:none" data-en="Durango, CO: serving clients nationwide" data-es="Durango, CO: sirviendo clientes en todo el país"> </span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-item"><span class="trust-icon">⚖</span> <span data-en="CHI Certified" data-es="Certificado CHI">CHI Certified</span></div>
+    <div class="trust-item"><span class="trust-icon">🔒</span> <span data-en="HIPAA Compliant" data-es="Cumplimiento HIPAA">HIPAA Compliant</span></div>
+    <div class="trust-item"><span class="trust-icon">📋</span> <span data-en="MSA + BAA Provided" data-es="MSA + BAA incluidos">MSA + BAA Provided</span></div>
+    <div class="trust-item"><span class="trust-icon">🤝</span> <span data-en="Personal Accountability" data-es="Responsabilidad personal">Personal Accountability</span></div>
+    <div class="trust-item"><span class="trust-icon">🌎</span> <span data-en="Regional Spanish Expertise" data-es="Experiencia en español regional">Regional Spanish Expertise</span></div>
+    <div class="trust-item"><span class="trust-icon">🛡</span> <span data-en="Safe AI Policy" data-es="Política de IA segura">Safe AI Policy</span></div>
+  </div>
+
+  <section class="mission">
+    <div>
+      <p class="section-label" data-en="Our Mission" data-es="Nuestra misión">Our Mission</p>
+    </div>
+    <div class="mission-text">
+      <h2 data-en="Social justice cannot exist without language justice." data-es="La justicia social no puede existir sin justicia lingüística.">Social justice cannot exist without language justice.</h2>
+      <p data-en="When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became a life's work, using language as a tool for justice and equity. What started as a game grew into a calling that has taken me from the bedside at Ronald Reagan UCLA Medical Center to immigration hearings, school board meetings, conference rooms, and community organizing sessions across the country." data-es="Cuando tenía 12 años, mi hermana y yo jugábamos a interpretar todo lo que escuchábamos en la radio. Ese reto de infancia se convirtió en mi vocación: usar el lenguaje como herramienta de justicia y equidad. Lo que empezó como un juego se transformó en un llamado que me ha llevado desde la cabecera de los pacientes en el Centro Médico Ronald Reagan de UCLA hasta audiencias de inmigración, juntas escolares, salas de conferencias y sesiones de organización comunitaria en todo el país.">When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became a life's work, using language as a tool for justice and equity. What started as a game grew into a calling that has taken me from the bedside at Ronald Reagan UCLA Medical Center to immigration hearings, school board meetings, conference rooms, and community organizing sessions across the country.</p>
+      <p data-en="Elevated Language Services LLC exists to ensure that language differences never become barriers to care, legal protection, education, or community participation. Every assignment is performed personally. Every session is approached with the full weight of what it means for the person on the other side of the interpretation." data-es="Elevated Language Services LLC existe para garantizar que las diferencias lingüísticas nunca se conviertan en barreras para el acceso a servicios de salud, protección legal, educación o participación comunitaria. Cada encargo se realiza personalmente. Cada sesión se aborda con plena conciencia de lo que significa para la persona al otro lado de la interpretación.">Elevated Language Services LLC exists to ensure that language differences never become barriers to care, legal protection, education, or community participation. Every assignment is performed personally. Every session is approached with the full weight of what it means for the person on the other side of the interpretation.</p>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="services-preview-inner">
+      <div class="section-header">
+        <h2 data-en="Services built for the settings that matter most." data-es="Servicios diseñados para los entornos que más importan.">Services built for the settings that matter most.</h2>
+        <p data-en="From bedside consultations to large-scale conferences, every service is delivered with the same standard of care and professional accountability." data-es="Desde consultas a pie de cama hasta conferencias a gran escala, cada servicio se entrega con el mismo estándar de cuidado y responsabilidad profesional.">From bedside consultations to large-scale conferences, every service is delivered with the same standard of care and professional accountability.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">01</p>
+          <h3 data-en="In-Person Interpretation" data-es="Interpretación presencial" data-en="In-Person Interpretation" data-es="Interpretación presencial">In-Person Interpretation</h3>
+          <p>Scheduled at your facility in Durango and surrounding areas. Medical, legal, educational, and community settings.</p>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">02</p>
+          <h3 data-en="OPI and VRI: Remote" data-es="OPI y VRI: A distancia">OPI and VRI: Remote</h3>
+          <p>Over-the-phone and video remote interpretation via Zoom or Microsoft Teams. Nationwide availability.</p>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">03</p>
+          <h3 data-en="Remote Simultaneous (RSI)" data-es="Simultánea remota (RSI)">Remote Simultaneous (RSI)</h3>
+          <p>Real-time simultaneous interpretation for conferences, board meetings, and large-scale events. 25–500+ participants.</p>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">04</p>
+          <h3 data-en="Document Translation" data-es="Traducción de documentos">Document Translation</h3>
+          <p>Professional translation and localization of documents across healthcare, legal, educational, and nonprofit sectors.</p>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">05</p>
+          <h3 data-en="Worker's Compensation" data-es="Compensación laboral">Worker's Compensation</h3>
+          <p>CCHI-certified interpretation per Colorado Rule 18-7(H). Billing code DoWC Z0722. In-person or remote.</p>
+        </div>
+        <div class="service-card" onclick="showPage('services')">
+          <p class="service-num">06</p>
+          <h3 data-en="Subtitling, MTPE &amp; Voice-Over" data-es="Subtitulación, MTPE y locución">Subtitling, MTPE &amp; Voice-Over</h3>
+          <p>Subtitling and transcription of multimedia content. Machine translation post-editing for accuracy and localization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAKES SECTION -->
+  <section class="stakes">
+    <div class="stakes-inner">
+      <div class="stakes-header">
+        <span class="section-label t" data-en="Why It Matters" data-es="Por qué importa">Why It Matters</span>
+        <h2 class="t" data-en="The cost of getting interpretation wrong is not abstract." data-es="El costo de una interpretación incorrecta no es abstracto.">The cost of getting interpretation wrong is not abstract.</h2>
+        <p class="t" data-en="Every year, people are misdiagnosed, lose legal cases, have informed consent violated, and in some cases lose their lives, because language access was treated as optional, improvised, or automated. This is documented. These are not hypotheticals." data-es="Cada año, personas reciben diagnósticos erróneos, pierden casos legales, ven violado su consentimiento informado y, en algunos casos, pierden la vida, porque el acceso lingüístico fue tratado como algo opcional, improvisado o automatizado. Esto está documentado. No son hipótesis.">Every year, people are misdiagnosed, lose legal cases, have informed consent violated, and in some cases lose their lives, because language access was treated as optional, improvised, or automated. This is documented. These are not hypotheticals.</p>
+      </div>
+
+      <div class="stakes-tracks">
+        <div class="stakes-track">
+          <div class="stakes-track-num">01</div>
+          <h3 class="t" data-en="Family members and bilingual staff are not interpreters." data-es="Los familiares y el personal bilingüe no son intérpretes.">Family members and bilingual staff are not interpreters.</h3>
+          <p class="t" data-en="Speaking a language and interpreting it are entirely different skills. Trained interpreters understand specialized terminology, cultural nuance, register, ethics, and the legal obligation of accuracy. A bilingual nurse or a patient's adult child does not." data-es="Hablar un idioma e interpretarlo son habilidades completamente distintas. Los intérpretes capacitados conocen la terminología especializada, el matiz cultural, el registro, la ética y la obligación legal de precisión. Una enfermera bilingüe o el hijo adulto de un paciente no los tienen.">Speaking a language and interpreting it are entirely different skills. Trained interpreters understand specialized terminology, cultural nuance, register, ethics, and the legal obligation of accuracy. A bilingual nurse or a patient's adult child does not.</p>
+          <p class="t" data-en="Research published in Pediatrics found that ad-hoc interpreters, family members, untrained bilingual staff, make 22% more errors with direct clinical consequences than trained professionals. These aren't minor slips. They're the kind of errors that change diagnoses, alter treatment plans, and expose your organization to liability." data-es="Una investigación publicada en Pediatrics encontró que los intérpretes ad hoc, familiares, personal bilingüe sin capacitación, cometen un 22% más de errores con consecuencias clínicas directas que los profesionales capacitados. No son errores menores. Son el tipo de errores que cambian diagnósticos, alteran planes de tratamiento y exponen a su organización a responsabilidad legal.">Research published in <em>Pediatrics</em> found that ad-hoc interpreters make 22% more errors with direct clinical consequences than trained professionals.</p>
+          <p class="t" data-en="There is also a privacy dimension that is often overlooked: patients routinely withhold sensitive information, mental health history, domestic violence, sexual health, when a family member is interpreting. The presence of a trained, neutral professional changes what a patient is willing to say." data-es="También hay una dimensión de privacidad que a menudo se pasa por alto: los pacientes habitualmente omiten información sensible, historial de salud mental, violencia doméstica, salud sexual, cuando un familiar está interpretando. La presencia de un profesional capacitado y neutral cambia lo que el paciente está dispuesto a revelar.">There's also a privacy dimension often overlooked: patients routinely withhold sensitive information, mental health, domestic violence, sexual health, when a family member is in the room interpreting.</p>
+          <p class="stakes-track track-risk t" data-en="Legal exposure: ACA Section 1557 and Title VI require qualified interpreters. Using family or untrained staff can result in malpractice liability and loss of federal funding." data-es="Exposición legal: la Sección 1557 de la ACA y el Título VI exigen intérpretes calificados. Usar familiares o personal no capacitado puede resultar en responsabilidad por negligencia médica y pérdida de fondos federales.">Legal exposure: ACA Section 1557 and Title VI require qualified interpreters. Using family or untrained staff can result in malpractice liability and loss of federal funding.</p>
+        </div>
+
+        <div class="stakes-track">
+          <div class="stakes-track-num">02</div>
+          <h3 class="t" data-en="AI translation is not interpretation, and it is not safe in high-stakes settings." data-es="La traducción por IA no es interpretación, y no es segura en entornos de alto riesgo.">AI translation is not interpretation, and it is not safe in high-stakes settings.</h3>
+          <p class="t" data-en="Google Translate, ChatGPT, and similar tools are not designed for live medical, legal, or community interpretation. They recognize patterns in text. They do not understand context, register, cultural meaning, or the weight of what is being communicated." data-es="Google Translate, ChatGPT y herramientas similares no están diseñadas para la interpretación médica, legal o comunitaria en tiempo real. Reconocen patrones en texto. No comprenden el contexto, el registro, el significado cultural ni el peso de lo que se está comunicando.">Google Translate, ChatGPT, and similar tools recognize patterns in text. They do not understand context, register, cultural meaning, or the weight of what is being communicated.</p>
+          <p class="t" data-en="A 2023 study presented at the ACL conference found clinically harmful errors, including potentially life-threatening ones, in machine translations of patient discharge instructions, even using widely-adopted MT systems. The National Center for State Courts states flatly that courts should never use machine translation for courtroom interactions, citing the risk of constitutional violations." data-es="Un estudio de 2023 presentado en la conferencia ACL encontró errores clínicamente dañinos, incluidos algunos potencialmente mortales, en traducciones automáticas de instrucciones de alta hospitalaria, incluso con sistemas de MT ampliamente utilizados. El Centro Nacional de Tribunales Estatales afirma categóricamente que los tribunales nunca deben usar traducción automática para interacciones en sala, citando el riesgo de violaciones constitucionales.">A 2023 ACL study found clinically harmful errors, including potentially life-threatening ones, in machine translations of patient discharge instructions. The National Center for State Courts states courts should <em>never</em> use machine translation in courtroom proceedings.</p>
+          <p class="t" data-en="In Garner v. Kadince (Utah, 2025), attorneys were sanctioned after submitting a motion that used AI to translate legal terminology, resulting in the fabricated phrase 'motion to eliminate' in place of the standard 'motion in limine,' alongside six entirely fictitious case citations. The court required a public apology and fee reimbursement. OpenAI's own published policies explicitly bar ChatGPT from use in 'high-risk government decision-making including law enforcement, criminal justice, migration and asylum.'" data-es="En Garner v. Kadince (Utah, 2025), los abogados fueron sancionados tras presentar una moción que usó IA para traducir terminología legal, lo que resultó en la frase inventada 'moción para eliminar' en lugar del estándar 'moción en limine', junto con seis citaciones de casos completamente ficticias. OpenAI prohíbe explícitamente el uso de ChatGPT en 'toma de decisiones gubernamentales de alto riesgo, incluidos la aplicación de la ley, la justicia penal, la migración y el asilo.'">In <em>Garner v. Kadince</em> (Utah, 2025), attorneys were sanctioned after AI translated "motion in limine" as the nonexistent "motion to eliminate" and generated six entirely fictitious case citations. OpenAI's own policies explicitly bar ChatGPT from use in "high-risk government decision-making including law enforcement, criminal justice, migration and asylum."</p>
+          <p class="stakes-track track-risk t" data-en="AI tools also create PHI exposure risk: many public tools store inputs to improve their models. Running patient information through them may constitute a HIPAA violation." data-es="Las herramientas de IA también crean riesgo de exposición de PHI: muchas herramientas públicas almacenan las entradas para mejorar sus modelos. Procesar información de pacientes a través de ellas puede constituir una violación de HIPAA.">AI tools also create PHI exposure: many public tools store inputs to improve their models. Routing patient information through them may constitute a HIPAA violation.</p>
+        </div>
+
+        <div class="stakes-track">
+          <div class="stakes-track-num">03</div>
+          <h3 class="t" data-en="Large-volume platforms trade accountability for scale." data-es="Las plataformas de alto volumen intercambian responsabilidad por escala.">Large-volume platforms trade accountability for scale.</h3>
+          <p class="t" data-en="High-volume OPI and VRI platforms connect you to whoever is available in the queue. Credentials vary widely and are often unverified. The interpreter you get today is not the interpreter you get tomorrow. There is no direct relationship, no institutional knowledge of your patient population, and in most cases no named professional you can hold accountable." data-es="Las plataformas de OPI y VRI de alto volumen le conectan con quien esté disponible en la fila. Las credenciales varían ampliamente y a menudo no están verificadas. El intérprete que obtiene hoy no es el de mañana. No hay relación directa, ni conocimiento institucional de su población de pacientes, ni en la mayoría de los casos un profesional identificado a quien pueda responsabilizar.">High-volume OPI and VRI platforms connect you to whoever is available in the queue. Credentials vary widely and are often unverified. There is no direct relationship, no named professional you can hold accountable.</p>
+          <p class="t" data-en="Regional variation matters. A Spanish-speaking patient from Oaxaca, from Cuba, or from Mexico City uses language differently. A platform that cannot match interpreters by dialect or regional background introduces exactly the kind of miscommunication risk it claims to prevent. This is not a hypothetical limitation, it is the documented cause of the most expensive medical interpretation error in U.S. history." data-es="La variación regional importa. Un paciente hispanohablante de Oaxaca, de Cuba o de la Ciudad de México usa el idioma de manera diferente. Una plataforma que no puede hacer coincidir intérpretes por dialecto o procedencia regional introduce exactamente el tipo de riesgo de comunicación que dice prevenir. Esta no es una limitación hipotética, es la causa documentada del error de interpretación médica más costoso en la historia de EE. UU.">Regional variation matters. A platform that cannot match interpreters by dialect introduces exactly the kind of miscommunication risk it claims to prevent, the documented cause of the most expensive medical interpretation error in U.S. history.</p>
+          <p class="stakes-track track-risk t" data-en="Ask any large-volume provider: can you guarantee the same certified, experienced interpreter across appointments? Can you guarantee dialect matching for indigenous-language-adjacent Spanish? The answer is no." data-es="Pregúntele a cualquier proveedor de alto volumen: ¿puede garantizar el mismo intérprete certificado y experimentado en todas las citas? ¿Puede garantizar coincidencia de dialecto para el español adyacente a lenguas indígenas? La respuesta es no.">Ask any large-volume provider: can you guarantee the same certified interpreter across appointments? Can you guarantee dialect matching for indigenous-language-adjacent Spanish? The answer is no.</p>
+        </div>
+      </div>
+
+      <!-- Ramirez Case Block -->
+      <div class="ramirez-block">
+        <div>
+          <p class="ramirez-label t" data-en="Case on record" data-es="Caso documentado">Case on record</p>
+          <div class="ramirez-stat">$71M</div>
+          <p class="ramirez-stat-label t" data-en="Settlement. One word. One missing interpreter." data-es="Acuerdo judicial. Una palabra. Un intérprete ausente.">Settlement. One word. One missing interpreter.</p>
+        </div>
+        <div class="ramirez-text">
+          <h4 class="t" data-en="Willie Ramirez. Florida, 1980. The most expensive medical interpretation error in U.S. history." data-es="Willie Ramirez. Florida, 1980. El error de interpretación médica más costoso en la historia de EE. UU.">Willie Ramirez. Florida, 1980. The most expensive medical interpretation error in U.S. history.</h4>
+          <p class="t" data-en="An 18-year-old arrived at a South Florida hospital unconscious. His Spanish-speaking family told doctors he was &ldquo;intoxicado&rdquo;, a Cuban Spanish term meaning he had ingested something bad, likely food poisoning. The word was interpreted as &ldquo;intoxicated.&rdquo; Doctors treated him for a drug overdose. He had a cerebral hemorrhage. For two days, the hemorrhage went untreated. Willie Ramirez left the hospital quadriplegic." data-es="Un joven de 18 años llegó inconsciente a un hospital del sur de Florida. Su familia hispanohablante le dijo a los médicos que estaba &ldquo;intoxicado&rdquo;, un término del español cubano que significa que había ingerido algo malo, posiblemente intoxicación alimentaria. La palabra fue interpretada como &ldquo;intoxicated&rdquo; (ebrio/drogado). Los médicos lo trataron por sobredosis. En realidad tenía una hemorragia cerebral. Durante dos días, la hemorragia no fue tratada. Willie Ramirez salió del hospital cuadripléjico.">An 18-year-old arrived at a South Florida hospital unconscious. His Spanish-speaking family told doctors he was &ldquo;intoxicado&rdquo;, a Cuban Spanish term meaning he had ingested something bad, likely food poisoning. The word was interpreted as &ldquo;intoxicated.&rdquo; Doctors treated him for a drug overdose. He had a cerebral hemorrhage. For two days, the hemorrhage went untreated. Willie Ramirez left the hospital quadriplegic.</p>
+          <p class="t" data-en="The hospital settled for $71 million. In the course of the lawsuit it was established that, had a neurosurgeon been called in when he arrived, Willie Ramirez could have walked out. The word &ldquo;intoxicado&rdquo; does not mean &ldquo;intoxicated&rdquo; in Cuban Spanish. A professional interpreter, one with regional competency, would have known this immediately." data-es="El hospital llegó a un acuerdo por $71 millones. En el transcurso del juicio se estableció que, si se hubiera llamado a un neurocirujano cuando llegó, Willie Ramirez podría haber salido caminando. La palabra &ldquo;intoxicado&rdquo; no significa &ldquo;intoxicated&rdquo; en español cubano. Un intérprete profesional, con competencia regional, lo habría sabido de inmediato.">The hospital settled for $71 million. It was established in the lawsuit that, had a neurosurgeon been called when he arrived, Willie Ramirez could have walked out. The word &ldquo;intoxicado&rdquo; does not mean &ldquo;intoxicated&rdquo; in Cuban Spanish. A professional interpreter with regional competency would have known this immediately.</p>
+          <p class="t" data-en="This is one case. It is the most documented. It is not the only one." data-es="Este es un caso. Es el más documentado. No es el único."><strong style="color:rgba(255,255,255,0.75);">This is one case. It is the most documented. It is not the only one.</strong></p>
+          <p class="ramirez-source">Source: Health Affairs, The Professional Interpreter, Boostlingo. Case documented in Gail Price-Wise, <em>Language, Culture, and Medical Tragedy</em>.</p>
+        </div>
+      </div>
+
+      <!-- Supporting stats -->
+      <div class="stakes-addl">
+        <div class="stakes-stat">
+          <div class="stat-num">22%</div>
+          <p class="t" data-en="more errors with clinical consequences when ad-hoc interpreters are used vs. trained professionals. Published in Pediatrics." data-es="más errores con consecuencias clínicas cuando se usan intérpretes ad hoc frente a profesionales capacitados. Publicado en Pediatrics.">more errors with clinical consequences when ad-hoc interpreters are used vs. trained professionals. <em>Pediatrics.</em></p>
+        </div>
+        <div class="stakes-stat">
+          <div class="stat-num">§1557</div>
+          <p class="t" data-en="ACA Section 1557 requires qualified interpreters for LEP patients. Non-compliance risks federal funding and malpractice liability." data-es="La Sección 1557 de la ACA exige intérpretes calificados para pacientes con dominio limitado del inglés. El incumplimiento arriesga fondos federales y responsabilidad por negligencia.">ACA Section 1557 requires qualified interpreters. Non-compliance risks federal funding and malpractice liability.</p>
+        </div>
+        <div class="stakes-stat">
+          <div class="stat-num t" data-en="Never" data-es="Nunca">Never</div>
+          <p class="t" data-en="The National Center for State Courts' guidance on machine translation: courts should never use machine translation for courtroom interactions." data-es="La orientación del Centro Nacional de Tribunales Estatales sobre traducción automática: los tribunales nunca deben usar traducción automática para interacciones en sala.">The National Center for State Courts: courts should <em>never</em> use machine translation for courtroom interactions.</p>
+        </div>
+        <div class="stakes-stat">
+          <div class="stat-num">PHI</div>
+          <p class="t" data-en="Many public AI translation tools store user inputs to improve their models. Routing patient data through them may constitute a HIPAA violation." data-es="Muchas herramientas públicas de traducción por IA almacenan las entradas para mejorar sus modelos. Procesar datos de pacientes a través de ellas puede constituir una violación de HIPAA.">Many public AI translation tools store user inputs. Routing patient information through them may constitute a HIPAA violation.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="difference">
+    <h2>The difference credentials, experience, and accountability make.</h2>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>What Matters to You</th>
+            <th>Elevated Language Services LLC</th>
+            <th>Large Volume Providers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Interpreter credentials</td><td>CHI-certified, 15+ years experience</td><td>Varies widely; often unverified</td></tr>
+          <tr><td>Language of service</td><td>Native bilingual, US-based</td><td>May include non-native speakers</td></tr>
+          <tr><td>Linguistic expertise</td><td>Regional Latin American varieties; indigenous language experience</td><td>Generalized; variation matching not guaranteed</td></tr>
+          <tr><td>Personal accountability</td><td>Direct relationship, every assignment</td><td>Anonymous call center routing</td></tr>
+          <tr><td>HIPAA BAA available</td><td>Yes: provided proactively</td><td>Varies by provider and tier</td></tr>
+          <tr><td>Safe AI policy</td><td>Formal written policy: no PHI in AI tools</td><td>Rarely disclosed</td></tr>
+          <tr><td>In-person availability</td><td>Yes: Durango and surrounding area</td><td>Typically remote only</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="home-cta">
+    <div class="home-cta-inner">
+      <h2 data-en="Ready to work together?" data-es="¿Listo para trabajar juntos?">Ready to work together?</h2>
+      <p data-en="Ready to sign from day one. MSA, HIPAA BAA, and Safe AI Policy included with every engagement." data-es="El proceso de incorporación es sencillo. Listos para firmar desde el primer día. MSA, BAA de HIPAA y Política de IA segura incluidos en cada encargo.">Ready to sign from day one. MSA, HIPAA BAA, and Safe AI Policy included with every engagement.</p>
+      <button class="btn-gold" onclick="showPage('contact')" data-en="Get in Touch" data-es="Contáctame">Get in Touch</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- =================== SERVICES PAGE =================== -->
+<div class="page" id="services">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-tag" data-en="Services" data-es="Servicios">Services</p>
+      <h1 data-en="Interpretation and translation for the settings that matter." data-es="Interpretación y traducción para los entornos que importan.">Interpretation and translation for the settings that matter.</h1>
+      <p data-en="Every service personally delivered by Miguel Medina y Cruz Portillo, CHI. No call centers, no routing, no surprises." data-es="Cada servicio entregado personalmente por Miguel Medina y Cruz Portillo, CHI. Sin centros de llamadas, sin derivaciones, sin sorpresas.">Every service personally delivered by Miguel Medina y Cruz Portillo, CHI. No call centers, no routing, no surprises.</p>
+    </div>
+  </div>
+
+  <div class="services-full">
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type">01: Interpretation</p>
+        <h3>In-Person Interpretation</h3>
+      </div>
+      <div class="service-section-right">
+        <p>Scheduled in-person interpretation at your facility in Durango and surrounding areas. Available for medical appointments, legal consultations, IEP meetings, community workshops, and more. Travel within Durango is included. Travel beyond Durango is billed at the current IRS mileage rate.</p>
+        <div class="rate-row">
+          <div class="rate-callout">
+            <div class="rate-num">$75 / hr</div>
+            <div class="rate-detail" data-en="Standard rate: 2-hour minimum" data-es="Tarifa estándar: mínimo 2 horas">Standard rate: 2-hour minimum</div>
+          </div>
+          <div class="rate-callout">
+            <div class="rate-num">$112.50 / hr</div>
+            <div class="rate-detail">Weekends &amp; holidays (1.5x)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type">02: Remote</p>
+        <h3>OPI &amp; VRI</h3>
+      </div>
+      <div class="service-section-right">
+        <p>Over-the-phone (OPI) and video remote interpretation (VRI) via Zoom or Microsoft Teams. Available nationwide for telehealth appointments, legal consultations, intake assessments, and any situation where in-person access isn't possible.</p>
+        <div class="rate-row">
+          <div class="rate-callout">
+            <div class="rate-num">$65 / hr</div>
+            <div class="rate-detail" data-en="Standard rate: 1-hour minimum, 15-min increments" data-es="Tarifa estándar: mínimo 1 hora, incrementos de 15 min">Standard rate: 1-hour minimum, 15-min increments</div>
+          </div>
+          <div class="rate-callout">
+            <div class="rate-num">$97.50 / hr</div>
+            <div class="rate-detail">Weekends &amp; holidays (1.5x)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type" data-en="03: Conferences" data-es="03: Conferencias">03: Conferences</p>
+        <h3 data-en="Conference Interpretation: RSI and On-Site" data-es="Interpretación para conferencias: RSI y presencial">Conference Interpretation: RSI and On-Site</h3>
+      </div>
+      <div class="service-section-right">
+        <p data-en="Simultaneous interpretation for conferences, board meetings, town halls, and large-scale events, delivered remotely via RSI platform or in-person at your venue. Experienced with audiences of 25–500+ participants across nonprofit, healthcare, government, and education sectors. Repeat clients include Chan Zuckerberg Initiative, ILRC, Prevention Institute, and Jefferson Union High School District." data-es="Interpretación simultánea para conferencias, juntas directivas, asambleas comunitarias y eventos a gran escala, entregada a distancia mediante plataforma RSI o presencialmente en su sede. Con experiencia en audiencias de 25 a más de 500 participantes en los sectores sin fines de lucro, salud, gobierno y educación. Clientes recurrentes: Chan Zuckerberg Initiative, ILRC, Prevention Institute y Jefferson Union High School District.">Simultaneous interpretation for conferences, board meetings, town halls, and large-scale events, delivered remotely via RSI platform or in-person at your venue. Experienced with audiences of 25–500+ participants across nonprofit, healthcare, government, and education sectors.</p>
+        <ul class="detail-list">
+          <li data-en="Remote Simultaneous Interpreting (RSI): via dedicated platform" data-es="Interpretación simultánea remota (RSI): mediante plataforma dedicada">Remote Simultaneous Interpreting (RSI): via dedicated platform</li>
+          <li data-en="On-site simultaneous: available for in-person conferences and events" data-es="Simultánea presencial: disponible para conferencias y eventos en persona">On-site simultaneous: available for in-person conferences and events</li>
+          <li data-en="English &#8594; Spanish and Spanish &#8594; English" data-es="Inglés &#8594; Español y Español &#8594; Inglés">English &#8594; Spanish and Spanish &#8594; English</li>
+          <li data-en="50–95+ events interpreted annually" data-es="50 a 95+ eventos interpretados anualmente">50–95+ events interpreted annually</li>
+          <li data-en="Booth partner coordination available for larger events" data-es="Coordinación de compañero de cabina disponible para eventos más grandes">Booth partner coordination available for larger events</li>
+        </ul>
+        <div class="rate-callout" style="margin-top:1.5rem; background:var(--navy-deep); border-left-color:var(--gold);">
+          <div class="rate-num" style="color:var(--white); font-size:1rem;" data-en="Rate varies by scope, format, and duration. Contact for a quote." data-es="La tarifa varía según el alcance, el formato y la duración. Contácteme para un presupuesto.">Rate varies by scope, format, and duration. Contact for a quote.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type" data-en="04: Colorado" data-es="04: Colorado">04: Colorado</p>
+        <h3 data-en="Worker's Compensation Interpretation" data-es="Interpretación para compensación laboral">Worker's Compensation Interpretation</h3>
+      </div>
+      <div class="service-section-right">
+        <p>CCHI-certified interpretation for Worker's Compensation evaluations and appointments, in compliance with Colorado Division of Workers' Compensation Rule 18-7(H). Billing code DoWC Z0722. Available in-person or via OPI/VRI. Prior authorization required except for initial and emergency treatment.</p>
+        <ul class="detail-list">
+          <li>Billing code: DoWC Z0722 | 15-minute increments | 1-hour minimum</li>
+          <li>Payers required to reimburse for certified interpreter services</li>
+          <li>Available in-person (Durango area) or remote</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type">05: Translation</p>
+        <h3 data-en="Document Translation &amp; Localization" data-es="Traducción y localización de documentos">Document Translation &amp; Localization</h3>
+      </div>
+      <div class="service-section-right">
+        <p>Professional English-Spanish translation of documents across healthcare, legal, educational, and nonprofit sectors. Standard turnaround is 1–2 business days (1,500–2,000 words per day). Rush service available.</p>
+        <div class="rate-row">
+          <div class="rate-callout">
+            <div class="rate-num">$0.20 / word</div>
+            <div class="rate-detail" data-en="Standard translation" data-es="Traducción estándar">Standard translation</div>
+          </div>
+          <div class="rate-callout">
+            <div class="rate-num">$0.30 / word</div>
+            <div class="rate-detail" data-en="Rush (under 24-hour notice)" data-es="Urgente (menos de 24 horas)">Rush (under 24-hour notice)</div>
+          </div>
+          <div class="rate-callout">
+            <div class="rate-num">$0.10 / word</div>
+            <div class="rate-detail" data-en="MTPE (machine translation post-editing)" data-es="MTPE (posedición de traducción automática)">MTPE (machine translation post-editing)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section">
+      <div class="service-section-left">
+        <p class="service-type">06: Media</p>
+        <h3>Subtitling &amp; Voice-Over</h3>
+      </div>
+      <div class="service-section-right">
+        <p>Spanish subtitling and transcription of multimedia content for healthcare, nonprofit, and educational organizations. Expert localization that goes beyond literal translation to ensure natural, culturally appropriate language for the target audience.</p>
+        <div class="rate-callout" style="max-width: 200px;">
+          <div class="rate-num">$35 / min</div>
+          <div class="rate-detail">Per minute of media content</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="sectors">
+    <div class="sectors-inner">
+      <h2 data-en="Sectors served." data-es="Sectores atendidos.">Sectors served.</h2>
+      <div class="sectors-grid">
+        <div class="sector-card">
+          <h4>Healthcare</h4>
+          <p>Private practices, specialty clinics, hospitals, and telehealth. Oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, and Worker's Compensation evaluations.</p>
+        </div>
+        <div class="sector-card">
+          <h4>Legal</h4>
+          <p>Immigration attorney consultations, SIJS hearings, Worker's Compensation evaluations, Medical Legal Partnership conferences, correctional facility intake assessments.</p>
+        </div>
+        <div class="sector-card">
+          <h4>Nonprofit &amp; Community</h4>
+          <p>Rapid response organizing, reproductive justice, environmental justice, community outreach, doula and midwife prenatal workshops, caregiver training.</p>
+        </div>
+        <div class="sector-card">
+          <h4 data-en="Education" data-es="Educación">Education</h4>
+          <p>IEP meetings, parent workshops, expulsion hearings, District Validation Reviews, school board meetings, and community engagement events.</p>
+        </div>
+        <div class="sector-card">
+          <h4>Government &amp; Public Sector</h4>
+          <p>County agency meetings, town halls, board meetings, public presentations, and community outreach for Spanish-speaking constituents.</p>
+        </div>
+        <div class="sector-card">
+          <h4>Conferences &amp; Events</h4>
+          <p>Large-scale simultaneous interpretation for conferences with 25–500+ participants. Repeat clients across healthcare, foundation, and advocacy sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compliance">
+    <div>
+      <h2 data-en="Compliance infrastructure included." data-es="Infraestructura de cumplimiento incluida.">Compliance infrastructure included.</h2>
+      <p data-en="Every client receives a complete onboarding package. No back-and-forth, no extra fees, no compliance gaps." data-es="Cada cliente recibe un paquete de incorporación completo. Sin va y viene, sin costos adicionales, sin vacíos de cumplimiento.">Every client receives a complete onboarding package. No back-and-forth, no extra fees, no compliance gaps.</p>
+    </div>
+    <div class="compliance-items">
+      <div class="comp-item">
+        <span class="comp-icon">📄</span>
+        <div>
+          <h5 data-en="Master Services Agreement" data-es="Acuerdo Marco de Servicios">Master Services Agreement</h5>
+          <p>Full 13-clause MSA covering scope, rates, cancellation, confidentiality, and independent contractor status.</p>
+        </div>
+      </div>
+      <div class="comp-item">
+        <span class="comp-icon">🔒</span>
+        <div>
+          <h5 data-en="HIPAA Business Associate Agreement" data-es="Acuerdo de Socio Comercial HIPAA">HIPAA Business Associate Agreement</h5>
+          <p>BAA based on HHS model provisions. Required for healthcare clients. Provided proactively at no additional cost.</p>
+        </div>
+      </div>
+      <div class="comp-item">
+        <span class="comp-icon">🤖</span>
+        <div>
+          <h5 data-en="Safe AI Policy" data-es="Política de IA segura" data-en="Safe AI Policy" data-es="Política de IA segura">Safe AI Policy</h5>
+          <p>Formal written policy governing AI tool use. No PHI ever enters AI platforms. All AI use is for preparation only.</p>
+        </div>
+      </div>
+      <div class="comp-item">
+        <span class="comp-icon">⚖</span>
+        <div>
+          <h5 data-en="Professional Ethics Adherence" data-es="Adherencia a la ética profesional">Professional Ethics Adherence</h5>
+          <p>NCIHC &amp; CCHI Code of Ethics maintained on every assignment, in every setting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- =================== ABOUT PAGE =================== -->
+<div class="page" id="about">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-tag" data-en="About" data-es="Sobre mí">About</p>
+      <h1 data-en="15 years of doing this work, and it still matters." data-es="15 años dedicado a este trabajo, y sigue importando.">15 years of doing this work, and it still matters.</h1>
+      <p data-en="Miguel Medina y Cruz Portillo, CHI, founder of Elevated Language Services LLC." data-es="Miguel Medina y Cruz Portillo, CHI, fundador de Elevated Language Services LLC.">Miguel Medina y Cruz Portillo, CHI, founder of Elevated Language Services LLC.</p>
+    </div>
+  </div>
+
+  <section class="about-intro">
+    <div>
+      <h2 data-en="Language as a tool for <em>justice</em> and equity." data-es="El lenguaje como herramienta de <em>justicia</em> y equidad.">Language as a tool for <em>justice</em> and equity.</h2>
+      <p data-en="When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became my life's work. What started as curiosity became a career that has taken me from the volunteer interpreter program at Ronald Reagan UCLA Medical Center to bedside consultations in oncology and ICU, immigration attorney conferences, school board hearings, and simultaneous interpretation for national conferences." data-es="Cuando tenía 12 años, mi hermana y yo jugábamos a interpretar todo lo que escuchábamos en la radio. Ese reto de infancia se convirtió en mi vocación. Lo que comenzó como curiosidad se transformó en una carrera que me ha llevado desde el programa de intérpretes voluntarios del Centro Médico Ronald Reagan de UCLA hasta consultas a pie de cama en oncología y UCI, conferencias con abogados de inmigración, audiencias de juntas escolares e interpretación simultánea para conferencias nacionales.">When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became my life's work. What started as curiosity became a career that has taken me from the volunteer interpreter program at Ronald Reagan UCLA Medical Center to bedside consultations in oncology and ICU, immigration attorney conferences, school board hearings, and simultaneous interpretation for national conferences.</p>
+      <p data-en="I founded Elevated Language Services LLC because I believe that every person controls their own communication, regardless of their primary language. That belief drives every assignment I take." data-es="Fundé Elevated Language Services LLC porque creo que toda persona tiene el derecho de controlar su propia comunicación, independientemente de su idioma principal. Esa convicción guía cada encargo que acepto.">I founded Elevated Language Services LLC because I believe that every person controls their own communication, regardless of their primary language. That belief drives every assignment I take.</p>
+      <p data-en="I am a Certified Healthcare Interpreter (CHI) in Spanish through the Certifying Commission for Healthcare Interpreters (CCHI), with a BA in Spanish and TESOL from UCLA and 40-hour medical interpreter training from UCLA Health. I am currently enrolled in court interpreter training through the Southern California School of Interpretation, in preparation for state court certification." data-es="Soy Intérprete de Salud Certificado (CHI) en español por la Comisión Certificadora de Intérpretes de Salud (CCHI), con una licenciatura en Español y TESOL de la UCLA y 40 horas de formación como intérprete médico en UCLA Health. Actualmente estoy inscrito en el programa de formación para intérpretes judiciales de la Southern California School of Interpretation, en preparación para la certificación estatal.">I am a Certified Healthcare Interpreter (CHI) in Spanish through the Certifying Commission for Healthcare Interpreters (CCHI), with a BA in Spanish and TESOL from UCLA and 40-hour medical interpreter training from UCLA Health. I am currently enrolled in court interpreter training through the Southern California School of Interpretation, in preparation for state court certification.</p>
+      <p data-en="My experience spans oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, school district expulsion hearings, and large-scale nonprofit conferences. Every setting. Every register. Every time." data-es="Mi experiencia abarca oncología, trasplante, UCI, cuidados paliativos, psiquiatría, audiencias de ética médica, evaluaciones de compensación laboral, consultas de Estatus Especial de Inmigrante Juvenil (SIJS), evaluaciones de admisión correccional, audiencias de expulsión escolar y conferencias de grandes organizaciones sin fines de lucro. Cada entorno. Cada registro. Siempre.">My experience spans oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, school district expulsion hearings, and large-scale nonprofit conferences. Every setting. Every register. Every time.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="credentials-stack">
+        <div class="cred-card">
+          <p class="cred-card-label" data-en="Certification" data-es="Certificación">Certification</p>
+          <p class="cred-card-title">Certified Healthcare Interpreter (CHI): Spanish</p>
+          <p class="cred-card-sub">CCHI: Certifying Commission for Healthcare Interpreters</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card-label" data-en="In Training" data-es="En formación">In Training</p>
+          <p class="cred-card-title">State Court Interpreter Certification</p>
+          <p class="cred-card-sub">SCSI Court Interpreter Certification Program</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card-label" data-en="Training" data-es="Formación">Training</p>
+          <p class="cred-card-title">40-Hour Medical Interpreter Training</p>
+          <p class="cred-card-sub">UCLA Health: Ronald Reagan Medical Center</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card-label">Education</p>
+          <p class="cred-card-title">BA Spanish &amp; TESOL</p>
+          <p class="cred-card-sub">University of California, Los Angeles</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card-label" data-en="Compliance" data-es="Cumplimiento">Compliance</p>
+          <p class="cred-card-title">HIPAA / FWA Certified</p>
+          <p class="cred-card-sub">Annual compliance training</p>
+        </div>
+        <div class="cred-card">
+          <p class="cred-card-label" data-en="Associations" data-es="Asociaciones">Associations</p>
+          <p class="cred-card-title">CITA · ATA Member</p>
+          <p class="cred-card-sub">Colorado Interpreters &amp; Translators Association · American Translators Association</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline-section">
+    <div class="timeline-inner">
+      <h2 data-en="Career highlights." data-es="Hitos de carrera.">Career highlights.</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <p class="tl-year">2011</p>
+          <p class="tl-title">UCLA Health: Spanish Interpreter</p>
+          <p class="tl-desc">Advanced from volunteer to professional interpreter at Ronald Reagan UCLA Medical Center. Completed 40-hour medical interpreter training. Specialized in oncology, transplant, ICU, hospice, genetics counseling, and clinical trials.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year" style="color:var(--gold-light)">2012 – 2024</p>
+          <p class="tl-title t" data-en="Professional Ultra Endurance Athlete: In Parallel" data-es="Atleta profesional de ultra resistencia: En paralelo">Professional Ultra Endurance Athlete: In Parallel</p>
+          <p class="tl-desc t"
+             data-en="Competed professionally across OCR, ultra obstacle, and ultra marathon distances for twelve years, alongside every client, every assignment, every year. Two World&#39;s Toughest Mudder team titles (2014, 2017). 2nd place, Spartan Ultra Beast World Championships (2015). 2nd overall on debut at Bighorn 100 (2019). Course record, Ouray 100 (2022). 30+ podium finishes across the career."
+             data-es="Compitió profesionalmente en OCR, ultra obstáculo y ultramaratón durante doce años, junto a cada cliente, cada encargo, cada año. Dos títulos de equipo en World&#39;s Toughest Mudder (2014, 2017). 2.° lugar en el Campeonato Mundial Spartan Ultra Beast (2015). 2.° puesto general en su debut en el Bighorn 100 (2019). Récord del recorrido en el Ouray 100 (2022). Más de 30 podios a lo largo de la carrera.">Competed professionally across OCR, ultra obstacle, and ultra marathon distances for twelve years, alongside every client, every assignment, every year. Two World&#39;s Toughest Mudder team titles (2014, 2017). 2nd place, Spartan Ultra Beast World Championships (2015). 2nd overall on debut at Bighorn 100 (2019). Course record, Ouray 100 (2022). 30+ podium finishes across the career.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2014</p>
+          <p class="tl-title">LAUSD: Spanish Interpreter &amp; Translator</p>
+          <p class="tl-desc">Served the nation's second-largest school district, facilitating equity for Spanish-speaking families across IEP meetings, parent workshops, District Validation Reviews, and LAUSD Board meetings.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2016</p>
+          <p class="tl-title">Paras and Associates: Medical Interpreter</p>
+          <p class="tl-desc">VRI interpretation across 40+ hospital systems nationwide, specializing in transplants, emergency situations, and psychiatric evaluations. 8+ year partnership with UCLA Health, LA General, and Contra Costa Health.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2022</p>
+          <p class="tl-title">A Simple Translation: Conference Interpreter</p>
+          <p class="tl-desc">50–95+ conferences annually via simultaneous and consecutive interpretation for healthcare, nonprofits, and school districts. Repeat clients include Chan Zuckerberg Initiative, ILRC, Prevention Institute, and Jefferson Union High School District.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2025</p>
+          <p class="tl-title">Elevated Language Services LLC: Founded</p>
+          <p class="tl-desc">Elevated Language Services LLC incorporated in Colorado, 2025. Formally operating 2026. Bringing 15 years of experience to Durango and the communities that need it most.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2026</p>
+          <p class="tl-title">Tewa Women United: Prenatal and Caregiver Workshops</p>
+          <p class="tl-desc">Simultaneous interpretation for doula and midwife prenatal, birth, and postpartum workshops and Circle of Security caregiver workshops. Serving an Indigenous-led reproductive and environmental justice organization in Northern New Mexico.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy">
+    <p class="section-label" data-en="Approach" data-es="Enfoque">Approach</p>
+    <h2 data-en="&ldquo;Every interpretation ensures that language differences don't become power imbalances.&rdquo;" data-es="&ldquo;Cada interpretación garantiza que las diferencias lingüísticas no se conviertan en desequilibrios de poder.&rdquo;">&ldquo;Every interpretation ensures that language differences don't become power imbalances.&rdquo;</h2>
+    <p data-en="Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight." data-es="La justicia lingüística no es una credencial. Es un compromiso. Significa llegar preparado, mantenerse presente, guardar una estricta confidencialidad y adherirse a la ética profesional incluso cuando nadie está mirando. Significa tratar a cada persona, sin importar su idioma principal, como alguien cuyas palabras tienen pleno valor.">Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight.</p>
+    <p data-en="That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a Master Services Agreement and HIPAA BAA as standard, not because a client asked, but because it's the right way to do business." data-es="Ese compromiso es la razón por la que mantengo la adherencia a la ética de la NCIHC y la CCHI en cada encargo. Es por eso que tengo una Política de IA segura formal. Es por eso que proporciono un Acuerdo Marco de Servicios y un BAA de HIPAA como estándar, no porque un cliente lo haya pedido, sino porque es la forma correcta de hacer negocios.">That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a Master Services Agreement and HIPAA BAA as standard, not because a client asked, but because it's the right way to do business.</p>
+  </section>
+
+  <!-- ATHLETE SECTION -->
+  <section class="athlete-section">
+    <div class="athlete-inner">
+      <div class="athlete-left">
+        <span class="section-label t" data-en="Beyond the Interpreter" data-es="Más allá del intérprete">Beyond the Interpreter</span>
+        <h2><span class="t" data-en="Twelve years of" data-es="Doce años de">Twelve years of</span> <em class="t" data-en="professional competition." data-es="competición profesional.">professional competition.</em></h2>
+        <div class="athlete-results">
+          <div class="athlete-result">
+            <p class="athlete-result-year">2022</p>
+            <p class="athlete-result-title t" data-en="Ouray 100: Course Record" data-es="Ouray 100: Récord del recorrido">Ouray 100: Course Record</p>
+            <p class="athlete-result-detail t" data-en="30:00:27. 102 miles, 41,862 ft elevation gain. Shattered prior record by 45+ minutes." data-es="30:00:27. 102 millas, 41,862 pies de ganancia de elevación. Pulverizó el récord anterior por más de 45 minutos.">30:00:27. 102 miles, 41,862 ft elevation gain. Shattered prior record by 45+ minutes.</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2015</p>
+            <p class="athlete-result-title t" data-en="Spartan Race Ultra Beast World Championships: 2nd Place" data-es="Campeonato Mundial Spartan Race Ultra Beast: 2.° lugar">Spartan Race Ultra Beast World Championships: 2nd Place</p>
+            <p class="athlete-result-detail">Spartan Pro Team &amp; SISU Pro Team</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2017</p>
+            <p class="athlete-result-title t" data-en="World's Toughest Mudder: 1st Place (Team)" data-es="World's Toughest Mudder: 1.° lugar (equipo)">World's Toughest Mudder: 1st Place (Team)</p>
+            <p class="athlete-result-detail t" data-en="Back-to-back team title." data-es="Título de equipo consecutivo.">Back-to-back team title.</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2014</p>
+            <p class="athlete-result-title t" data-en="World's Toughest Mudder: 1st Place (Team)" data-es="World's Toughest Mudder: 1.° lugar (equipo)">World's Toughest Mudder: 1st Place (Team)</p>
+            <p class="athlete-result-detail t" data-en="With Mark Jones, Hunter McIntyre, and Dennis Wayne Welch." data-es="Con Mark Jones, Hunter McIntyre y Dennis Wayne Welch.">With Mark Jones, Hunter McIntyre, and Dennis Wayne Welch.</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2021</p>
+            <p class="athlete-result-title t" data-en="Bandera 100k: 4th Overall" data-es="Bandera 100k: 4.° puesto general">Bandera 100k: 4th Overall</p>
+            <p class="athlete-result-detail t" data-en="8:29:56. Western States Golden Ticket race. Ranked 20th fastest male 100k trail runner in the United States, UltraRunning Magazine annual performance rankings." data-es="8:29:56. Carrera con boleto dorado para Western States. Clasificado 20.° corredor masculino más rápido en 100k de trail en EE. UU., Clasificaciones anuales de UltraRunning Magazine.">8:29:56. Western States Golden Ticket race. Ranked 20th fastest male 100k trail runner in the United States, UltraRunning Magazine annual performance rankings.</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2019</p>
+            <p class="athlete-result-title t" data-en="Bighorn 100: 2nd Overall" data-es="Bighorn 100: 2.° puesto general">Bighorn 100: 2nd Overall</p>
+            <p class="athlete-result-detail t" data-en="22:10:08. First 100-mile race. 20,500 ft of gain through the Bighorn National Forest, Wyoming." data-es="22:10:08. Primera carrera de 100 millas. 20,500 pies de ganancia en el Bosque Nacional Bighorn, Wyoming.">22:10:08. First 100-mile race. 20,500 ft of gain through the Bighorn National Forest, Wyoming.</p>
+          </div>
+          <div class="athlete-result">
+            <p class="athlete-result-year">2012–2024</p>
+            <p class="athlete-result-title t" data-en="30+ Professional Podium Finishes" data-es="Más de 30 podios profesionales">30+ Professional Podium Finishes</p>
+            <p class="athlete-result-detail t" data-en="Ultra marathon, ultra OCR, trail. Spartan, WTM, and independent ultra events. Featured on CNN Fit Nation (2016) and 60 Minutes Sports." data-es="Ultramaratón, ultra OCR, trail. Spartan, WTM y eventos ultra independientes. Presentado en CNN Fit Nation (2016) y 60 Minutes Sports.">Ultra marathon, ultra OCR, trail. Featured on CNN Fit Nation (2016) and 60 Minutes Sports.</p>
+          </div>
+        </div>
+      </div>
+      <div class="athlete-right">
+        <p class="t"
+           data-en="It started with short Spartan Sprint events, the kind where you finish covered in mud and feeling like you found something. Over the next twelve years it evolved into something else entirely: a professional ultra endurance career spanning 50+ competitive races, 30+ podiums, world championship placements, and a course record at one of Colorado's most demanding 100-milers."
+           data-es="Todo comenzó con los cortos Spartan Sprint, el tipo de eventos donde terminas cubierto de barro y sintiéndote que encontraste algo. Durante los siguientes doce años evolucionó hacia algo completamente diferente: una carrera profesional de resistencia ultra que abarcó más de 50 competencias, más de 30 podios, lugares en campeonatos mundiales y un récord de recorrido en uno de los 100 millas más exigentes de Colorado.">It started with short Spartan Sprint events, the kind where you finish covered in mud and feeling like you found something. Over the next twelve years it evolved into something else entirely: a professional ultra endurance career spanning 50+ competitive races, 30+ podiums, world championship placements, and a course record at one of Colorado's most demanding 100-milers.</p>
+        <p class="t"
+           data-en="The progression followed a deliberate arc, shorter and faster to longer and more brutal, from stadium sprints through Spartan Supers and Beasts, into the Ultra Beast circuit, and finally into pure ultra marathon distance events where the obstacles aren't built by race directors but by the San Juan Mountains themselves. By 2022, that arc reached its clearest expression: the Ouray 100, 102 miles, nearly 42,000 feet of climbing, finished in 30 hours and 27 seconds, a course record that stood more than 45 minutes faster than what had come before."
+           data-es="La progresión siguió un arco deliberado, de eventos más cortos y rápidos a otros más largos y brutales, desde los sprints de estadio pasando por los Spartan Super y Beast, hasta el circuito Ultra Beast y finalmente hacia eventos de distancia pura de ultramaratón donde los obstáculos no los construyen los directores de carrera sino las montañas San Juan. Para 2022, ese arco alcanzó su expresión más clara: el Ouray 100, 102 millas, casi 42,000 pies de escalada, terminado en 30 horas y 27 segundos, un récord del recorrido que superó al anterior por más de 45 minutos.">The progression followed a deliberate arc, shorter and faster to longer and more brutal, from stadium sprints through Spartan Supers and Beasts, into the Ultra Beast circuit, and finally into pure ultra marathon distance events where the obstacles aren't built by race directors but by the San Juan Mountains themselves. By 2022, that arc reached its clearest expression: the Ouray 100, 102 miles, nearly 42,000 feet of climbing, finished in 30 hours and 27 seconds, a course record that stood more than 45 minutes faster than what had come before.</p>
+        <div class="athlete-pullquote">
+          <p class="t"
+             data-en="&ldquo;This sport has given me the ability to be comfortable with being uncomfortable. I don&rsquo;t fear adversity now. I feel I can overcome anything, especially with a good attitude.&rdquo;"
+             data-es="&ldquo;Este deporte me ha dado la capacidad de sentirme cómodo con la incomodidad. Ya no le temo a la adversidad. Siento que puedo superar cualquier cosa, especialmente con una buena actitud.&rdquo;">&ldquo;This sport has given me the ability to be comfortable with being uncomfortable. I don&rsquo;t fear adversity now. I feel I can overcome anything, especially with a good attitude.&rdquo;</p>
+        </div>
+        <p class="t"
+           data-en="None of this happened separately from the work. The two careers ran in parallel, sometimes quite literally, interpretation sessions in the morning, trail miles in the afternoon, races on weekends when cases permitted. The discipline required for both is more similar than it might appear. Ultra endurance competition demands a specific kind of mental architecture: the ability to perform accurately and under control when you are deeply fatigued, to stay precise when everything in you wants to simplify, to have prepared so thoroughly that when conditions get difficult you are not improvising."
+           data-es="Nada de esto ocurrió por separado del trabajo. Las dos carreras transcurrieron en paralelo, a veces literalmente, sesiones de interpretación por la mañana, millas en el trail por la tarde, carreras los fines de semana cuando los casos lo permitían. La disciplina requerida para ambas es más similar de lo que podría parecer. La competición de ultra resistencia demanda un tipo específico de arquitectura mental: la capacidad de rendir con precisión y control cuando estás profundamente fatigado, de mantenerte preciso cuando todo en ti quiere simplificar, de haber preparado tan minuciosamente que cuando las condiciones se complican no estás improvisando.">None of this happened separately from the work. The two careers ran in parallel, interpretation sessions in the morning, trail miles in the afternoon, races on weekends. The discipline required for both is more similar than it might appear. Ultra endurance competition demands a specific kind of mental architecture: the ability to perform accurately and under control when you are deeply fatigued, to stay precise when everything in you wants to simplify, to have prepared so thoroughly that when conditions get difficult you are not improvising.</p>
+        <p class="t"
+           data-en="A simultaneous interpreter in hour three of a conference, managing register, accuracy, and emotional neutrality under pressure, is drawing on something not entirely different from what carries a runner through hour twenty-eight of a mountain hundred. The preparation is different. The demand on the mind is not."
+           data-es="Un intérprete simultáneo en la tercera hora de una conferencia, gestionando el registro, la precisión y la neutralidad emocional bajo presión, está recurriendo a algo no muy diferente de lo que lleva a un corredor a través de la hora veintiocho de un centenar de montaña. La preparación es diferente. La exigencia de la mente no lo es.">A simultaneous interpreter in hour three of a conference, managing register, accuracy, and emotional neutrality under pressure, is drawing on something not entirely different from what carries a runner through hour twenty-eight of a mountain hundred. The preparation is different. The demand on the mind is not.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="experience-section">
+    <div class="experience-inner">
+      <h2 data-en="Settings and specializations." data-es="Entornos y especializaciones.">Settings and specializations.</h2>
+      <div class="exp-grid">
+        <div class="exp-item" data-en="Oncology consultations" data-es="Consultas oncológicas">Oncology consultations</div>
+        <div class="exp-item" data-en="Organ transplant services" data-es="Servicios de trasplante de órganos">Organ transplant services</div>
+        <div class="exp-item" data-en="ICU &amp; critical care" data-es="UCI y cuidados críticos">ICU &amp; critical care</div>
+        <div class="exp-item" data-en="Hospice &amp; palliative care" data-es="Cuidados paliativos y hospicios">Hospice &amp; palliative care</div>
+        <div class="exp-item" data-en="Psychiatric evaluations" data-es="Evaluaciones psiquiátricas">Psychiatric evaluations</div>
+        <div class="exp-item" data-en="Patient ethics hearings" data-es="Audiencias de ética médica">Patient ethics hearings</div>
+        <div class="exp-item" data-en="Genetics counseling" data-es="Asesoramiento genético">Genetics counseling</div>
+        <div class="exp-item" data-en="Clinical trials" data-es="Ensayos clínicos">Clinical trials</div>
+        <div class="exp-item" data-en="Worker's Compensation evaluations" data-es="Evaluaciones de compensación laboral">Worker's Compensation evaluations</div>
+        <div class="exp-item" data-en="Correctional facility intake" data-es="Admisión en instalaciones correccionales">Correctional facility intake</div>
+        <div class="exp-item" data-en="SIJS attorney consultations" data-es="Consultas con abogados de SIJS">SIJS attorney consultations</div>
+        <div class="exp-item" data-en="Medical Legal Partnership conferences" data-es="Conferencias de Asociación Médico-Legal">Medical Legal Partnership conferences</div>
+        <div class="exp-item" data-en="IEP meetings" data-es="Reuniones de IEP">IEP meetings</div>
+        <div class="exp-item" data-en="School expulsion hearings" data-es="Audiencias de expulsión escolar">School expulsion hearings</div>
+        <div class="exp-item" data-en="Board meetings &amp; town halls" data-es="Juntas directivas y asambleas comunitarias">Board meetings &amp; town halls</div>
+        <div class="exp-item" data-en="Deportation defense (rapid response)" data-es="Defensa contra deportación (respuesta rápida)">Deportation defense (rapid response)</div>
+        <div class="exp-item" data-en="Prenatal &amp; birth workshops" data-es="Talleres prenatales y de parto">Prenatal &amp; birth workshops</div>
+        <div class="exp-item" data-en="Caregiver training programs" data-es="Programas de formación para cuidadores">Caregiver training programs</div>
+        <div class="exp-item" data-en="Nonprofit governance meetings" data-es="Reuniones de gobernanza sin fines de lucro">Nonprofit governance meetings</div>
+        <div class="exp-item" data-en="Community organizing sessions" data-es="Sesiones de organización comunitaria">Community organizing sessions</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- =================== CONTACT PAGE =================== -->
+<div class="page" id="contact">
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-hero-tag" data-en="Contact" data-es="Contacto">Contact</p>
+      <h1 data-en="Let's talk about what you need." data-es="Hablemos de lo que necesita.">Let's talk about what you need.</h1>
+      <p data-en="Onboarding is straightforward. Reach out and we'll take it from there." data-es="El proceso de incorporación es sencillo. Contácteme y lo resolvemos juntos.">Onboarding is straightforward. Reach out and we'll take it from there.</p>
+    </div>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info">
+      <h2 data-en="Get in touch." data-es="Póngase en contacto.">Get in touch.</h2>
+      <p>Whether you're scheduling an upcoming appointment, exploring a longer-term partnership, or have questions about services and rates, reach out directly. Response within one business day.</p>
+      <div class="contact-detail">
+        <div class="contact-item">
+          <span class="contact-icon">✉</span>
+          <div class="contact-item-text">
+            <strong data-en="Email" data-es="Correo electrónico">Email</strong>
+            <a href="mailto:miguel@elevatedlanguageservices.com">miguel@elevatedlanguageservices.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🔗</span>
+          <div class="contact-item-text">
+            <strong>LinkedIn</strong>
+            <a href="https://linkedin.com/in/miguel-g-medina" target="_blank">linkedin.com/in/miguel-g-medina</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <div class="contact-item-text">
+            <strong data-en="Location" data-es="Ubicación">Location</strong>
+            <span data-en="Durango, Colorado. Serving clients remotely nationwide." data-es="Durango, Colorado. Sirviendo a clientes a distancia en todo el país.">Durango, Colorado. Serving clients remotely nationwide.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <p style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;" data-en="Onboarding Package" data-es="Paquete de incorporación">Onboarding Package</p>
+        <ul class="detail-list">
+          <li>Master Services Agreement (MSA)</li>
+          <li>HIPAA Business Associate Agreement (BAA)</li>
+          <li>Safe AI Policy</li>
+          <li>Rate Sheet</li>
+        </ul>
+        <p style="font-size:0.8rem; color:var(--text-light); margin-top:1rem; line-height:1.6;">Ready to sign from day one. No waiting, no back-and-forth.</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form" id="contactFormContainer">
+        <h3 data-en="Send a message" data-es="Enviar un mensaje">Send a message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="First Name" data-es="Nombre">First Name</label>
+            <input type="text" placeholder="First name" />
+          </div>
+          <div class="form-group">
+            <label data-en="Last Name" data-es="Apellido">Last Name</label>
+            <input type="text" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-en="Organization" data-es="Organización">Organization</label>
+          <input type="text" data-en="Practice, agency, or organization name" data-es="Práctica, agencia u organización" placeholder="Practice, agency, or organization name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label data-en="Service Needed" data-es="Servicio requerido">Service Needed</label>
+          <select>
+            <option value="">Select a service</option>
+            <option>In-Person Interpretation</option>
+            <option data-en="OPI / VRI: Remote" data-es="OPI / VRI: A distancia">OPI / VRI: Remote</option>
+            <option>Remote Simultaneous (RSI)</option>
+            <option>Worker's Compensation</option>
+            <option>Document Translation</option>
+            <option data-en="Subtitling / MTPE / Voice-Over" data-es="Subtitulación / MTPE / Locución">Subtitling / MTPE / Voice-Over</option>
+            <option data-en="Not sure yet: exploring options" data-es="Aún no estoy seguro/a: explorando opciones">Not sure yet: exploring options</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Message" data-es="Mensaje">Message</label>
+          <textarea placeholder="Tell me about the assignment, event, or what you're looking for. If you have a specific date or timeline in mind, include that here."></textarea>
+        </div>
+        <div class="form-submit">
+          <button class="btn-primary" onclick="handleFormSubmit()" style="width:100%; text-align:center;" data-en="Send Message" data-es="Enviar mensaje">Send Message</button>
+        </div>
+        <p class="form-note">This form is for scheduling and general inquiries. Please do not include patient names, case numbers, or any protected health information in your message.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div style="font-size:2rem; margin-bottom:1rem;">✓</div>
+        <h4 data-en="Message received." data-es="Mensaje recibido.">Message received.</h4>
+        <p data-en="Thank you for reaching out. I'll respond within one business day." data-es="Gracias por ponerse en contacto. Responderé en un día hábil.">Thank you for reaching out. I'll respond within one business day.</p>
+      </div>
+    </div>
+  </div>
+
+<!-- COLLABORATION SECTION -->
+<section class="collab-section">
+  <div class="collab-inner">
+    <div class="collab-text">
+      <p class="section-label" style="color:var(--gold-light);margin-bottom:1.5rem;" data-en="For Interpreters &amp; Agencies" data-es="Para intérpretes y agencias">For Interpreters &amp; Agencies</p>
+      <h2><span data-en="Let's work" data-es="Trabajemos">Let's work</span> <em data-en="together." data-es="juntos.">together.</em></h2>
+      <p data-en="Conference work, whether remote or on-site, often calls for a booth partner. I'm always open to connecting with other credentialed interpreters for event coverage, language pairs beyond Spanish, and large-scale conference support." data-es="El trabajo en conferencias, ya sea a distancia o presencial, a menudo requiere un compañero de cabina. Siempre estoy abierto a conectar con otros intérpretes certificados para cobertura de eventos, pares de idiomas más allá del español y apoyo en conferencias a gran escala.">Conference work, whether remote or on-site, often calls for a booth partner. I'm always open to connecting with other credentialed interpreters for event coverage, language pairs beyond Spanish, and large-scale conference support.</p>
+      <p data-en="Agencies: if you need a reliable, CHI-certified Spanish interpreter with demonstrated conference and healthcare experience, I'm available for subcontracting. You can expect professional conduct, complete documentation, and no surprises." data-es="Agencias: si necesitan un intérprete de español confiable, certificado CHI, con experiencia comprobada en conferencias y salud, estoy disponible como subcontratista. Pueden esperar conducta profesional, documentación completa y sin sorpresas.">Agencies: if you need a reliable, CHI-certified Spanish interpreter with demonstrated conference and healthcare experience, I'm available for subcontracting.</p>
+      <div class="collab-pillars">
+        <div class="collab-pillar">
+          <span class="collab-pillar-icon">🎙</span>
+          <div>
+            <h4 data-en="Booth Partner: RSI and On-Site" data-es="Compañero de cabina: RSI y presencial">Booth Partner: RSI and On-Site</h4>
+            <p data-en="Available for conference co-interpretation. English-Spanish. Comfortable with long-form simultaneous across healthcare, nonprofit, legal, and government settings." data-es="Disponible para co-interpretación en conferencias. Inglés-Español. Cómodo con simultánea de larga duración en entornos de salud, sin fines de lucro, legales y gubernamentales.">Available for conference co-interpretation. English-Spanish. Healthcare, nonprofit, legal, and government settings.</p>
+          </div>
+        </div>
+        <div class="collab-pillar">
+          <span class="collab-pillar-icon">🤝</span>
+          <div>
+            <h4 data-en="Subcontracting: Agencies Welcome" data-es="Subcontratación: Agencias bienvenidas">Subcontracting: Agencies Welcome</h4>
+            <p data-en="CHI-certified, 15+ years, clean documentation. MSA and rate sheet available on request. Professional liability insurance held." data-es="Certificado CHI, más de 15 años de experiencia, documentación completa. MSA y hoja de tarifas disponibles a solicitud. Seguro de responsabilidad profesional vigente.">CHI-certified, 15+ years, full documentation. MSA and rate sheet available on request.</p>
+          </div>
+        </div>
+        <div class="collab-pillar">
+          <span class="collab-pillar-icon">🌐</span>
+          <div>
+            <h4 data-en="Language Justice Collaboration" data-es="Colaboración en justicia lingüística">Language Justice Collaboration</h4>
+            <p data-en="Particularly interested in connecting with interpreters working in community, reproductive justice, environmental justice, and Indigenous-language settings." data-es="Especialmente interesado en conectar con intérpretes que trabajen en entornos comunitarios, de justicia reproductiva, justicia ambiental y lenguas indígenas.">Especially interested in interpreters working in community, reproductive justice, and Indigenous-language settings.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="collab-form-wrap">
+      <h3 data-en="Get in touch" data-es="Contáctame">Get in touch</h3>
+      <p class="collab-sub" data-en="Whether you're an interpreter looking to connect or an agency exploring subcontracting, reach out below. I respond within one business day." data-es="Ya sea que sea un intérprete que quiere conectar o una agencia explorando subcontratación, escríbame. Respondo en un día hábil.">Whether you're an interpreter looking to connect or an agency exploring subcontracting, reach out below.</p>
+      <div id="collabFormContainer">
+        <div class="form-group">
+          <label data-en="Your Name" data-es="Su nombre">Your Name</label>
+          <input type="text" data-en="Full name" data-es="Nombre completo" placeholder="Full name" />
+        </div>
+        <div class="form-group">
+          <label data-en="Email" data-es="Correo electrónico">Email</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label data-en="I am a..." data-es="Soy...">I am a...</label>
+          <select>
+            <option data-en="Freelance interpreter" data-es="Intérprete independiente">Freelance interpreter</option>
+            <option data-en="Agency or language services company" data-es="Agencia o empresa de servicios lingüísticos">Agency or language services company</option>
+            <option data-en="Event organizer seeking interpreter coverage" data-es="Organizador de eventos buscando cobertura">Event organizer seeking interpreter coverage</option>
+            <option data-en="Other" data-es="Otro">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Message" data-es="Mensaje">Message</label>
+          <textarea placeholder="Tell me about the event, language pair, or what you have in mind." data-en="Tell me about the event, language pair, or what you have in mind." data-es="Cuénteme sobre el evento, el par de idiomas o lo que tiene en mente." style="min-height:100px;"></textarea>
+        </div>
+        <button class="btn-outline-gold" onclick="handleCollabSubmit()" data-en="Send Message" data-es="Enviar mensaje">Send Message</button>
+        <p class="form-note" style="margin-top:1rem;" data-en="Please do not include client or patient information in your message." data-es="Por favor, no incluya información de clientes o pacientes en su mensaje.">Please do not include client or patient information in your message.</p>
+      </div>
+      <div id="collabSuccess" style="display:none;text-align:center;padding:3rem 1rem;">
+        <div style="font-size:2rem;margin-bottom:1rem;color:var(--gold)">✓</div>
+        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.5rem;" data-en="Message received." data-es="Mensaje recibido.">Message received.</h4>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);" data-en="I'll be in touch within one business day." data-es="Le escribiré dentro de un día hábil.">I'll be in touch within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <p class="footer-brand">Elevated <span>Language</span> Services LLC</p>
+      <p class="footer-tagline" data-en="Professional English-Spanish interpretation and translation. Serving healthcare, legal, nonprofit, education, and community settings in Durango, Colorado and nationwide." data-es="Interpretación y traducción profesional inglés-español. Al servicio de los sectores de salud, legal, sin fines de lucro, educación y comunidad en Durango, Colorado y en todo el país.">Professional English-Spanish interpretation and translation. Serving healthcare, legal, nonprofit, education, and community settings in Durango, Colorado and nationwide.</p>
+    </div>
+    <div class="footer-col">
+      <h5 data-en="Navigation" data-es="Navegación">Navigation</h5>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('services')">Services</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:miguel@elevatedlanguageservices.com">miguel@elevatedlanguageservices.com</a></li>
+        <li><a href="https://linkedin.com/in/miguel-g-medina" target="_blank">LinkedIn</a></li>
+        <li><a>Durango, Colorado</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Elevated Language Services LLC | Miguel Medina y Cruz Portillo, CHI</span>
+    <span data-en="NCIHC &amp; CCHI Code of Ethics Adherence" data-es="Adherencia al Código de Ética NCIHC y CCHI">NCIHC &amp; CCHI Code of Ethics Adherence</span>
+  </div>
+</footer>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+
+  function handleCollabSubmit() {
+    document.getElementById('collabFormContainer').style.display = 'none';
+    var s = document.getElementById('collabSuccess');
+    s.style.display = 'block';
+    s.querySelectorAll('[data-' + currentLang + ']').forEach(function(el){
+      var v = el.getAttribute('data-' + currentLang);
+      if (v) el.innerHTML = v;
+    });
+  }
+
+  function handleFormSubmit() {
+    document.getElementById('contactFormContainer').style.display = 'none';
+    const success = document.getElementById('formSuccess');
+    success.style.display = 'block';
+    success.style.padding = '4rem 3rem';
+  }
+
+
+  var currentLang = 'en';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.remove('active');});
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      if(b.getAttribute('onclick') === "setLang('"+lang+"')") b.classList.add('active');
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+      if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
+        el.placeholder = el.getAttribute('data-'+lang);
+      } else if(el.tagName === 'OPTION'){
+        el.textContent = el.getAttribute('data-'+lang);
+      } else {
+        el.innerHTML = el.getAttribute('data-'+lang);
+      }
+    });
+  }
+
+  // Nav link active state
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
+      this.style.color = 'var(--gold)';
+    });
+  });
+</script>
+
+</body>
+</html>
