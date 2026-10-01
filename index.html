@@ -398,6 +398,98 @@
       color: rgba(255,255,255,0.45);
     }
 
+    /* ON-DEMAND FEATURED CARD */
+    .service-card-featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
+      padding: 2.5rem 3rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .service-card-featured:hover { background: var(--navy-mid); }
+
+    .service-card-featured .service-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .service-card-featured h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      line-height: 1.25;
+    }
+
+    .service-card-featured p {
+      font-size: 0.82rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .service-card-featured .featured-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.4rem 1rem;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 600px) {
+      .service-card-featured {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 2.5rem;
+      }
+      .service-card-featured .featured-badge {
+        justify-self: start;
+      }
+    }
+
+    /* ON-DEMAND FEATURES GRID (services detail) */
+    .ondemand-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .ondemand-feature {
+      background: rgba(26,39,68,0.03);
+      border: 1px solid rgba(26,39,68,0.08);
+      padding: 1.2rem 1.4rem;
+    }
+
+    .ondemand-feature h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .ondemand-feature p {
+      font-size: 0.78rem !important;
+      color: var(--text-mid);
+      line-height: 1.5 !important;
+      margin-bottom: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .ondemand-features { grid-template-columns: 1fr; }
+    }
+
     /* DIFFERENCE SECTION */
     .difference {
       padding: 8rem 4rem;
@@ -1725,6 +1817,18 @@
           <h3 data-en="Subtitling, MTPE &amp; Voice-Over" data-es="Subtitulación, MTPE y locución">Subtitling, MTPE &amp; Voice-Over</h3>
           <p>Subtitling and transcription of multimedia content. Machine translation post-editing for accuracy and localization.</p>
         </div>
+        <div class="service-card-featured" onclick="showPage('services')">
+          <div>
+            <p class="service-num">07</p>
+          </div>
+          <div>
+            <h3 data-en="On-Demand OPI &amp; VRI" data-es="OPI y VRI bajo demanda">On-Demand OPI &amp; VRI</h3>
+            <p data-en="24/7 access to certified interpreters in 200+ languages. Average connection under 30 seconds. Managed through the ELS interpreter network." data-es="Acceso 24/7 a int&eacute;rpretes certificados en m&aacute;s de 200 idiomas. Conexi&oacute;n promedio en menos de 30 segundos. Gestionado a trav&eacute;s de la red de int&eacute;rpretes de ELS.">24/7 access to certified interpreters in 200+ languages. Average connection under 30 seconds. Managed through the ELS interpreter network.</p>
+          </div>
+          <div>
+            <span class="featured-badge" data-en="200+ Languages" data-es="200+ idiomas">200+ Languages</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1847,7 +1951,7 @@
     <div class="page-hero-inner">
       <p class="page-hero-tag" data-en="Services" data-es="Servicios">Services</p>
       <h1 data-en="Interpretation and translation for the settings that matter." data-es="Interpretación y traducción para los entornos que importan.">Interpretation and translation for the settings that matter.</h1>
-      <p data-en="Every service personally delivered by Miguel Medina y Cruz Portillo, CHI. No call centers, no routing, no surprises." data-es="Cada servicio entregado personalmente por Miguel Medina y Cruz Portillo, CHI. Sin centros de llamadas, sin derivaciones, sin sorpresas.">Every service personally delivered by Miguel Medina y Cruz Portillo, CHI. No call centers, no routing, no surprises.</p>
+      <p data-en="Scheduled services personally delivered by Miguel Medina y Cruz Portillo, CHI. On-demand coverage through the ELS interpreter network. One relationship, complete language access." data-es="Servicios programados entregados personalmente por Miguel Medina y Cruz Portillo, CHI. Cobertura bajo demanda a trav&eacute;s de la red de int&eacute;rpretes de ELS. Una sola relaci&oacute;n, acceso ling&uuml;&iacute;stico completo.">Scheduled services personally delivered by Miguel Medina y Cruz Portillo, CHI. On-demand coverage through the ELS interpreter network. One relationship, complete language access.</p>
     </div>
   </div>
 
@@ -1962,6 +2066,49 @@
         <div class="rate-callout" style="max-width: 200px;">
           <div class="rate-num">$35 / min</div>
           <div class="rate-detail">Per minute of media content</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-section" style="border-top: 2px solid var(--gold); padding-top: 5rem;">
+      <div class="service-section-left">
+        <p class="service-type" data-en="07: On-Demand" data-es="07: Bajo demanda">07: On-Demand</p>
+        <h3 data-en="On-Demand OPI &amp; VRI" data-es="OPI y VRI bajo demanda">On-Demand OPI &amp; VRI</h3>
+        <p style="font-size: 0.78rem; color: var(--gold); margin-top: 0.5rem; letter-spacing: 0.06em;" data-en="200+ LANGUAGES &middot; 24/7/365" data-es="200+ IDIOMAS &middot; 24/7/365">200+ LANGUAGES &middot; 24/7/365</p>
+      </div>
+      <div class="service-section-right">
+        <p data-en="Immediate access to qualified interpreters through the ELS interpreter network. Audio (OPI) and video remote interpreting (VRI) available on demand in over 200 spoken languages, plus American Sign Language, with an average connection time under 30 seconds. No appointment needed, no app to install, no special equipment required." data-es="Acceso inmediato a int&eacute;rpretes calificados a trav&eacute;s de la red de int&eacute;rpretes de ELS. Interpretaci&oacute;n remota por audio (OPI) y video (VRI) disponible bajo demanda en m&aacute;s de 200 idiomas hablados, m&aacute;s Lengua de Se&ntilde;as Americana, con un tiempo de conexi&oacute;n promedio menor a 30 segundos. Sin cita previa, sin aplicaci&oacute;n que instalar, sin equipo especial requerido.">Immediate access to qualified interpreters through the ELS interpreter network. Audio (OPI) and video remote interpreting (VRI) available on demand in over 200 spoken languages, plus American Sign Language, with an average connection time under 30 seconds. No appointment needed, no app to install, no special equipment required.</p>
+        <p data-en="This is the complement to scheduled services with Miguel. When a patient walks in unannounced, when a language need falls outside English-Spanish, or when your staff needs interpreting support outside scheduled hours, the ELS network provides coverage under your existing relationship. One vendor, one point of contact, complete language access." data-es="Este es el complemento a los servicios programados con Miguel. Cuando un paciente llega sin cita, cuando la necesidad ling&uuml;&iacute;stica es fuera del par ingl&eacute;s-espa&ntilde;ol, o cuando su personal necesita apoyo de interpretaci&oacute;n fuera del horario programado, la red de ELS provee cobertura bajo su relaci&oacute;n existente. Un solo proveedor, un solo punto de contacto, acceso ling&uuml;&iacute;stico completo.">This is the complement to scheduled services with Miguel. When a patient walks in unannounced, when a language need falls outside English-Spanish, or when your staff needs interpreting support outside scheduled hours, the ELS network provides coverage under your existing relationship. One vendor, one point of contact, complete language access.</p>
+
+        <div class="ondemand-features">
+          <div class="ondemand-feature">
+            <h5 data-en="Instant Access" data-es="Acceso inmediato">Instant Access</h5>
+            <p data-en="Connect to a qualified interpreter in under 30 seconds on average. Available 24 hours a day, 365 days a year." data-es="Con&eacute;ctese con un int&eacute;rprete calificado en menos de 30 segundos en promedio. Disponible las 24 horas del d&iacute;a, los 365 d&iacute;as del a&ntilde;o.">Connect to a qualified interpreter in under 30 seconds on average. Available 24 hours a day, 365 days a year.</p>
+          </div>
+          <div class="ondemand-feature">
+            <h5 data-en="Browser-Based" data-es="Basado en navegador">Browser-Based</h5>
+            <p data-en="Works on any device with a browser. Chrome, Edge, Firefox, Safari. No downloads, no apps, no IT deployment required." data-es="Funciona en cualquier dispositivo con navegador. Chrome, Edge, Firefox, Safari. Sin descargas, sin aplicaciones, sin implementaci&oacute;n de TI.">Works on any device with a browser. Chrome, Edge, Firefox, Safari. No downloads, no apps, no IT deployment required.</p>
+          </div>
+          <div class="ondemand-feature">
+            <h5 data-en="Enterprise Security" data-es="Seguridad empresarial">Enterprise Security</h5>
+            <p data-en="SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant. Enterprise-grade security for protected health information." data-es="Cifrado SRTP con AES-128 e intercambio de claves DTLS-SRTP. Compatible con HIPAA. Seguridad de nivel empresarial para informaci&oacute;n de salud protegida.">SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant. Enterprise-grade security for protected health information.</p>
+          </div>
+          <div class="ondemand-feature">
+            <h5 data-en="200+ Languages" data-es="200+ idiomas">200+ Languages</h5>
+            <p data-en="Full OPI coverage across 200+ spoken languages including less common and indigenous languages. VRI available for top-demand languages and ASL." data-es="Cobertura OPI completa en m&aacute;s de 200 idiomas hablados, incluyendo idiomas menos comunes e ind&iacute;genas. VRI disponible para idiomas de alta demanda y ASL.">Full OPI coverage across 200+ spoken languages including less common and indigenous languages. VRI available for top-demand languages and ASL.</p>
+          </div>
+          <div class="ondemand-feature">
+            <h5 data-en="Gender-Specific Matching" data-es="Asignaci&oacute;n por g&eacute;nero">Gender-Specific Matching</h5>
+            <p data-en="Request a male or female interpreter at session start. Critical for patient comfort in sensitive clinical encounters." data-es="Solicite un int&eacute;rprete masculino o femenino al iniciar la sesi&oacute;n. Fundamental para la comodidad del paciente en encuentros cl&iacute;nicos sensibles.">Request a male or female interpreter at session start. Critical for patient comfort in sensitive clinical encounters.</p>
+          </div>
+          <div class="ondemand-feature">
+            <h5 data-en="Single Vendor" data-es="Un solo proveedor">Single Vendor</h5>
+            <p data-en="On-demand coverage is managed under your existing ELS agreement. No separate vendor contract, no additional onboarding, no second point of contact." data-es="La cobertura bajo demanda se gestiona bajo su acuerdo existente con ELS. Sin contrato de proveedor separado, sin incorporaci&oacute;n adicional, sin segundo punto de contacto.">On-demand coverage is managed under your existing ELS agreement. No separate vendor contract, no additional onboarding, no second point of contact.</p>
+          </div>
+        </div>
+
+        <div class="rate-callout" style="margin-top:2rem; background:var(--navy-deep); border-left-color:var(--gold);">
+          <div class="rate-num" style="color:var(--white); font-size:1rem;" data-en="Per-minute rates. Billed only for time used. Contact for a custom quote based on your volume and language needs." data-es="Tarifas por minuto. Se factura solo el tiempo utilizado. Cont&aacute;cteme para un presupuesto personalizado seg&uacute;n su volumen y necesidades ling&uuml;&iacute;sticas.">Per-minute rates. Billed only for time used. Contact for a custom quote based on your volume and language needs.</div>
         </div>
       </div>
     </div>
