@@ -291,37 +291,12 @@
     }
 
     /* MISSION SECTION */
-    .mission {
-      padding: 8rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 6rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
     .section-label {
       font-size: 0.68rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
       padding-top: 0.5rem;
-    }
-
-    .mission-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 3vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-    }
-
-    .mission-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: var(--text-mid);
-      margin-bottom: 1.2rem;
     }
 
     /* SERVICES PREVIEW */
@@ -1277,7 +1252,7 @@
       .hero-right { min-height: 320px; }
       .hero-left { padding: 3rem 1.5rem; }
 
-      .mission, .about-intro, .contact-layout, .compliance {
+      .about-intro, .contact-layout, .compliance {
         grid-template-columns: 1fr;
         gap: 3rem;
         padding: 4rem 1.5rem;
@@ -1301,90 +1276,6 @@
     /* ANIMATIONS */
 
 
-    /* STAKES SECTION */
-    .stakes {
-      background: var(--navy-deep);
-      padding: 8rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .stakes::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 60%);
-    }
-    .stakes-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-    .stakes-header {
-      max-width: 720px;
-      margin-bottom: 5rem;
-    }
-    .stakes-header .section-label {
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      display: block;
-    }
-    .stakes-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 4rem);
-      font-weight: 300;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    .stakes-header p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.5);
-    }
-    .stakes-tracks {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background: rgba(201,168,76,0.12);
-      margin-bottom: 5rem;
-    }
-    .stakes-track {
-      background: var(--navy-deep);
-      padding: 2.5rem;
-    }
-    .stakes-track-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: rgba(201,168,76,0.2);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-    }
-    .stakes-track h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 1rem;
-      line-height: 1.25;
-    }
-    .stakes-track p {
-      font-size: 0.85rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 0.75rem;
-    }
-    .stakes-track p:last-child { margin-bottom: 0; }
-    .stakes-track .track-risk {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(201,168,76,0.6);
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(201,168,76,0.15);
-    }
     .ramirez-block {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(201,168,76,0.2);
@@ -1435,32 +1326,54 @@
       margin-top: 1rem;
       font-style: italic;
     }
-    .stakes-addl {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
+    /* INLINE STAKES CALLOUTS (Services page) */
+    .stakes-callout {
+      background: rgba(255,255,255,0.02);
+      border-left: 3px solid var(--gold);
+      padding: 2.5rem 2.5rem 2.5rem 2rem;
+      margin: 1rem 0 3rem;
     }
-    .stakes-stat {
-      border-top: 1px solid rgba(201,168,76,0.25);
-      padding-top: 1.5rem;
-    }
-    .stakes-stat .stat-num {
+    .stakes-callout h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .stakes-callout p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0;
+    }
+    .stakes-callout .inline-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .stakes-callout .inline-stat {
+      border-top: 1px solid rgba(201,168,76,0.25);
+      padding-top: 1rem;
+      min-width: 140px;
+    }
+    .stakes-callout .inline-stat .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
       font-weight: 300;
       color: var(--gold);
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.3rem;
     }
-    .stakes-stat p {
-      font-size: 0.78rem;
+    .stakes-callout .inline-stat p {
+      font-size: 0.75rem;
       color: rgba(255,255,255,0.4);
-      line-height: 1.55;
+      line-height: 1.5;
     }
     @media(max-width:900px) {
-      .stakes { padding: 5rem 1.5rem; }
-      .stakes-tracks { grid-template-columns: 1fr; }
       .ramirez-block { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem; }
-      .stakes-addl { grid-template-columns: repeat(2, 1fr); }
+      .stakes-callout { padding: 2rem 1.5rem; }
+      .stakes-callout .inline-stats { flex-direction: column; gap: 1.5rem; }
     }
 
     /* LANGUAGE TOGGLE */
@@ -1739,17 +1652,6 @@
     <div class="trust-item"><span class="trust-icon">🛡</span> <span data-en="Safe AI Policy" data-es="Política de IA segura">Safe AI Policy</span></div>
   </div>
 
-  <section class="mission">
-    <div>
-      <p class="section-label" data-en="Our Mission" data-es="Nuestra misión">Our Mission</p>
-    </div>
-    <div class="mission-text">
-      <h2 data-en="Social justice cannot exist without language justice." data-es="La justicia social no puede existir sin justicia lingüística.">Social justice cannot exist without language justice.</h2>
-      <p data-en="When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became a life's work, using language as a tool for justice and equity. What started as a game grew into a calling that has taken me from the bedside at Ronald Reagan UCLA Medical Center to immigration hearings, school board meetings, conference rooms, and community organizing sessions across the country." data-es="Cuando tenía 12 años, mi hermana y yo jugábamos a interpretar todo lo que escuchábamos en la radio. Ese reto de infancia se convirtió en mi vocación: usar el lenguaje como herramienta de justicia y equidad. Lo que empezó como un juego se transformó en un llamado que me ha llevado desde la cabecera de los pacientes en el Centro Médico Ronald Reagan de UCLA hasta audiencias de inmigración, juntas escolares, salas de conferencias y sesiones de organización comunitaria en todo el país.">When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became a life's work, using language as a tool for justice and equity. What started as a game grew into a calling that has taken me from the bedside at Ronald Reagan UCLA Medical Center to immigration hearings, school board meetings, conference rooms, and community organizing sessions across the country.</p>
-      <p data-en="Elevated Language Services LLC exists to ensure that language differences never become barriers to care, legal protection, education, or community participation. Every assignment is performed personally. Every session is approached with the full weight of what it means for the person on the other side of the interpretation." data-es="Elevated Language Services LLC existe para garantizar que las diferencias lingüísticas nunca se conviertan en barreras para el acceso a servicios de salud, protección legal, educación o participación comunitaria. Cada encargo se realiza personalmente. Cada sesión se aborda con plena conciencia de lo que significa para la persona al otro lado de la interpretación.">Elevated Language Services LLC exists to ensure that language differences never become barriers to care, legal protection, education, or community participation. Every assignment is performed personally. Every session is approached with the full weight of what it means for the person on the other side of the interpretation.</p>
-    </div>
-  </section>
-
   <section class="services-preview">
     <div class="services-preview-inner">
       <div class="section-header">
@@ -1803,81 +1705,7 @@
     </div>
   </section>
 
-  <!-- STAKES SECTION -->
-  <section class="stakes">
-    <div class="stakes-inner">
-      <div class="stakes-header">
-        <span class="section-label t" data-en="Why It Matters" data-es="Por qué importa">Why It Matters</span>
-        <h2 class="t" data-en="The cost of getting interpretation wrong is not abstract." data-es="El costo de una interpretación incorrecta no es abstracto.">The cost of getting interpretation wrong is not abstract.</h2>
-        <p class="t" data-en="Every year, people are misdiagnosed, lose legal cases, have informed consent violated, and in some cases lose their lives, because language access was treated as optional, improvised, or automated. This is documented. These are not hypotheticals." data-es="Cada año, personas reciben diagnósticos erróneos, pierden casos legales, ven violado su consentimiento informado y, en algunos casos, pierden la vida, porque el acceso lingüístico fue tratado como algo opcional, improvisado o automatizado. Esto está documentado. No son hipótesis.">Every year, people are misdiagnosed, lose legal cases, have informed consent violated, and in some cases lose their lives, because language access was treated as optional, improvised, or automated. This is documented. These are not hypotheticals.</p>
-      </div>
-
-      <div class="stakes-tracks">
-        <div class="stakes-track">
-          <div class="stakes-track-num">01</div>
-          <h3 class="t" data-en="Family members and bilingual staff are not interpreters." data-es="Los familiares y el personal bilingüe no son intérpretes.">Family members and bilingual staff are not interpreters.</h3>
-          <p class="t" data-en="Speaking a language and interpreting it are entirely different skills. Trained interpreters understand specialized terminology, cultural nuance, register, ethics, and the legal obligation of accuracy. A bilingual nurse or a patient's adult child does not." data-es="Hablar un idioma e interpretarlo son habilidades completamente distintas. Los intérpretes capacitados conocen la terminología especializada, el matiz cultural, el registro, la ética y la obligación legal de precisión. Una enfermera bilingüe o el hijo adulto de un paciente no los tienen.">Speaking a language and interpreting it are entirely different skills. Trained interpreters understand specialized terminology, cultural nuance, register, ethics, and the legal obligation of accuracy. A bilingual nurse or a patient's adult child does not.</p>
-          <p class="t" data-en="Research published in Pediatrics found that ad-hoc interpreters, family members, untrained bilingual staff, make 22% more errors with direct clinical consequences than trained professionals. These aren't minor slips. They're the kind of errors that change diagnoses, alter treatment plans, and expose your organization to liability." data-es="Una investigación publicada en Pediatrics encontró que los intérpretes ad hoc, familiares, personal bilingüe sin capacitación, cometen un 22% más de errores con consecuencias clínicas directas que los profesionales capacitados. No son errores menores. Son el tipo de errores que cambian diagnósticos, alteran planes de tratamiento y exponen a su organización a responsabilidad legal.">Research published in <em>Pediatrics</em> found that ad-hoc interpreters make 22% more errors with direct clinical consequences than trained professionals.</p>
-          <p class="t" data-en="There is also a privacy dimension that is often overlooked: patients routinely withhold sensitive information, mental health history, domestic violence, sexual health, when a family member is interpreting. The presence of a trained, neutral professional changes what a patient is willing to say." data-es="También hay una dimensión de privacidad que a menudo se pasa por alto: los pacientes habitualmente omiten información sensible, historial de salud mental, violencia doméstica, salud sexual, cuando un familiar está interpretando. La presencia de un profesional capacitado y neutral cambia lo que el paciente está dispuesto a revelar.">There's also a privacy dimension often overlooked: patients routinely withhold sensitive information, mental health, domestic violence, sexual health, when a family member is in the room interpreting.</p>
-          <p class="stakes-track track-risk t" data-en="Legal exposure: ACA Section 1557 and Title VI require qualified interpreters. Using family or untrained staff can result in malpractice liability and loss of federal funding." data-es="Exposición legal: la Sección 1557 de la ACA y el Título VI exigen intérpretes calificados. Usar familiares o personal no capacitado puede resultar en responsabilidad por negligencia médica y pérdida de fondos federales.">Legal exposure: ACA Section 1557 and Title VI require qualified interpreters. Using family or untrained staff can result in malpractice liability and loss of federal funding.</p>
-        </div>
-
-        <div class="stakes-track">
-          <div class="stakes-track-num">02</div>
-          <h3 class="t" data-en="AI translation is not interpretation, and it is not safe in high-stakes settings." data-es="La traducción por IA no es interpretación, y no es segura en entornos de alto riesgo.">AI translation is not interpretation, and it is not safe in high-stakes settings.</h3>
-          <p class="t" data-en="Google Translate, ChatGPT, and similar tools are not designed for live medical, legal, or community interpretation. They recognize patterns in text. They do not understand context, register, cultural meaning, or the weight of what is being communicated." data-es="Google Translate, ChatGPT y herramientas similares no están diseñadas para la interpretación médica, legal o comunitaria en tiempo real. Reconocen patrones en texto. No comprenden el contexto, el registro, el significado cultural ni el peso de lo que se está comunicando.">Google Translate, ChatGPT, and similar tools recognize patterns in text. They do not understand context, register, cultural meaning, or the weight of what is being communicated.</p>
-          <p class="t" data-en="A 2023 study presented at the ACL conference found clinically harmful errors, including potentially life-threatening ones, in machine translations of patient discharge instructions, even using widely-adopted MT systems. The National Center for State Courts states flatly that courts should never use machine translation for courtroom interactions, citing the risk of constitutional violations." data-es="Un estudio de 2023 presentado en la conferencia ACL encontró errores clínicamente dañinos, incluidos algunos potencialmente mortales, en traducciones automáticas de instrucciones de alta hospitalaria, incluso con sistemas de MT ampliamente utilizados. El Centro Nacional de Tribunales Estatales afirma categóricamente que los tribunales nunca deben usar traducción automática para interacciones en sala, citando el riesgo de violaciones constitucionales.">A 2023 ACL study found clinically harmful errors, including potentially life-threatening ones, in machine translations of patient discharge instructions. The National Center for State Courts states courts should <em>never</em> use machine translation in courtroom proceedings.</p>
-          <p class="t" data-en="In Garner v. Kadince (Utah, 2025), attorneys were sanctioned after submitting a motion that used AI to translate legal terminology, resulting in the fabricated phrase 'motion to eliminate' in place of the standard 'motion in limine,' alongside six entirely fictitious case citations. The court required a public apology and fee reimbursement. OpenAI's own published policies explicitly bar ChatGPT from use in 'high-risk government decision-making including law enforcement, criminal justice, migration and asylum.'" data-es="En Garner v. Kadince (Utah, 2025), los abogados fueron sancionados tras presentar una moción que usó IA para traducir terminología legal, lo que resultó en la frase inventada 'moción para eliminar' en lugar del estándar 'moción en limine', junto con seis citaciones de casos completamente ficticias. OpenAI prohíbe explícitamente el uso de ChatGPT en 'toma de decisiones gubernamentales de alto riesgo, incluidos la aplicación de la ley, la justicia penal, la migración y el asilo.'">In <em>Garner v. Kadince</em> (Utah, 2025), attorneys were sanctioned after AI translated "motion in limine" as the nonexistent "motion to eliminate" and generated six entirely fictitious case citations. OpenAI's own policies explicitly bar ChatGPT from use in "high-risk government decision-making including law enforcement, criminal justice, migration and asylum."</p>
-          <p class="stakes-track track-risk t" data-en="AI tools also create PHI exposure risk: many public tools store inputs to improve their models. Running patient information through them may constitute a HIPAA violation." data-es="Las herramientas de IA también crean riesgo de exposición de PHI: muchas herramientas públicas almacenan las entradas para mejorar sus modelos. Procesar información de pacientes a través de ellas puede constituir una violación de HIPAA.">AI tools also create PHI exposure: many public tools store inputs to improve their models. Routing patient information through them may constitute a HIPAA violation.</p>
-        </div>
-
-        <div class="stakes-track">
-          <div class="stakes-track-num">03</div>
-          <h3 class="t" data-en="Large-volume platforms trade accountability for scale." data-es="Las plataformas de alto volumen intercambian responsabilidad por escala.">Large-volume platforms trade accountability for scale.</h3>
-          <p class="t" data-en="High-volume OPI and VRI platforms connect you to whoever is available in the queue. Credentials vary widely and are often unverified. The interpreter you get today is not the interpreter you get tomorrow. There is no direct relationship, no institutional knowledge of your patient population, and in most cases no named professional you can hold accountable." data-es="Las plataformas de OPI y VRI de alto volumen le conectan con quien esté disponible en la fila. Las credenciales varían ampliamente y a menudo no están verificadas. El intérprete que obtiene hoy no es el de mañana. No hay relación directa, ni conocimiento institucional de su población de pacientes, ni en la mayoría de los casos un profesional identificado a quien pueda responsabilizar.">High-volume OPI and VRI platforms connect you to whoever is available in the queue. Credentials vary widely and are often unverified. There is no direct relationship, no named professional you can hold accountable.</p>
-          <p class="t" data-en="Regional variation matters. A Spanish-speaking patient from Oaxaca, from Cuba, or from Mexico City uses language differently. A platform that cannot match interpreters by dialect or regional background introduces exactly the kind of miscommunication risk it claims to prevent. This is not a hypothetical limitation, it is the documented cause of the most expensive medical interpretation error in U.S. history." data-es="La variación regional importa. Un paciente hispanohablante de Oaxaca, de Cuba o de la Ciudad de México usa el idioma de manera diferente. Una plataforma que no puede hacer coincidir intérpretes por dialecto o procedencia regional introduce exactamente el tipo de riesgo de comunicación que dice prevenir. Esta no es una limitación hipotética, es la causa documentada del error de interpretación médica más costoso en la historia de EE. UU.">Regional variation matters. A platform that cannot match interpreters by dialect introduces exactly the kind of miscommunication risk it claims to prevent, the documented cause of the most expensive medical interpretation error in U.S. history.</p>
-          <p class="stakes-track track-risk t" data-en="Ask any large-volume provider: can you guarantee the same certified, experienced interpreter across appointments? Can you guarantee dialect matching for indigenous-language-adjacent Spanish? The answer is no." data-es="Pregúntele a cualquier proveedor de alto volumen: ¿puede garantizar el mismo intérprete certificado y experimentado en todas las citas? ¿Puede garantizar coincidencia de dialecto para el español adyacente a lenguas indígenas? La respuesta es no.">Ask any large-volume provider: can you guarantee the same certified interpreter across appointments? Can you guarantee dialect matching for indigenous-language-adjacent Spanish? The answer is no.</p>
-        </div>
-      </div>
-
-      <!-- Ramirez Case Block -->
-      <div class="ramirez-block">
-        <div>
-          <p class="ramirez-label t" data-en="Case on record" data-es="Caso documentado">Case on record</p>
-          <div class="ramirez-stat">$71M</div>
-          <p class="ramirez-stat-label t" data-en="Settlement. One word. One missing interpreter." data-es="Acuerdo judicial. Una palabra. Un intérprete ausente.">Settlement. One word. One missing interpreter.</p>
-        </div>
-        <div class="ramirez-text">
-          <h4 class="t" data-en="Willie Ramirez. Florida, 1980. The most expensive medical interpretation error in U.S. history." data-es="Willie Ramirez. Florida, 1980. El error de interpretación médica más costoso en la historia de EE. UU.">Willie Ramirez. Florida, 1980. The most expensive medical interpretation error in U.S. history.</h4>
-          <p class="t" data-en="An 18-year-old arrived at a South Florida hospital unconscious. His Spanish-speaking family told doctors he was &ldquo;intoxicado&rdquo;, a Cuban Spanish term meaning he had ingested something bad, likely food poisoning. The word was interpreted as &ldquo;intoxicated.&rdquo; Doctors treated him for a drug overdose. He had a cerebral hemorrhage. For two days, the hemorrhage went untreated. Willie Ramirez left the hospital quadriplegic." data-es="Un joven de 18 años llegó inconsciente a un hospital del sur de Florida. Su familia hispanohablante le dijo a los médicos que estaba &ldquo;intoxicado&rdquo;, un término del español cubano que significa que había ingerido algo malo, posiblemente intoxicación alimentaria. La palabra fue interpretada como &ldquo;intoxicated&rdquo; (ebrio/drogado). Los médicos lo trataron por sobredosis. En realidad tenía una hemorragia cerebral. Durante dos días, la hemorragia no fue tratada. Willie Ramirez salió del hospital cuadripléjico.">An 18-year-old arrived at a South Florida hospital unconscious. His Spanish-speaking family told doctors he was &ldquo;intoxicado&rdquo;, a Cuban Spanish term meaning he had ingested something bad, likely food poisoning. The word was interpreted as &ldquo;intoxicated.&rdquo; Doctors treated him for a drug overdose. He had a cerebral hemorrhage. For two days, the hemorrhage went untreated. Willie Ramirez left the hospital quadriplegic.</p>
-          <p class="t" data-en="The hospital settled for $71 million. In the course of the lawsuit it was established that, had a neurosurgeon been called in when he arrived, Willie Ramirez could have walked out. The word &ldquo;intoxicado&rdquo; does not mean &ldquo;intoxicated&rdquo; in Cuban Spanish. A professional interpreter, one with regional competency, would have known this immediately." data-es="El hospital llegó a un acuerdo por $71 millones. En el transcurso del juicio se estableció que, si se hubiera llamado a un neurocirujano cuando llegó, Willie Ramirez podría haber salido caminando. La palabra &ldquo;intoxicado&rdquo; no significa &ldquo;intoxicated&rdquo; en español cubano. Un intérprete profesional, con competencia regional, lo habría sabido de inmediato.">The hospital settled for $71 million. It was established in the lawsuit that, had a neurosurgeon been called when he arrived, Willie Ramirez could have walked out. The word &ldquo;intoxicado&rdquo; does not mean &ldquo;intoxicated&rdquo; in Cuban Spanish. A professional interpreter with regional competency would have known this immediately.</p>
-          <p class="t" data-en="This is one case. It is the most documented. It is not the only one." data-es="Este es un caso. Es el más documentado. No es el único."><strong style="color:rgba(255,255,255,0.75);">This is one case. It is the most documented. It is not the only one.</strong></p>
-          <p class="ramirez-source">Source: Health Affairs, The Professional Interpreter, Boostlingo. Case documented in Gail Price-Wise, <em>Language, Culture, and Medical Tragedy</em>.</p>
-        </div>
-      </div>
-
-      <!-- Supporting stats -->
-      <div class="stakes-addl">
-        <div class="stakes-stat">
-          <div class="stat-num">22%</div>
-          <p class="t" data-en="more errors with clinical consequences when ad-hoc interpreters are used vs. trained professionals. Published in Pediatrics." data-es="más errores con consecuencias clínicas cuando se usan intérpretes ad hoc frente a profesionales capacitados. Publicado en Pediatrics.">more errors with clinical consequences when ad-hoc interpreters are used vs. trained professionals. <em>Pediatrics.</em></p>
-        </div>
-        <div class="stakes-stat">
-          <div class="stat-num">§1557</div>
-          <p class="t" data-en="ACA Section 1557 requires qualified interpreters for LEP patients. Non-compliance risks federal funding and malpractice liability." data-es="La Sección 1557 de la ACA exige intérpretes calificados para pacientes con dominio limitado del inglés. El incumplimiento arriesga fondos federales y responsabilidad por negligencia.">ACA Section 1557 requires qualified interpreters. Non-compliance risks federal funding and malpractice liability.</p>
-        </div>
-        <div class="stakes-stat">
-          <div class="stat-num t" data-en="Never" data-es="Nunca">Never</div>
-          <p class="t" data-en="The National Center for State Courts' guidance on machine translation: courts should never use machine translation for courtroom interactions." data-es="La orientación del Centro Nacional de Tribunales Estatales sobre traducción automática: los tribunales nunca deben usar traducción automática para interacciones en sala.">The National Center for State Courts: courts should <em>never</em> use machine translation for courtroom interactions.</p>
-        </div>
-        <div class="stakes-stat">
-          <div class="stat-num">PHI</div>
-          <p class="t" data-en="Many public AI translation tools store user inputs to improve their models. Routing patient data through them may constitute a HIPAA violation." data-es="Muchas herramientas públicas de traducción por IA almacenan las entradas para mejorar sus modelos. Procesar datos de pacientes a través de ellas puede constituir una violación de HIPAA.">Many public AI translation tools store user inputs. Routing patient information through them may constitute a HIPAA violation.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  <!-- Stakes content moved to Services page; Ramirez moved to About page -->
 
 
   <section class="difference">
@@ -1946,6 +1774,21 @@
       </div>
     </div>
 
+    <div class="stakes-callout">
+      <h4 data-en="Family members and bilingual staff are not interpreters." data-es="Los familiares y el personal biling&uuml;e no son int&eacute;rpretes.">Family members and bilingual staff are not interpreters.</h4>
+      <p data-en="Ad-hoc interpreters produce 22% more errors with potential clinical consequences than trained professionals (Flores et al., Pediatrics 2012). Beyond accuracy, using untrained staff creates privacy exposure and puts organizations at legal risk. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation." data-es="Los int&eacute;rpretes improvisados producen un 22% m&aacute;s de errores con posibles consecuencias cl&iacute;nicas que los profesionales capacitados (Flores et al., Pediatrics 2012). M&aacute;s all&aacute; de la precisi&oacute;n, recurrir a personal no capacitado genera exposici&oacute;n de privacidad y riesgo legal para las organizaciones. La Secci&oacute;n 1557 de la ACA exige int&eacute;rpretes calificados en programas con fondos federales. El incumplimiento conlleva acciones de derechos civiles, p&eacute;rdida de financiamiento y litigios.">Ad-hoc interpreters produce 22% more errors with potential clinical consequences than trained professionals (Flores et al., Pediatrics 2012). Beyond accuracy, using untrained staff creates privacy exposure and puts organizations at legal risk. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation.</p>
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <div class="stat-num">22%</div>
+          <p class="t" data-en="More errors with clinical consequences when ad-hoc interpreters are used." data-es="M&aacute;s errores con consecuencias cl&iacute;nicas cuando se usan int&eacute;rpretes improvisados.">More errors with clinical consequences when ad-hoc interpreters are used.</p>
+        </div>
+        <div class="inline-stat">
+          <div class="stat-num">&sect;1557</div>
+          <p class="t" data-en="ACA Section 1557 requires qualified interpreters. Non-compliance risks federal funding." data-es="La Secci&oacute;n 1557 de la ACA exige int&eacute;rpretes calificados. El incumplimiento pone en riesgo fondos federales.">ACA Section 1557 requires qualified interpreters. Non-compliance risks federal funding.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="service-section">
       <div class="service-section-left">
         <p class="service-type" data-en="03: Conferences" data-es="03: Conferencias">03: Conferences</p>
@@ -1988,6 +1831,21 @@
       </div>
       <div class="service-section-right">
         <p data-en="Professional English-Spanish translation of documents across healthcare, legal, educational, and nonprofit sectors. Standard turnaround is 1 to 2 business days (1,500 to 2,000 words per day). Rush service available. Machine translation post-editing (MTPE) also offered for projects where AI-assisted translation with expert review is appropriate." data-es="Traducci&oacute;n profesional ingl&eacute;s-espa&ntilde;ol de documentos en los sectores de salud, legal, educaci&oacute;n y sin fines de lucro. Tiempo de entrega est&aacute;ndar de 1 a 2 d&iacute;as h&aacute;biles (1,500 a 2,000 palabras por d&iacute;a). Servicio urgente disponible. Tambi&eacute;n se ofrece posedici&oacute;n de traducci&oacute;n autom&aacute;tica (MTPE) para proyectos donde la traducci&oacute;n asistida por IA con revisi&oacute;n experta sea apropiada.">Professional English-Spanish translation of documents across healthcare, legal, educational, and nonprofit sectors. Standard turnaround is 1 to 2 business days (1,500 to 2,000 words per day). Rush service available. Machine translation post-editing (MTPE) also offered for projects where AI-assisted translation with expert review is appropriate.</p>
+      </div>
+    </div>
+
+    <div class="stakes-callout">
+      <h4 data-en="AI translation is not interpretation." data-es="La traducci&oacute;n por IA no es interpretaci&oacute;n.">AI translation is not interpretation.</h4>
+      <p data-en="Machine translation fails on register, dialect, and clinical nuance. An ACL 2023 study found that MT systems still produce critical errors in medical contexts. The NCSC has stated that courts should never use machine translation for legal proceedings. And public AI tools store user inputs by default, meaning patient data routed through them may violate HIPAA." data-es="La traducci&oacute;n autom&aacute;tica falla en registro, dialecto y matices cl&iacute;nicos. Un estudio de ACL 2023 encontr&oacute; que los sistemas de TA a&uacute;n producen errores cr&iacute;ticos en contextos m&eacute;dicos. El NCSC ha declarado que los tribunales nunca deben usar traducci&oacute;n autom&aacute;tica en procedimientos legales. Y las herramientas p&uacute;blicas de IA almacenan las entradas por defecto, lo que significa que los datos de pacientes procesados a trav&eacute;s de ellas pueden violar HIPAA.">Machine translation fails on register, dialect, and clinical nuance. An ACL 2023 study found that MT systems still produce critical errors in medical contexts. The NCSC has stated that courts should never use machine translation for legal proceedings. And public AI tools store user inputs by default, meaning patient data routed through them may violate HIPAA.</p>
+      <div class="inline-stats">
+        <div class="inline-stat">
+          <div class="stat-num" data-en="Never" data-es="Nunca">Never</div>
+          <p class="t" data-en="NCSC guidance: courts should never use machine translation for proceedings." data-es="Directriz del NCSC: los tribunales nunca deben usar traducci&oacute;n autom&aacute;tica en procedimientos.">NCSC guidance: courts should never use machine translation for proceedings.</p>
+        </div>
+        <div class="inline-stat">
+          <div class="stat-num">PHI</div>
+          <p class="t" data-en="Public AI tools store inputs. Routing patient data through them risks HIPAA violations." data-es="Las herramientas p&uacute;blicas de IA almacenan entradas. Procesar datos de pacientes a trav&eacute;s de ellas puede violar HIPAA.">Public AI tools store inputs. Routing patient data through them risks HIPAA violations.</p>
+        </div>
       </div>
     </div>
 
@@ -2042,6 +1900,11 @@
           <div class="rate-num" style="color:var(--white); font-size:1rem;" data-en="Per-minute rates. Billed only for time used. Contact for a custom quote based on your volume and language needs." data-es="Tarifas por minuto. Se factura solo el tiempo utilizado. Cont&aacute;cteme para un presupuesto personalizado seg&uacute;n su volumen y necesidades ling&uuml;&iacute;sticas.">Per-minute rates. Billed only for time used. Contact for a custom quote based on your volume and language needs.</div>
         </div>
       </div>
+    </div>
+
+    <div class="stakes-callout">
+      <h4 data-en="Large-volume platforms trade accountability for scale." data-es="Las plataformas de gran volumen sacrifican la responsabilidad por la escala.">Large-volume platforms trade accountability for scale.</h4>
+      <p data-en="Queue-based platforms route calls to the next available interpreter regardless of specialization, regional variation, or dialect. A caller from rural Oaxaca and a caller from Buenos Aires need different interpreters. Scale without matching produces technically compliant but practically inadequate service. ELS pairs on-demand access with the accountability of a single point of contact who knows your organization." data-es="Las plataformas basadas en colas asignan las llamadas al siguiente int&eacute;rprete disponible sin importar la especializaci&oacute;n, la variaci&oacute;n regional o el dialecto. Un usuario de la zona rural de Oaxaca y uno de Buenos Aires necesitan int&eacute;rpretes diferentes. La escala sin emparejamiento produce un servicio t&eacute;cnicamente conforme pero pr&aacute;cticamente inadecuado. ELS combina el acceso bajo demanda con la responsabilidad de un &uacute;nico punto de contacto que conoce su organizaci&oacute;n.">Queue-based platforms route calls to the next available interpreter regardless of specialization, regional variation, or dialect. A caller from rural Oaxaca and a caller from Buenos Aires need different interpreters. Scale without matching produces technically compliant but practically inadequate service. ELS pairs on-demand access with the accountability of a single point of contact who knows your organization.</p>
     </div>
 
   </div>
@@ -2123,8 +1986,8 @@
 
   <section class="about-intro">
     <div>
-      <h2 data-en="Language as a tool for <em>justice</em> and equity." data-es="El lenguaje como herramienta de <em>justicia</em> y equidad.">Language as a tool for <em>justice</em> and equity.</h2>
-      <p data-en="When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became my life's work. What started as curiosity became a career that has taken me from the volunteer interpreter program at Ronald Reagan UCLA Medical Center to bedside consultations in oncology and ICU, immigration attorney conferences, school board hearings, and simultaneous interpretation for national conferences." data-es="Cuando tenía 12 años, mi hermana y yo jugábamos a interpretar todo lo que escuchábamos en la radio. Ese reto de infancia se convirtió en mi vocación. Lo que comenzó como curiosidad se transformó en una carrera que me ha llevado desde el programa de intérpretes voluntarios del Centro Médico Ronald Reagan de UCLA hasta consultas a pie de cama en oncología y UCI, conferencias con abogados de inmigración, audiencias de juntas escolares e interpretación simultánea para conferencias nacionales.">When I was 12, my sister and I played a game: interpret everything on the radio. That childhood challenge became my life's work. What started as curiosity became a career that has taken me from the volunteer interpreter program at Ronald Reagan UCLA Medical Center to bedside consultations in oncology and ICU, immigration attorney conferences, school board hearings, and simultaneous interpretation for national conferences.</p>
+      <h2 data-en="Language differences should never decide who gets <em>heard</em>." data-es="Las diferencias de idioma nunca deben decidir a qui&eacute;n se <em>escucha</em>.">Language differences should never decide who gets <em>heard</em>.</h2>
+      <p data-en="When I was 12, my sister and I invented a game: interpret everything on the radio. News, commercials, rancheras. It started as play. It became a way to understand what language really does." data-es="Cuando ten&iacute;a 12 a&ntilde;os, mi hermana y yo inventamos un juego: interpretar todo lo que sal&iacute;a en la radio. Noticias, comerciales, rancheras. Empez&oacute; como un juego. Se convirti&oacute; en una forma de entender lo que el lenguaje realmente hace.">When I was 12, my sister and I invented a game: interpret everything on the radio. News, commercials, rancheras. It started as play. It became a way to understand what language really does.</p>
       <p data-en="I founded Elevated Language Services LLC because I believe that every person controls their own communication, regardless of their primary language. That belief drives every assignment I take." data-es="Fundé Elevated Language Services LLC porque creo que toda persona tiene el derecho de controlar su propia comunicación, independientemente de su idioma principal. Esa convicción guía cada encargo que acepto.">I founded Elevated Language Services LLC because I believe that every person controls their own communication, regardless of their primary language. That belief drives every assignment I take.</p>
       <p data-en="I am a Certified Healthcare Interpreter (CHI) in Spanish through the Certifying Commission for Healthcare Interpreters (CCHI), with a BA in Spanish and TESOL from UCLA and 40-hour medical interpreter training from UCLA Health. I am currently enrolled in court interpreter training through the Southern California School of Interpretation, in preparation for state court certification." data-es="Soy Intérprete de Salud Certificado (CHI) en español por la Comisión Certificadora de Intérpretes de Salud (CCHI), con una licenciatura en Español y TESOL de la UCLA y 40 horas de formación como intérprete médico en UCLA Health. Actualmente estoy inscrito en el programa de formación para intérpretes judiciales de la Southern California School of Interpretation, en preparación para la certificación estatal.">I am a Certified Healthcare Interpreter (CHI) in Spanish through the Certifying Commission for Healthcare Interpreters (CCHI), with a BA in Spanish and TESOL from UCLA and 40-hour medical interpreter training from UCLA Health. I am currently enrolled in court interpreter training through the Southern California School of Interpretation, in preparation for state court certification.</p>
       <p data-en="My experience spans oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, school district expulsion hearings, and large-scale nonprofit conferences. Every setting. Every register. Every time." data-es="Mi experiencia abarca oncología, trasplante, UCI, cuidados paliativos, psiquiatría, audiencias de ética médica, evaluaciones de compensación laboral, consultas de Estatus Especial de Inmigrante Juvenil (SIJS), evaluaciones de admisión correccional, audiencias de expulsión escolar y conferencias de grandes organizaciones sin fines de lucro. Cada entorno. Cada registro. Siempre.">My experience spans oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, school district expulsion hearings, and large-scale nonprofit conferences. Every setting. Every register. Every time.</p>
@@ -2216,6 +2079,20 @@
     <p data-en="Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight." data-es="La justicia lingüística no es una credencial. Es un compromiso. Significa llegar preparado, mantenerse presente, guardar una estricta confidencialidad y adherirse a la ética profesional incluso cuando nadie está mirando. Significa tratar a cada persona, sin importar su idioma principal, como alguien cuyas palabras tienen pleno valor.">Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight.</p>
     <p data-en="That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business." data-es="Ese compromiso es la raz&oacute;n por la que mantengo la adherencia a la &eacute;tica de la NCIHC y la CCHI en cada encargo. Es por eso que tengo una Pol&iacute;tica de IA segura formal. Es por eso que proporciono un BAA de HIPAA como est&aacute;ndar, no porque un cliente lo haya pedido, sino porque es la forma correcta de hacer negocios.">That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business.</p>
   </section>
+
+  <!-- RAMIREZ CASE STUDY -->
+  <div class="ramirez-block">
+    <div>
+      <p class="ramirez-label t" data-en="Case on record" data-es="Caso documentado">Case on record</p>
+      <div class="ramirez-stat">$71M</div>
+      <p class="ramirez-stat-label t" data-en="Settlement. One word. One missing interpreter." data-es="Acuerdo judicial. Una palabra. Un int&eacute;rprete ausente.">Settlement. One word. One missing interpreter.</p>
+    </div>
+    <div class="ramirez-text">
+      <h4 data-en="Willie Ramirez, 1980" data-es="Willie Ramirez, 1980">Willie Ramirez, 1980</h4>
+      <p data-en="An 18-year-old arrived at a South Florida emergency room in a coma. His family described him as &ldquo;intoxicado.&rdquo; Without a qualified interpreter, hospital staff treated the word as &ldquo;intoxicated&rdquo; and pursued a drug-overdose workup. The actual cause was a cerebellar hemorrhage. The delay in correct diagnosis left Willie Ramirez a quadriplegic. The resulting malpractice settlement was $71 million." data-es="Un joven de 18 a&ntilde;os lleg&oacute; a una sala de emergencias en el sur de Florida en estado de coma. Su familia lo describi&oacute; como &ldquo;intoxicado.&rdquo; Sin un int&eacute;rprete calificado, el personal del hospital interpret&oacute; la palabra como &ldquo;intoxicated&rdquo; (drogado) y procedi&oacute; con un protocolo de sobredosis. La causa real era una hemorragia cerebelosa. El retraso en el diagn&oacute;stico correcto dej&oacute; a Willie Ram&iacute;rez cuadripl&eacute;jico. El acuerdo por negligencia m&eacute;dica fue de $71 millones.">An 18-year-old arrived at a South Florida emergency room in a coma. His family described him as &ldquo;intoxicado.&rdquo; Without a qualified interpreter, hospital staff treated the word as &ldquo;intoxicated&rdquo; and pursued a drug-overdose workup. The actual cause was a cerebellar hemorrhage. The delay in correct diagnosis left Willie Ramirez a quadriplegic. The resulting malpractice settlement was $71 million.</p>
+      <p class="ramirez-source" data-en="Sources: Health Affairs, The Professional Interpreter, Boostlingo, Gail Price-Wise" data-es="Fuentes: Health Affairs, The Professional Interpreter, Boostlingo, Gail Price-Wise">Sources: Health Affairs, The Professional Interpreter, Boostlingo, Gail Price-Wise</p>
+    </div>
+  </div>
 
   <!-- ATHLETE SECTION -->
   <section class="athlete-section">
