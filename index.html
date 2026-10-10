@@ -1651,32 +1651,6 @@
       margin-bottom: 2rem;
       line-height: 1.5;
     }
-    .collab-form-wrap .form-group label {
-      color: rgba(255,255,255,0.5);
-    }
-    .collab-form-wrap .form-group input,
-    .collab-form-wrap .form-group select,
-    .collab-form-wrap .form-group textarea {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(201,168,76,0.2);
-      color: var(--white);
-    }
-    .collab-form-wrap .form-group input:focus,
-    .collab-form-wrap .form-group select:focus,
-    .collab-form-wrap .form-group textarea:focus {
-      border-color: var(--gold);
-    }
-    .collab-form-wrap .form-group input::placeholder,
-    .collab-form-wrap .form-group textarea::placeholder {
-      color: rgba(255,255,255,0.25);
-    }
-    .collab-form-wrap .form-group select option {
-      background: var(--navy-deep);
-      color: var(--white);
-    }
-    .collab-form-wrap .form-note {
-      color: rgba(255,255,255,0.3);
-    }
     .btn-outline-gold {
       background: transparent;
       color: var(--gold);
@@ -2407,24 +2381,39 @@
           </div>
         </div>
         <div class="form-group">
-          <label data-en="Organization" data-es="Organización">Organization</label>
-          <input type="text" name="organization" data-en="Practice, agency, or organization name" data-es="Práctica, agencia u organización" placeholder="Practice, agency, or organization name" />
+          <label data-en="Organization" data-es="Organizaci&oacute;n">Organization</label>
+          <input type="text" name="organization" data-en="Practice, agency, or organization name" data-es="Pr&aacute;ctica, agencia u organizaci&oacute;n" placeholder="Practice, agency, or organization name" />
         </div>
         <div class="form-group">
           <label>Email</label>
           <input type="email" name="email" required placeholder="your@email.com" />
         </div>
         <div class="form-group">
+          <label data-en="I am a..." data-es="Soy...">I am a...</label>
+          <select name="role" required>
+            <option value="" data-en="Select one" data-es="Seleccione uno">Select one</option>
+            <option data-en="Healthcare or medical provider" data-es="Proveedor de salud o m&eacute;dico">Healthcare or medical provider</option>
+            <option data-en="Legal or court services" data-es="Servicios legales o judiciales">Legal or court services</option>
+            <option data-en="School district or education program" data-es="Distrito escolar o programa educativo">School district or education program</option>
+            <option data-en="Nonprofit or community organization" data-es="Organizaci&oacute;n sin fines de lucro o comunitaria">Nonprofit or community organization</option>
+            <option data-en="Government or public agency" data-es="Agencia gubernamental o p&uacute;blica">Government or public agency</option>
+            <option data-en="Event organizer" data-es="Organizador de eventos">Event organizer</option>
+            <option data-en="Agency or language services company" data-es="Agencia o empresa de servicios ling&uuml;&iacute;sticos">Agency or language services company</option>
+            <option data-en="Freelance interpreter" data-es="Int&eacute;rprete independiente">Freelance interpreter</option>
+            <option data-en="Other" data-es="Otro">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
           <label data-en="Service Needed" data-es="Servicio requerido">Service Needed</label>
           <select name="service">
-            <option value="" data-en="Select a service" data-es="Seleccione un servicio">Select a service</option>
+            <option value="" data-en="Select a service (optional)" data-es="Seleccione un servicio (opcional)">Select a service (optional)</option>
             <option data-en="In-Person Interpretation" data-es="Interpretaci&oacute;n presencial">In-Person Interpretation</option>
             <option data-en="OPI / VRI: Remote" data-es="OPI / VRI: A distancia">OPI / VRI: Remote</option>
             <option data-en="Remote Simultaneous (RSI)" data-es="Simult&aacute;nea remota (RSI)">Remote Simultaneous (RSI)</option>
             <option data-en="Worker's Compensation" data-es="Compensaci&oacute;n laboral">Worker's Compensation</option>
             <option data-en="Document Translation" data-es="Traducci&oacute;n de documentos">Document Translation</option>
-            <option data-en="Subtitling / MTPE / Voice-Over" data-es="Subtitulación / MTPE / Locución">Subtitling / MTPE / Voice-Over</option>
-            <option data-en="Not sure yet: exploring options" data-es="Aún no estoy seguro/a: explorando opciones">Not sure yet: exploring options</option>
+            <option data-en="Subtitling / MTPE / Voice-Over" data-es="Subtitulaci&oacute;n / MTPE / Locuci&oacute;n">Subtitling / MTPE / Voice-Over</option>
+            <option data-en="Not sure yet" data-es="A&uacute;n no estoy seguro/a">Not sure yet</option>
           </select>
         </div>
         <div class="form-group">
@@ -2434,7 +2423,7 @@
         <div class="form-submit">
           <button type="submit" class="btn-primary" style="width:100%; text-align:center;" data-en="Send Message" data-es="Enviar mensaje">Send Message</button>
         </div>
-        <p class="form-note" data-en="This form is for scheduling and general inquiries. Please do not include patient names, case numbers, or any protected health information in your message." data-es="Este formulario es para programaci&oacute;n y consultas generales. Por favor, no incluya nombres de pacientes, n&uacute;meros de caso ni informaci&oacute;n de salud protegida en su mensaje.">This form is for scheduling and general inquiries. Please do not include patient names, case numbers, or any protected health information in your message.</p>
+        <p class="form-note" data-en="This form is for scheduling and general inquiries. Please do not include patient names, case numbers, or other sensitive personal information in your message." data-es="Este formulario es para programaci&oacute;n y consultas generales. Por favor, no incluya nombres de pacientes, n&uacute;meros de caso ni otra informaci&oacute;n personal sensible en su mensaje.">This form is for scheduling and general inquiries. Please do not include patient names, case numbers, or other sensitive personal information in your message.</p>
         </form>
       </div>
       <div class="form-success" id="formSuccess">
@@ -2477,42 +2466,10 @@
         </div>
       </div>
     </div>
-    <div class="collab-form-wrap">
-      <h3 data-en="Get in touch" data-es="Contáctame">Get in touch</h3>
-      <p class="collab-sub" data-en="Whether you're an interpreter looking to connect or an agency exploring subcontracting, reach out below. I respond within one business day." data-es="Ya sea que sea un intérprete que quiere conectar o una agencia explorando subcontratación, escríbame. Respondo en un día hábil.">Whether you're an interpreter looking to connect or an agency exploring subcontracting, reach out below.</p>
-      <div id="collabFormContainer">
-        <form id="collabForm" action="https://formspree.io/f/YOUR_COLLAB_FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="Collaboration inquiry via ELS website" />
-        <div class="form-group">
-          <label data-en="Your Name" data-es="Su nombre">Your Name</label>
-          <input type="text" name="name" required data-en="Full name" data-es="Nombre completo" placeholder="Full name" />
-        </div>
-        <div class="form-group">
-          <label data-en="Email" data-es="Correo electrónico">Email</label>
-          <input type="email" name="email" required placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label data-en="I am a..." data-es="Soy...">I am a...</label>
-          <select name="role">
-            <option data-en="Freelance interpreter" data-es="Intérprete independiente">Freelance interpreter</option>
-            <option data-en="Agency or language services company" data-es="Agencia o empresa de servicios lingüísticos">Agency or language services company</option>
-            <option data-en="Event organizer seeking interpreter coverage" data-es="Organizador de eventos buscando cobertura">Event organizer seeking interpreter coverage</option>
-            <option data-en="Other" data-es="Otro">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label data-en="Message" data-es="Mensaje">Message</label>
-          <textarea name="message" required placeholder="Tell me about the event, language pair, or what you have in mind." data-en="Tell me about the event, language pair, or what you have in mind." data-es="Cuénteme sobre el evento, el par de idiomas o lo que tiene en mente." style="min-height:100px;"></textarea>
-        </div>
-        <button type="submit" class="btn-outline-gold" data-en="Send Message" data-es="Enviar mensaje">Send Message</button>
-        <p class="form-note" style="margin-top:1rem;" data-en="Please do not include client or patient information in your message." data-es="Por favor, no incluya información de clientes o pacientes en su mensaje.">Please do not include client or patient information in your message.</p>
-        </form>
-      </div>
-      <div id="collabSuccess" style="display:none;text-align:center;padding:3rem 1rem;">
-        <div style="font-size:2rem;margin-bottom:1rem;color:var(--gold)">✓</div>
-        <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--white);margin-bottom:0.5rem;" data-en="Message received." data-es="Mensaje recibido.">Message received.</h4>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.45);" data-en="I'll be in touch within one business day." data-es="Le escribiré dentro de un día hábil.">I'll be in touch within one business day.</p>
-      </div>
+    <div class="collab-form-wrap" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+      <h3 data-en="Get in touch" data-es="Cont&aacute;ctame">Get in touch</h3>
+      <p class="collab-sub" data-en="Whether you're an interpreter looking to connect or an agency exploring subcontracting, I respond within one business day." data-es="Ya sea que sea un int&eacute;rprete que quiere conectar o una agencia explorando subcontrataci&oacute;n, respondo en un d&iacute;a h&aacute;bil.">Whether you're an interpreter looking to connect or an agency exploring subcontracting, I respond within one business day.</p>
+      <button class="btn-outline-gold" onclick="showPage('contact'); setTimeout(function(){ document.getElementById('contactFormContainer').scrollIntoView({behavior:'smooth'}); }, 100);" data-en="Send a Message" data-es="Enviar un mensaje">Send a Message</button>
     </div>
   </div>
 </section>
@@ -2564,37 +2521,6 @@
     nav.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-
-  document.getElementById('collabForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var form = this;
-    var btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(function(r) {
-      if (r.ok) {
-        document.getElementById('collabFormContainer').style.display = 'none';
-        var s = document.getElementById('collabSuccess');
-        s.style.display = 'block';
-        s.querySelectorAll('[data-' + currentLang + ']').forEach(function(el){
-          var v = el.getAttribute('data-' + currentLang);
-          if (v) el.innerHTML = v;
-        });
-      } else {
-        btn.disabled = false;
-        btn.textContent = currentLang === 'es' ? 'Enviar mensaje' : 'Send Message';
-        alert(currentLang === 'es' ? 'Error al enviar. Intente de nuevo.' : 'Error sending. Please try again.');
-      }
-    }).catch(function() {
-      btn.disabled = false;
-      btn.textContent = currentLang === 'es' ? 'Enviar mensaje' : 'Send Message';
-      alert(currentLang === 'es' ? 'Error al enviar. Intente de nuevo.' : 'Error sending. Please try again.');
-    });
-  });
 
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
