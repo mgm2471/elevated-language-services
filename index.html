@@ -1477,6 +1477,52 @@
       line-height: 1.4;
       margin: 0 !important;
     }
+    /* ABOUT PHOTOS */
+    .about-headshot {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 4px;
+      margin-bottom: 2rem;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    .about-photo-break {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .about-photo-break img {
+      width: 100%;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+    .about-photo-break .photo-caption {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+    .athlete-race-photo {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 4px;
+      margin: 2rem 0;
+      object-fit: cover;
+    }
+    @media(max-width:900px) {
+      .about-photo-break {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem 2rem;
+        gap: 1.5rem;
+      }
+      .about-headshot { max-width: 200px; }
+      .athlete-race-photo { max-width: 100%; }
+    }
+
     @media(max-width:900px) {
       .athlete-section { padding: 5rem 1.5rem; }
       .athlete-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -1998,6 +2044,7 @@
       <p data-en="The core of my work is simultaneous interpretation for conferences, board meetings, and community events, both remotely via RSI and on-site. From there, my experience extends into oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, and school district expulsion hearings. Every setting. Every register. Every time." data-es="El n&uacute;cleo de mi trabajo es la interpretaci&oacute;n simult&aacute;nea para conferencias, juntas directivas y eventos comunitarios, tanto a distancia mediante RSI como presencialmente. A partir de ah&iacute;, mi experiencia se extiende a oncolog&iacute;a, trasplante, UCI, cuidados paliativos, psiquiatr&iacute;a, audiencias de &eacute;tica m&eacute;dica, evaluaciones de compensaci&oacute;n laboral, consultas de Estatus Especial de Inmigrante Juvenil (SIJS), evaluaciones de admisi&oacute;n correccional y audiencias de expulsi&oacute;n escolar. Cada entorno. Cada registro. Siempre.">The core of my work is simultaneous interpretation for conferences, board meetings, and community events, both remotely via RSI and on-site. From there, my experience extends into oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, Worker's Compensation evaluations, Special Immigrant Juvenile Status consultations, correctional facility intake assessments, and school district expulsion hearings. Every setting. Every register. Every time.</p>
     </div>
     <div class="about-sidebar">
+      <img src="images/headshot.jpg" alt="Miguel Medina y Cruz Portillo" class="about-headshot" loading="lazy">
       <div class="credentials-stack">
         <div class="cred-card">
           <p class="cred-card-label" data-en="Certification" data-es="Certificación">Certification</p>
@@ -2032,6 +2079,17 @@
       </div>
     </div>
   </section>
+
+  <div class="about-photo-break">
+    <div>
+      <img src="images/sister.jpg" alt="Miguel and his sister" loading="lazy">
+      <p class="photo-caption t" data-en="With my sister. The radio game started with us." data-es="Con mi hermana. El juego de la radio empez&oacute; con nosotras.">With my sister. The radio game started with us.</p>
+    </div>
+    <div>
+      <img src="images/booth-conference.jpg" alt="Simultaneous interpretation booth at a conference" loading="lazy">
+      <p class="photo-caption t" data-en="On-site simultaneous interpretation at a national conference." data-es="Interpretaci&oacute;n simult&aacute;nea presencial en una conferencia nacional.">On-site simultaneous interpretation at a national conference.</p>
+    </div>
+  </div>
 
   <section class="timeline-section">
     <div class="timeline-inner">
@@ -2084,6 +2142,14 @@
     <p data-en="Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight." data-es="La justicia lingüística no es una credencial. Es un compromiso. Significa llegar preparado, mantenerse presente, guardar una estricta confidencialidad y adherirse a la ética profesional incluso cuando nadie está mirando. Significa tratar a cada persona, sin importar su idioma principal, como alguien cuyas palabras tienen pleno valor.">Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight.</p>
     <p data-en="That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business." data-es="Ese compromiso es la raz&oacute;n por la que mantengo la adherencia a la &eacute;tica de la NCIHC y la CCHI en cada encargo. Es por eso que tengo una pol&iacute;tica formal de uso seguro de IA. Es por eso que proporciono un BAA de HIPAA como est&aacute;ndar, no porque un cliente lo haya pedido, sino porque es la forma correcta de hacer negocios.">That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business.</p>
   </section>
+
+  <div class="about-photo-break" style="padding-bottom:3rem">
+    <div>
+      <img src="images/booth-dark.jpg" alt="Simultaneous interpretation booth setup" loading="lazy">
+      <p class="photo-caption t" data-en="SI booth setup. Headset on, glossary loaded, ready." data-es="Montaje de cabina SI. Auriculares puestos, glosario cargado, listo.">SI booth setup. Headset on, glossary loaded, ready.</p>
+    </div>
+    <div></div>
+  </div>
 
   <!-- RAMIREZ CASE STUDY -->
   <div class="ramirez-block">
@@ -2155,6 +2221,7 @@
              data-en="&ldquo;This sport has given me the ability to be comfortable with being uncomfortable. I don&rsquo;t fear adversity now. I feel I can overcome anything, especially with a good attitude.&rdquo;"
              data-es="&ldquo;Este deporte me ha dado la capacidad de sentirme cómodo con la incomodidad. Ya no le temo a la adversidad. Siento que puedo superar cualquier cosa, especialmente con una buena actitud.&rdquo;">&ldquo;This sport has given me the ability to be comfortable with being uncomfortable. I don&rsquo;t fear adversity now. I feel I can overcome anything, especially with a good attitude.&rdquo;</p>
         </div>
+        <img src="images/ouray-100.jpg" alt="Miguel racing the Ouray 100" class="athlete-race-photo" loading="lazy">
         <p class="t"
            data-en="None of this happened separately from the work. The two careers ran in parallel, sometimes quite literally, interpretation sessions in the morning, trail miles in the afternoon, races on weekends when cases permitted. The discipline required for both is more similar than it might appear. Ultra endurance competition demands a specific kind of mental architecture: the ability to perform accurately and under control when you are deeply fatigued, to stay precise when everything in you wants to simplify, to have prepared so thoroughly that when conditions get difficult you are not improvising."
            data-es="Nada de esto ocurrió por separado del trabajo. Las dos carreras transcurrieron en paralelo, a veces literalmente, sesiones de interpretación por la mañana, millas en el trail por la tarde, carreras los fines de semana cuando los casos lo permitían. La disciplina requerida para ambas es más similar de lo que podría parecer. La competición de ultra resistencia demanda un tipo específico de arquitectura mental: la capacidad de rendir con precisión y control cuando estás profundamente fatigado, de mantenerte preciso cuando todo en ti quiere simplificar, de haber preparado tan minuciosamente que cuando las condiciones se complican no estás improvisando.">None of this happened separately from the work. The two careers ran in parallel, interpretation sessions in the morning, trail miles in the afternoon, races on weekends. The discipline required for both is more similar than it might appear. Ultra endurance competition demands a specific kind of mental architecture: the ability to perform accurately and under control when you are deeply fatigued, to stay precise when everything in you wants to simplify, to have prepared so thoroughly that when conditions get difficult you are not improvising.</p>
