@@ -477,6 +477,35 @@
       .ondemand-features { grid-template-columns: 1fr; }
     }
 
+    /* BELIEF-BREAKER STAT BAND */
+    .belief-breaker {
+      background: var(--navy-deep);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .belief-breaker .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .belief-breaker p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    .belief-breaker .belief-cite {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 1.25rem;
+      letter-spacing: 0.04em;
+      font-style: italic;
+    }
+
     /* DIFFERENCE SECTION */
     .difference {
       padding: 8rem 4rem;
@@ -1317,9 +1346,12 @@
       .nav-hamburger { display: flex; }
       .nav-cta { display: none; }
 
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { min-height: 320px; }
-      .hero-left { padding: 3rem 1.5rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 3rem 1.5rem; order: 1; }
+      .hero-right { min-height: auto; padding: 3rem 0; order: 2; }
+      .hero-quote-block { padding: 2rem 1.5rem; }
+      .hero-quote { font-size: 1.4rem; margin-bottom: 1.25rem; }
+      .hero-credentials { margin-top: 1.5rem; }
 
       .about-intro, .contact-layout, .compliance {
         grid-template-columns: 1fr;
@@ -1332,7 +1364,9 @@
       .section-header { grid-template-columns: 1fr; }
       .services-full { padding: 4rem 1.5rem; }
       .service-section { grid-template-columns: 1fr; gap: 1.5rem; }
-      .trust-strip { gap: 1.5rem; padding: 1.5rem; }
+      .trust-strip { gap: 1rem; padding: 1.5rem; flex-wrap: wrap; justify-content: center; }
+      .belief-breaker { padding: 3.5rem 1.5rem; }
+      .belief-breaker .stat-num { font-size: 3rem; }
       .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
       .timeline-section, .experience-section, .sectors { padding: 4rem 1.5rem; }
       .philosophy { padding: 5rem 1.5rem; }
@@ -1826,10 +1860,8 @@
         <p class="hero-quote" data-en="&ldquo;Language differences should never become power imbalances.&rdquo;" data-es="&ldquo;Las diferencias lingüísticas nunca deben convertirse en desequilibrios de poder.&rdquo;">&ldquo;Language differences should never become power imbalances.&rdquo;</p>
         <p class="hero-quote-attr">Miguel Medina y Cruz Portillo, CHI</p>
         <div class="hero-credentials">
-          <div class="cred-item"><span class="cred-dot"></span> <span data-en="Certified Healthcare Interpreter (CHI): Spanish" data-es="Int&eacute;rprete de Salud Certificado (CHI): Espa&ntilde;ol">Certified Healthcare Interpreter (CHI): Spanish</span></div>
-          <div class="cred-item"><span class="cred-dot"></span> <span data-en="15+ years professional experience" data-es="M&aacute;s de 15 a&ntilde;os de experiencia profesional">15+ years professional experience</span></div>
+          <div class="cred-item"><span class="cred-dot"></span> <span data-en="CHI-certified interpreter, 15+ years" data-es="Int&eacute;rprete certificado CHI, m&aacute;s de 15 a&ntilde;os">CHI-certified interpreter, 15+ years</span></div>
           <div class="cred-item"><span class="cred-dot"></span> <span data-en="Native bilingual English &amp; Spanish" data-es="Biling&uuml;e nativo ingl&eacute;s y espa&ntilde;ol">Native bilingual English &amp; Spanish</span></div>
-          <div class="cred-item"><span class="cred-dot"></span> <span data-en="NCIHC &amp; CCHI ethics adherence" data-es="Adherencia a la &eacute;tica NCIHC y CCHI">NCIHC &amp; CCHI ethics adherence</span></div>
           <div class="cred-item"><span class="cred-dot"></span> <span data-en="Durango, CO: serving clients remotely nationwide" data-es="Durango, CO: sirviendo a clientes a distancia en todo el pa&iacute;s">Durango, CO: serving clients remotely nationwide</span></div>
         </div>
       </div>
@@ -1837,11 +1869,11 @@
   </section>
 
   <div class="trust-strip">
-    <div class="trust-item"><span data-en="CHI Certified" data-es="Certificado CHI">CHI Certified</span></div>
     <div class="trust-item"><span data-en="HIPAA Compliant" data-es="Cumplimiento HIPAA">HIPAA Compliant</span></div>
-    <div class="trust-item"><span data-en="Direct Accountability" data-es="Responsabilidad directa">Direct Accountability</span></div>
-    <div class="trust-item"><span data-en="Regional Spanish Expertise" data-es="Experiencia en espa&ntilde;ol regional">Regional Spanish Expertise</span></div>
     <div class="trust-item"><span data-en="Safe AI Policy" data-es="Pol&iacute;tica de IA segura">Safe AI Policy</span></div>
+    <div class="trust-item"><span data-en="Same-Day Onboarding" data-es="Incorporaci&oacute;n el mismo d&iacute;a">Same-Day Onboarding</span></div>
+    <div class="trust-item"><span data-en="Direct Accountability" data-es="Responsabilidad directa">Direct Accountability</span></div>
+    <div class="trust-item"><span data-en="200+ Languages On-Demand" data-es="200+ idiomas bajo demanda">200+ Languages On-Demand</span></div>
   </div>
 
   <section class="services-preview">
@@ -1923,6 +1955,12 @@
     </div>
   </section>
 
+
+  <section class="belief-breaker">
+    <div class="stat-num">35.6%</div>
+    <p data-en="of patient discharge instructions were incorrectly translated by AI in a peer-reviewed study." data-es="de las instrucciones de alta m&eacute;dica fueron traducidas incorrectamente por IA en un estudio revisado por pares.">of patient discharge instructions were incorrectly translated by AI in a peer-reviewed study.</p>
+    <p class="belief-cite" data-en="U.S. Commission on Civil Rights, 2026" data-es="Comisi&oacute;n de Derechos Civiles de EE.&nbsp;UU., 2026">U.S. Commission on Civil Rights, 2026</p>
+  </section>
 
   <section class="difference">
     <h2 data-en="The difference credentials, experience, and accountability make." data-es="La diferencia que hacen las credenciales, la experiencia y la responsabilidad.">The difference credentials, experience, and accountability make.</h2>
@@ -2156,6 +2194,56 @@
         <div class="sector-card">
           <h4 data-en="Conferences &amp; Events" data-es="Conferencias y eventos">Conferences &amp; Events</h4>
           <p data-en="Simultaneous interpretation for conferences with 25 to 500+ participants. Healthcare, foundation, agricultural, environmental, and advocacy sectors." data-es="Interpretaci&oacute;n simult&aacute;nea para conferencias con 25 a 500+ participantes. Sectores de salud, fundaciones, agricultura, medio ambiente y organizaciones de incidencia.">Simultaneous interpretation for conferences with 25 to 500+ participants. Healthcare, foundation, agricultural, environmental, and advocacy sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="experience-section">
+    <div class="experience-inner">
+      <h2 data-en="Settings and specializations." data-es="Entornos y especializaciones.">Settings and specializations.</h2>
+      <div class="exp-categories">
+        <div class="exp-category">
+          <h4 data-en="Healthcare" data-es="Salud">Healthcare</h4>
+          <ul>
+            <li class="t" data-en="Oncology &amp; critical care" data-es="Oncolog&iacute;a y cuidados cr&iacute;ticos">Oncology &amp; critical care</li>
+            <li class="t" data-en="Hospice &amp; palliative care" data-es="Cuidados paliativos y hospicios">Hospice &amp; palliative care</li>
+            <li class="t" data-en="Psychiatric evaluations" data-es="Evaluaciones psiqui&aacute;tricas">Psychiatric evaluations</li>
+            <li class="t" data-en="Prenatal &amp; postpartum care" data-es="Atenci&oacute;n prenatal y posparto">Prenatal &amp; postpartum care</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Legal" data-es="Legal">Legal</h4>
+          <ul>
+            <li class="t" data-en="Deportation defense (rapid response)" data-es="Defensa contra deportaci&oacute;n (respuesta r&aacute;pida)">Deportation defense (rapid response)</li>
+            <li class="t" data-en="SIJS attorney consultations" data-es="Consultas con abogados de SIJS">SIJS attorney consultations</li>
+            <li class="t" data-en="Worker's Compensation evaluations" data-es="Evaluaciones de compensaci&oacute;n laboral">Worker's Compensation evaluations</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Education" data-es="Educaci&oacute;n">Education</h4>
+          <ul>
+            <li class="t" data-en="IEP &amp; Section 504 meetings" data-es="Reuniones de IEP y Secci&oacute;n 504">IEP &amp; Section 504 meetings</li>
+            <li class="t" data-en="School discipline hearings" data-es="Audiencias disciplinarias escolares">School discipline hearings</li>
+            <li class="t" data-en="District-level proceedings" data-es="Procedimientos a nivel de distrito">District-level proceedings</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Nonprofit" data-es="Sin fines de lucro">Nonprofit</h4>
+          <ul>
+            <li class="t" data-en="Reproductive &amp; environmental justice" data-es="Justicia reproductiva y ambiental">Reproductive &amp; environmental justice</li>
+            <li class="t" data-en="Community health &amp; prevention" data-es="Salud comunitaria y prevenci&oacute;n">Community health &amp; prevention</li>
+            <li class="t" data-en="Agricultural &amp; environmental conferences" data-es="Conferencias agr&iacute;colas y ambientales">Agricultural &amp; environmental conferences</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Community &amp; Government" data-es="Comunidad y gobierno">Community &amp; Government</h4>
+          <ul>
+            <li class="t" data-en="Public utilities commission hearings" data-es="Audiencias de comisi&oacute;n de servicios p&uacute;blicos">Public utilities commission hearings</li>
+            <li class="t" data-en="Cooperative governance" data-es="Gobernanza cooperativa">Cooperative governance</li>
+            <li class="t" data-en="Board meetings &amp; town halls" data-es="Juntas directivas y asambleas comunitarias">Board meetings &amp; town halls</li>
+            <li class="t" data-en="Language access assessments" data-es="Evaluaciones de acceso ling&uuml;&iacute;stico">Language access assessments</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -2402,55 +2490,6 @@
   </section>
 
 
-  <section class="experience-section">
-    <div class="experience-inner">
-      <h2 data-en="Settings and specializations." data-es="Entornos y especializaciones.">Settings and specializations.</h2>
-      <div class="exp-categories">
-        <div class="exp-category">
-          <h4 data-en="Healthcare" data-es="Salud">Healthcare</h4>
-          <ul>
-            <li class="t" data-en="Oncology &amp; critical care" data-es="Oncolog&iacute;a y cuidados cr&iacute;ticos">Oncology &amp; critical care</li>
-            <li class="t" data-en="Hospice &amp; palliative care" data-es="Cuidados paliativos y hospicios">Hospice &amp; palliative care</li>
-            <li class="t" data-en="Psychiatric evaluations" data-es="Evaluaciones psiqui&aacute;tricas">Psychiatric evaluations</li>
-            <li class="t" data-en="Prenatal &amp; postpartum care" data-es="Atenci&oacute;n prenatal y posparto">Prenatal &amp; postpartum care</li>
-          </ul>
-        </div>
-        <div class="exp-category">
-          <h4 data-en="Legal" data-es="Legal">Legal</h4>
-          <ul>
-            <li class="t" data-en="Deportation defense (rapid response)" data-es="Defensa contra deportaci&oacute;n (respuesta r&aacute;pida)">Deportation defense (rapid response)</li>
-            <li class="t" data-en="SIJS attorney consultations" data-es="Consultas con abogados de SIJS">SIJS attorney consultations</li>
-            <li class="t" data-en="Worker's Compensation evaluations" data-es="Evaluaciones de compensaci&oacute;n laboral">Worker's Compensation evaluations</li>
-          </ul>
-        </div>
-        <div class="exp-category">
-          <h4 data-en="Education" data-es="Educaci&oacute;n">Education</h4>
-          <ul>
-            <li class="t" data-en="IEP &amp; Section 504 meetings" data-es="Reuniones de IEP y Secci&oacute;n 504">IEP &amp; Section 504 meetings</li>
-            <li class="t" data-en="School discipline hearings" data-es="Audiencias disciplinarias escolares">School discipline hearings</li>
-            <li class="t" data-en="District-level proceedings" data-es="Procedimientos a nivel de distrito">District-level proceedings</li>
-          </ul>
-        </div>
-        <div class="exp-category">
-          <h4 data-en="Nonprofit" data-es="Sin fines de lucro">Nonprofit</h4>
-          <ul>
-            <li class="t" data-en="Reproductive &amp; environmental justice" data-es="Justicia reproductiva y ambiental">Reproductive &amp; environmental justice</li>
-            <li class="t" data-en="Community health &amp; prevention" data-es="Salud comunitaria y prevenci&oacute;n">Community health &amp; prevention</li>
-            <li class="t" data-en="Agricultural &amp; environmental conferences" data-es="Conferencias agr&iacute;colas y ambientales">Agricultural &amp; environmental conferences</li>
-          </ul>
-        </div>
-        <div class="exp-category">
-          <h4 data-en="Community &amp; Government" data-es="Comunidad y gobierno">Community &amp; Government</h4>
-          <ul>
-            <li class="t" data-en="Public utilities commission hearings" data-es="Audiencias de comisi&oacute;n de servicios p&uacute;blicos">Public utilities commission hearings</li>
-            <li class="t" data-en="Cooperative governance" data-es="Gobernanza cooperativa">Cooperative governance</li>
-            <li class="t" data-en="Board meetings &amp; town halls" data-es="Juntas directivas y asambleas comunitarias">Board meetings &amp; town halls</li>
-            <li class="t" data-en="Language access assessments" data-es="Evaluaciones de acceso ling&uuml;&iacute;stico">Language access assessments</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
 
 </div>
 
@@ -2657,6 +2696,9 @@
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.location.hash !== '#' + id) {
+      history.replaceState(null, '', '#' + id);
+    }
     return false;
   }
 
@@ -2723,6 +2765,16 @@
       }
     });
   }
+
+  // Hash-based routing
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(hash)) {
+      showPage(hash);
+    }
+  }
+  handleHash();
+  window.addEventListener('hashchange', handleHash);
 
   // Nav link active state
   document.querySelectorAll('.nav-links a').forEach(link => {
