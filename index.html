@@ -285,9 +285,13 @@
       color: rgba(255,255,255,0.65);
     }
 
-    .trust-icon {
-      font-size: 1.1rem;
-      color: var(--gold);
+    .trust-item::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     /* MISSION SECTION */
@@ -797,9 +801,12 @@
     }
 
     .comp-icon {
-      font-size: 1.2rem;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 8px;
     }
 
     .comp-item h5 {
@@ -995,27 +1002,32 @@
       margin-bottom: 3rem;
     }
 
-    .exp-grid {
+    .exp-categories {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5px;
-      background: rgba(26,39,68,0.1);
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
     }
-
-    .exp-item {
-      background: var(--cream);
-      padding: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--text-mid);
-      line-height: 1.5;
-    }
-
-    .exp-item::before {
-      content: '—';
+    .exp-category h4 {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--gold);
-      display: block;
-      margin-bottom: 0.4rem;
-      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(26,39,68,0.1);
+    }
+    .exp-category ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .exp-category li {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      padding: 0.45rem 0;
+      line-height: 1.5;
     }
 
     /* =================== CONTACT PAGE =================== */
@@ -1258,7 +1270,8 @@
         padding: 4rem 1.5rem;
       }
 
-      .services-grid, .sectors-grid, .exp-grid { grid-template-columns: 1fr; }
+      .services-grid, .sectors-grid { grid-template-columns: 1fr; }
+      .exp-categories { grid-template-columns: 1fr; }
       .section-header { grid-template-columns: 1fr; }
       .services-full { padding: 4rem 1.5rem; }
       .service-section { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -1574,10 +1587,12 @@
       align-items: flex-start;
     }
     .collab-pillar-icon {
-      font-size: 1.1rem;
-      color: var(--gold);
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 8px;
     }
     .collab-pillar h4 {
       font-size: 0.82rem;
@@ -1662,10 +1677,9 @@
     <div class="hero-left">
       <p class="hero-tag" data-en="Language Justice in Practice" data-es="Justicia lingüística en acción">Language Justice in Practice</p>
       <h1 class="hero-headline">
-        <span data-en="Every voice" data-es="Cada voz">Every voice</span><br/>
-        <em data-en="heard," data-es="escuchada,">heard,</em><br/>
-        <span data-en="respected," data-es="respetada,">respected,</span><br/>
-        <span data-en="and empowered." data-es="y empoderada.">and empowered.</span>
+        <span data-en="Language justice" data-es="La justicia ling&uuml;&iacute;stica">Language justice</span><br/>
+        <em data-en="starts with" data-es="empieza con">starts with</em><br/>
+        <span data-en="who's in the room." data-es="qui&eacute;n est&aacute; en la sala.">who's in the room.</span>
       </h1>
       <p class="hero-sub" data-en="Professional English-Spanish interpretation and translation for healthcare, legal, nonprofit, and community settings. Personally performed by a CHI-certified interpreter with 15 years of experience." data-es="Interpretaci&oacute;n y traducci&oacute;n profesional ingl&eacute;s-espa&ntilde;ol para entornos de salud, legales, sin fines de lucro y comunitarios. Realizada personalmente por un int&eacute;rprete certificado CHI con 15 a&ntilde;os de experiencia.">Professional English-Spanish interpretation and translation for healthcare, legal, nonprofit, and community settings. Personally performed by a CHI-certified interpreter with 15 years of experience.</p>
       <div class="hero-actions">
@@ -1690,19 +1704,18 @@
   </section>
 
   <div class="trust-strip">
-    <div class="trust-item"><span class="trust-icon">⚖</span> <span data-en="CHI Certified" data-es="Certificado CHI">CHI Certified</span></div>
-    <div class="trust-item"><span class="trust-icon">🔒</span> <span data-en="HIPAA Compliant" data-es="Cumplimiento HIPAA">HIPAA Compliant</span></div>
-    <div class="trust-item"><span class="trust-icon">📋</span> <span data-en="Full Compliance Documentation" data-es="Documentaci&oacute;n de cumplimiento completa">Full Compliance Documentation</span></div>
-    <div class="trust-item"><span class="trust-icon">🤝</span> <span data-en="Personal Accountability" data-es="Responsabilidad personal">Personal Accountability</span></div>
-    <div class="trust-item"><span class="trust-icon">🌎</span> <span data-en="Regional Spanish Expertise" data-es="Experiencia en español regional">Regional Spanish Expertise</span></div>
-    <div class="trust-item"><span class="trust-icon">🛡</span> <span data-en="Safe AI Policy" data-es="Política de IA segura">Safe AI Policy</span></div>
+    <div class="trust-item"><span data-en="CHI Certified" data-es="Certificado CHI">CHI Certified</span></div>
+    <div class="trust-item"><span data-en="HIPAA Compliant" data-es="Cumplimiento HIPAA">HIPAA Compliant</span></div>
+    <div class="trust-item"><span data-en="Direct Accountability" data-es="Responsabilidad directa">Direct Accountability</span></div>
+    <div class="trust-item"><span data-en="Regional Spanish Expertise" data-es="Experiencia en espa&ntilde;ol regional">Regional Spanish Expertise</span></div>
+    <div class="trust-item"><span data-en="Safe AI Policy" data-es="Pol&iacute;tica de IA segura">Safe AI Policy</span></div>
   </div>
 
   <section class="services-preview">
     <div class="services-preview-inner">
       <div class="section-header">
-        <h2 data-en="Services built for the settings that matter most." data-es="Servicios diseñados para los entornos que más importan.">Services built for the settings that matter most.</h2>
-        <p data-en="From bedside consultations to large-scale conferences, every service is delivered with the same standard of care and professional accountability." data-es="Desde consultas a pie de cama hasta conferencias a gran escala, cada servicio se presta con el mismo nivel de cuidado y responsabilidad profesional.">From bedside consultations to large-scale conferences, every service is delivered with the same standard of care and professional accountability.</p>
+        <h2 data-en="What I do." data-es="Lo que hago.">What I do.</h2>
+        <p data-en="Scheduled and on-demand interpretation, written translation, and media localization. In person across the Four Corners region, remote nationwide." data-es="Interpretaci&oacute;n programada y bajo demanda, traducci&oacute;n escrita y localizaci&oacute;n de medios. Presencial en la regi&oacute;n de Four Corners, a distancia en todo el pa&iacute;s.">Scheduled and on-demand interpretation, written translation, and media localization. In person across the Four Corners region, remote nationwide.</p>
       </div>
       <div class="services-grid">
         <div class="service-card" onclick="showPage('services')">
@@ -1769,8 +1782,7 @@
           <tr><td data-en="Language of service" data-es="Idioma del servicio">Language of service</td><td data-en="Native bilingual, US-based" data-es="Biling&uuml;e nativo, con sede en EE. UU.">Native bilingual, US-based</td></tr>
           <tr><td data-en="Linguistic expertise" data-es="Competencia ling&uuml;&iacute;stica">Linguistic expertise</td><td data-en="Regional Latin American varieties; indigenous language experience" data-es="Variedades regionales latinoamericanas; experiencia con lenguas ind&iacute;genas">Regional Latin American varieties; indigenous language experience</td></tr>
           <tr><td data-en="Accountability" data-es="Responsabilidad">Accountability</td><td data-en="Direct relationship on dedicated assignments; named point of contact for on-demand services" data-es="Relaci&oacute;n directa en encargos dedicados; punto de contacto designado para servicios bajo demanda">Direct relationship on dedicated assignments; named point of contact for on-demand services</td></tr>
-          <tr><td data-en="HIPAA BAA" data-es="BAA de HIPAA">HIPAA BAA</td><td data-en="Provided proactively" data-es="Proporcionado proactivamente">Provided proactively</td></tr>
-          <tr><td data-en="Safe AI policy" data-es="Pol&iacute;tica de IA segura">Safe AI policy</td><td data-en="Formal written policy: no PHI in AI tools" data-es="Pol&iacute;tica escrita formal: ning&uacute;n PHI en herramientas de IA">Formal written policy: no PHI in AI tools</td></tr>
+          <tr><td data-en="Compliance documentation" data-es="Documentaci&oacute;n de cumplimiento">Compliance documentation</td><td data-en="HIPAA, Safe AI Policy, onboarding package ready day one" data-es="HIPAA, pol&iacute;tica de IA segura, paquete de incorporaci&oacute;n listo desde el primer d&iacute;a">HIPAA, Safe AI Policy, onboarding package ready day one</td></tr>
           <tr><td data-en="In-person availability" data-es="Disponibilidad presencial">In-person availability</td><td data-en="Durango and Four Corners region" data-es="Durango y la regi&oacute;n de Four Corners">Durango and Four Corners region</td></tr>
         </tbody>
       </table>
@@ -1780,7 +1792,7 @@
   <section class="home-cta">
     <div class="home-cta-inner">
       <h2 data-en="Ready to work together?" data-es="¿Listo para trabajar juntos?">Ready to work together?</h2>
-      <p data-en="Ready to sign from day one. HIPAA BAA and Safe AI Policy included with every engagement." data-es="Listos para firmar desde el primer d&iacute;a. BAA de HIPAA y Pol&iacute;tica de IA segura incluidos en cada encargo.">Ready to sign from day one. HIPAA BAA and Safe AI Policy included with every engagement.</p>
+      <p data-en="Full compliance documentation included with every engagement. Ready to sign from day one." data-es="Documentaci&oacute;n de cumplimiento completa incluida con cada encargo. Listos para firmar desde el primer d&iacute;a.">Full compliance documentation included with every engagement. Ready to sign from day one.</p>
       <button class="btn-gold" onclick="showPage('contact')" data-en="Get in Touch" data-es="Contáctame">Get in Touch</button>
     </div>
   </section>
@@ -1906,7 +1918,7 @@
         <h3 data-en="Subtitling &amp; Voice-Over" data-es="Subtitulaci&oacute;n y locuci&oacute;n">Subtitling &amp; Voice-Over</h3>
       </div>
       <div class="service-section-right">
-        <p data-en="Spanish subtitling and transcription of multimedia content for healthcare, nonprofit, and educational organizations. Expert localization that goes beyond literal translation to ensure natural, culturally appropriate language for the target audience." data-es="Subtitulaci&oacute;n y transcripci&oacute;n en espa&ntilde;ol de contenido multimedia para organizaciones de salud, sin fines de lucro y educativas. Localizaci&oacute;n experta que va m&aacute;s all&aacute; de la traducci&oacute;n literal para garantizar un lenguaje natural y culturalmente apropiado para el p&uacute;blico destinatario.">Spanish subtitling and transcription of multimedia content for healthcare, nonprofit, and educational organizations. Expert localization that goes beyond literal translation to ensure natural, culturally appropriate language for the target audience.</p>
+        <p data-en="Spanish subtitling and transcription of multimedia content for healthcare, nonprofit, and educational organizations. Localization, not just literal translation." data-es="Subtitulaci&oacute;n y transcripci&oacute;n en espa&ntilde;ol de contenido multimedia para organizaciones de salud, sin fines de lucro y educativas. Localizaci&oacute;n, no solo traducci&oacute;n literal.">Spanish subtitling and transcription of multimedia content for healthcare, nonprofit, and educational organizations. Localization, not just literal translation.</p>
       </div>
     </div>
 
@@ -1931,7 +1943,7 @@
           </div>
           <div class="ondemand-feature">
             <h5 data-en="Enterprise Security" data-es="Seguridad empresarial">Enterprise Security</h5>
-            <p data-en="SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant. Enterprise-grade security for protected health information." data-es="Cifrado SRTP con AES-128 e intercambio de claves DTLS-SRTP. Compatible con HIPAA. Seguridad de nivel empresarial para informaci&oacute;n de salud protegida.">SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant. Enterprise-grade security for protected health information.</p>
+            <p data-en="SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant." data-es="Cifrado SRTP con AES-128 e intercambio de claves DTLS-SRTP. Compatible con HIPAA.">SRTP encryption with AES-128 and DTLS-SRTP key exchange. HIPAA-compliant.</p>
           </div>
           <div class="ondemand-feature">
             <h5 data-en="200+ Languages" data-es="200+ idiomas">200+ Languages</h5>
@@ -1966,27 +1978,27 @@
       <div class="sectors-grid">
         <div class="sector-card">
           <h4 data-en="Healthcare" data-es="Salud">Healthcare</h4>
-          <p data-en="Private practices, specialty clinics, hospitals, and telehealth. Oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, and Worker's Compensation evaluations." data-es="Consultorios privados, cl&iacute;nicas especializadas, hospitales y telesalud. Oncolog&iacute;a, trasplante, UCI, cuidados paliativos, psiquiatr&iacute;a, audiencias de &eacute;tica m&eacute;dica y evaluaciones de compensaci&oacute;n laboral.">Private practices, specialty clinics, hospitals, and telehealth. Oncology, transplant, ICU, hospice, psychiatry, patient ethics hearings, and Worker's Compensation evaluations.</p>
+          <p data-en="Private practices, specialty clinics, hospitals, and telehealth. Oncology, critical care, hospice, psychiatry, prenatal and postpartum care, and Worker's Compensation evaluations." data-es="Consultorios privados, cl&iacute;nicas especializadas, hospitales y telesalud. Oncolog&iacute;a, cuidados cr&iacute;ticos, cuidados paliativos, psiquiatr&iacute;a, atenci&oacute;n prenatal y posparto, y evaluaciones de compensaci&oacute;n laboral.">Private practices, specialty clinics, hospitals, and telehealth. Oncology, critical care, hospice, psychiatry, prenatal and postpartum care, and Worker's Compensation evaluations.</p>
         </div>
         <div class="sector-card">
           <h4 data-en="Legal" data-es="Legal">Legal</h4>
-          <p data-en="Immigration attorney consultations, SIJS hearings, Worker's Compensation evaluations, Medical Legal Partnership conferences, correctional facility intake assessments." data-es="Consultas con abogados de inmigraci&oacute;n, audiencias de SIJS, evaluaciones de compensaci&oacute;n laboral, conferencias de Asociaci&oacute;n M&eacute;dico-Legal, evaluaciones de admisi&oacute;n correccional.">Immigration attorney consultations, SIJS hearings, Worker's Compensation evaluations, Medical Legal Partnership conferences, correctional facility intake assessments.</p>
+          <p data-en="Immigration attorney consultations, SIJS hearings, deportation defense, Worker's Compensation evaluations, correctional facility intake assessments." data-es="Consultas con abogados de inmigraci&oacute;n, audiencias de SIJS, defensa contra deportaci&oacute;n, evaluaciones de compensaci&oacute;n laboral, evaluaciones de admisi&oacute;n correccional.">Immigration attorney consultations, SIJS hearings, deportation defense, Worker's Compensation evaluations, correctional facility intake assessments.</p>
         </div>
         <div class="sector-card">
           <h4 data-en="Nonprofit &amp; Community" data-es="Sin fines de lucro y comunidad">Nonprofit &amp; Community</h4>
-          <p data-en="Rapid response organizing, reproductive justice, environmental justice, community outreach, doula and midwife prenatal workshops, caregiver training." data-es="Organizaci&oacute;n de respuesta r&aacute;pida, justicia reproductiva, justicia ambiental, vinculaci&oacute;n comunitaria, talleres prenatales con doulas y parteras, formaci&oacute;n para cuidadores.">Rapid response organizing, reproductive justice, environmental justice, community outreach, doula and midwife prenatal workshops, caregiver training.</p>
+          <p data-en="Rapid response organizing, reproductive justice, environmental justice, cooperative governance, disaster recovery, community outreach, prenatal and birth workshops." data-es="Organizaci&oacute;n de respuesta r&aacute;pida, justicia reproductiva, justicia ambiental, gobernanza cooperativa, recuperaci&oacute;n ante desastres, vinculaci&oacute;n comunitaria, talleres prenatales y de parto.">Rapid response organizing, reproductive justice, environmental justice, cooperative governance, disaster recovery, community outreach, prenatal and birth workshops.</p>
         </div>
         <div class="sector-card">
           <h4 data-en="Education" data-es="Educaci&oacute;n">Education</h4>
-          <p data-en="IEP meetings, parent workshops, expulsion hearings, District Validation Reviews, school board meetings, and community engagement events." data-es="Reuniones de IEP, talleres para padres, audiencias de expulsi&oacute;n, Revisiones de Validaci&oacute;n del Distrito, juntas escolares y eventos de participaci&oacute;n comunitaria.">IEP meetings, parent workshops, expulsion hearings, District Validation Reviews, school board meetings, and community engagement events.</p>
+          <p data-en="IEP and Section 504 meetings, parent workshops, discipline hearings, district-level proceedings, school board meetings, and community engagement events." data-es="Reuniones de IEP y Secci&oacute;n 504, talleres para padres, audiencias disciplinarias, procedimientos a nivel de distrito, juntas escolares y eventos de participaci&oacute;n comunitaria.">IEP and Section 504 meetings, parent workshops, discipline hearings, district-level proceedings, school board meetings, and community engagement events.</p>
         </div>
         <div class="sector-card">
           <h4 data-en="Government &amp; Public Sector" data-es="Gobierno y sector p&uacute;blico">Government &amp; Public Sector</h4>
-          <p data-en="County agency meetings, town halls, board meetings, public presentations, and community outreach for Spanish-speaking constituents." data-es="Reuniones de agencias del condado, asambleas comunitarias, juntas directivas, presentaciones p&uacute;blicas y vinculaci&oacute;n comunitaria con residentes hispanohablantes.">County agency meetings, town halls, board meetings, public presentations, and community outreach for Spanish-speaking constituents.</p>
+          <p data-en="Public utilities commission hearings, county agency meetings, town halls, board meetings, public presentations, and community outreach for Spanish-speaking constituents." data-es="Audiencias de comisi&oacute;n de servicios p&uacute;blicos, reuniones de agencias del condado, asambleas comunitarias, juntas directivas, presentaciones p&uacute;blicas y vinculaci&oacute;n comunitaria con residentes hispanohablantes.">Public utilities commission hearings, county agency meetings, town halls, board meetings, public presentations, and community outreach for Spanish-speaking constituents.</p>
         </div>
         <div class="sector-card">
           <h4 data-en="Conferences &amp; Events" data-es="Conferencias y eventos">Conferences &amp; Events</h4>
-          <p data-en="Large-scale simultaneous interpretation for conferences with 25&#8211;500+ participants. Repeat clients across healthcare, foundation, and advocacy sectors." data-es="Interpretaci&oacute;n simult&aacute;nea a gran escala para conferencias con 25 a 500+ participantes. Clientes recurrentes en los sectores de salud, fundaciones y organizaciones de incidencia.">Large-scale simultaneous interpretation for conferences with 25&#8211;500+ participants. Repeat clients across healthcare, foundation, and advocacy sectors.</p>
+          <p data-en="Simultaneous interpretation for conferences with 25 to 500+ participants. Healthcare, foundation, agricultural, environmental, and advocacy sectors." data-es="Interpretaci&oacute;n simult&aacute;nea para conferencias con 25 a 500+ participantes. Sectores de salud, fundaciones, agricultura, medio ambiente y organizaciones de incidencia.">Simultaneous interpretation for conferences with 25 to 500+ participants. Healthcare, foundation, agricultural, environmental, and advocacy sectors.</p>
         </div>
       </div>
     </div>
@@ -1994,26 +2006,26 @@
 
   <section class="compliance">
     <div>
-      <h2 data-en="Compliance infrastructure included." data-es="Infraestructura de cumplimiento incluida.">Compliance infrastructure included.</h2>
-      <p data-en="Every client receives a complete onboarding package. No back-and-forth, no extra fees, no compliance gaps." data-es="Cada cliente recibe un paquete de incorporación completo. Sin va y viene, sin costos adicionales, sin vacíos de cumplimiento.">Every client receives a complete onboarding package. No back-and-forth, no extra fees, no compliance gaps.</p>
+      <h2 data-en="Documentation included." data-es="Documentaci&oacute;n incluida.">Documentation included.</h2>
+      <p data-en="Every client receives a complete onboarding package at no additional cost." data-es="Cada cliente recibe un paquete de incorporaci&oacute;n completo sin costo adicional.">Every client receives a complete onboarding package at no additional cost.</p>
     </div>
     <div class="compliance-items">
       <div class="comp-item">
-        <span class="comp-icon">🔒</span>
+        <span class="comp-icon" aria-hidden="true"></span>
         <div>
           <h5 data-en="HIPAA Business Associate Agreement" data-es="Acuerdo de Socio Comercial HIPAA">HIPAA Business Associate Agreement</h5>
-          <p data-en="BAA based on HHS model provisions. Required for healthcare clients. Provided proactively at no additional cost." data-es="BAA basado en las disposiciones modelo del HHS. Requerido para clientes de salud. Proporcionado proactivamente sin costo adicional.">BAA based on HHS model provisions. Required for healthcare clients. Provided proactively at no additional cost.</p>
+          <p data-en="Based on HHS model provisions. Required for healthcare clients. Provided proactively at no additional cost." data-es="Basado en las disposiciones modelo del HHS. Requerido para clientes de salud. Proporcionado proactivamente sin costo adicional.">Based on HHS model provisions. Required for healthcare clients. Provided proactively at no additional cost.</p>
         </div>
       </div>
       <div class="comp-item">
-        <span class="comp-icon">🤖</span>
+        <span class="comp-icon" aria-hidden="true"></span>
         <div>
           <h5 data-en="Safe AI Policy" data-es="Pol&iacute;tica de IA segura">Safe AI Policy</h5>
           <p data-en="Formal written policy governing AI tool use. No PHI ever enters AI platforms. All AI use is for preparation only." data-es="Pol&iacute;tica escrita formal que rige el uso de herramientas de IA. Ning&uacute;n PHI ingresa en plataformas de IA. Todo uso de IA es solo para preparaci&oacute;n.">Formal written policy governing AI tool use. No PHI ever enters AI platforms. All AI use is for preparation only.</p>
         </div>
       </div>
       <div class="comp-item">
-        <span class="comp-icon">⚖</span>
+        <span class="comp-icon" aria-hidden="true"></span>
         <div>
           <h5 data-en="Professional Ethics Adherence" data-es="Adherencia a la ética profesional">Professional Ethics Adherence</h5>
           <p data-en="NCIHC &amp; CCHI Code of Ethics maintained on every assignment, in every setting." data-es="C&oacute;digo de &Eacute;tica NCIHC y CCHI mantenido en cada encargo, en cada entorno.">NCIHC &amp; CCHI Code of Ethics maintained on every assignment, in every setting.</p>
@@ -2140,7 +2152,7 @@
     <p class="section-label" data-en="Approach" data-es="Enfoque">Approach</p>
     <h2 data-en="&ldquo;Every interpretation ensures that language differences don't become power imbalances.&rdquo;" data-es="&ldquo;Cada interpretación garantiza que las diferencias lingüísticas no se conviertan en desequilibrios de poder.&rdquo;">&ldquo;Every interpretation ensures that language differences don't become power imbalances.&rdquo;</h2>
     <p data-en="Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight." data-es="La justicia lingüística no es una credencial. Es un compromiso. Significa llegar preparado, mantenerse presente, guardar una estricta confidencialidad y adherirse a la ética profesional incluso cuando nadie está mirando. Significa tratar a cada persona, sin importar su idioma principal, como alguien cuyas palabras tienen pleno valor.">Language justice is not a credential. It's a commitment. It means showing up prepared, staying present, maintaining strict confidentiality, and holding to professional ethics even when no one is checking. It means treating every person, regardless of their primary language, as someone whose words carry full weight.</p>
-    <p data-en="That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business." data-es="Ese compromiso es la raz&oacute;n por la que mantengo la adherencia a la &eacute;tica de la NCIHC y la CCHI en cada encargo. Es por eso que tengo una pol&iacute;tica formal de uso seguro de IA. Es por eso que proporciono un BAA de HIPAA como est&aacute;ndar, no porque un cliente lo haya pedido, sino porque es la forma correcta de hacer negocios.">That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why I provide a HIPAA BAA as standard, not because a client asked, but because it's the right way to do business.</p>
+    <p data-en="That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why compliance documentation comes standard, not because a client asked for it, but because it's the right way to do this work." data-es="Ese compromiso es la raz&oacute;n por la que mantengo la adherencia a la &eacute;tica de la NCIHC y la CCHI en cada encargo. Es por eso que tengo una pol&iacute;tica formal de uso seguro de IA. Es por eso que la documentaci&oacute;n de cumplimiento viene de serie, no porque un cliente la haya pedido, sino porque es la forma correcta de hacer este trabajo.">That commitment is why I maintain NCIHC and CCHI ethics adherence on every assignment. It's why I have a formal Safe AI Policy. It's why compliance documentation comes standard, not because a client asked for it, but because it's the right way to do this work.</p>
   </section>
 
   <div class="about-photo-break" style="padding-bottom:3rem">
@@ -2236,19 +2248,41 @@
   <section class="experience-section">
     <div class="experience-inner">
       <h2 data-en="Settings and specializations." data-es="Entornos y especializaciones.">Settings and specializations.</h2>
-      <div class="exp-grid">
-        <div class="exp-item" data-en="Oncology &amp; critical care" data-es="Oncolog&iacute;a y cuidados cr&iacute;ticos">Oncology &amp; critical care</div>
-        <div class="exp-item" data-en="Hospice &amp; palliative care" data-es="Cuidados paliativos y hospicios">Hospice &amp; palliative care</div>
-        <div class="exp-item" data-en="Psychiatric evaluations" data-es="Evaluaciones psiqui&aacute;tricas">Psychiatric evaluations</div>
-        <div class="exp-item" data-en="Prenatal &amp; postpartum care" data-es="Atenci&oacute;n prenatal y posparto">Prenatal &amp; postpartum care</div>
-        <div class="exp-item" data-en="Worker's Compensation evaluations" data-es="Evaluaciones de compensaci&oacute;n laboral">Worker's Compensation evaluations</div>
-        <div class="exp-item" data-en="Deportation defense (rapid response)" data-es="Defensa contra deportaci&oacute;n (respuesta r&aacute;pida)">Deportation defense (rapid response)</div>
-        <div class="exp-item" data-en="SIJS attorney consultations" data-es="Consultas con abogados de SIJS">SIJS attorney consultations</div>
-        <div class="exp-item" data-en="IEP &amp; Section 504 meetings" data-es="Reuniones de IEP y Secci&oacute;n 504">IEP &amp; Section 504 meetings</div>
-        <div class="exp-item" data-en="School discipline hearings" data-es="Audiencias disciplinarias escolares">School discipline hearings</div>
-        <div class="exp-item" data-en="Public utilities commission hearings" data-es="Audiencias de comisi&oacute;n de servicios p&uacute;blicos">Public utilities commission hearings</div>
-        <div class="exp-item" data-en="Governance &amp; board meetings" data-es="Gobernanza y juntas directivas">Governance &amp; board meetings</div>
-        <div class="exp-item" data-en="Agricultural &amp; environmental conferences" data-es="Conferencias agr&iacute;colas y ambientales">Agricultural &amp; environmental conferences</div>
+      <div class="exp-categories">
+        <div class="exp-category">
+          <h4 data-en="Healthcare" data-es="Salud">Healthcare</h4>
+          <ul>
+            <li class="t" data-en="Oncology &amp; critical care" data-es="Oncolog&iacute;a y cuidados cr&iacute;ticos">Oncology &amp; critical care</li>
+            <li class="t" data-en="Hospice &amp; palliative care" data-es="Cuidados paliativos y hospicios">Hospice &amp; palliative care</li>
+            <li class="t" data-en="Psychiatric evaluations" data-es="Evaluaciones psiqui&aacute;tricas">Psychiatric evaluations</li>
+            <li class="t" data-en="Prenatal &amp; postpartum care" data-es="Atenci&oacute;n prenatal y posparto">Prenatal &amp; postpartum care</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Legal" data-es="Legal">Legal</h4>
+          <ul>
+            <li class="t" data-en="Deportation defense (rapid response)" data-es="Defensa contra deportaci&oacute;n (respuesta r&aacute;pida)">Deportation defense (rapid response)</li>
+            <li class="t" data-en="SIJS attorney consultations" data-es="Consultas con abogados de SIJS">SIJS attorney consultations</li>
+            <li class="t" data-en="Worker's Compensation evaluations" data-es="Evaluaciones de compensaci&oacute;n laboral">Worker's Compensation evaluations</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Education" data-es="Educaci&oacute;n">Education</h4>
+          <ul>
+            <li class="t" data-en="IEP &amp; Section 504 meetings" data-es="Reuniones de IEP y Secci&oacute;n 504">IEP &amp; Section 504 meetings</li>
+            <li class="t" data-en="School discipline hearings" data-es="Audiencias disciplinarias escolares">School discipline hearings</li>
+            <li class="t" data-en="District-level proceedings" data-es="Procedimientos a nivel de distrito">District-level proceedings</li>
+          </ul>
+        </div>
+        <div class="exp-category">
+          <h4 data-en="Community &amp; Government" data-es="Comunidad y gobierno">Community &amp; Government</h4>
+          <ul>
+            <li class="t" data-en="Public utilities commission hearings" data-es="Audiencias de comisi&oacute;n de servicios p&uacute;blicos">Public utilities commission hearings</li>
+            <li class="t" data-en="Cooperative governance" data-es="Gobernanza cooperativa">Cooperative governance</li>
+            <li class="t" data-en="Board meetings &amp; town halls" data-es="Juntas directivas y asambleas comunitarias">Board meetings &amp; town halls</li>
+            <li class="t" data-en="Agricultural &amp; environmental conferences" data-es="Conferencias agr&iacute;colas y ambientales">Agricultural &amp; environmental conferences</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -2297,12 +2331,12 @@
       <div style="margin-top: 3rem;">
         <p style="font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem;" data-en="Onboarding Package" data-es="Paquete de incorporación">Onboarding Package</p>
         <ul class="detail-list">
-          <li data-en="Master Services Agreement (MSA)" data-es="Acuerdo Marco de Servicios (MSA)">Master Services Agreement (MSA)</li>
-          <li data-en="HIPAA Business Associate Agreement (BAA)" data-es="Acuerdo de Socio Comercial HIPAA (BAA)">HIPAA Business Associate Agreement (BAA)</li>
+          <li data-en="Services agreement" data-es="Acuerdo de servicios">Services agreement</li>
+          <li data-en="HIPAA compliance documentation" data-es="Documentaci&oacute;n de cumplimiento HIPAA">HIPAA compliance documentation</li>
           <li data-en="Safe AI Policy" data-es="Pol&iacute;tica de IA segura">Safe AI Policy</li>
-          <li data-en="Rate Sheet" data-es="Hoja de tarifas">Rate Sheet</li>
+          <li data-en="Rate sheet" data-es="Hoja de tarifas">Rate sheet</li>
         </ul>
-        <p style="font-size:0.8rem; color:var(--text-light); margin-top:1rem; line-height:1.6;" data-en="Ready to sign from day one. No waiting, no back-and-forth." data-es="Listos para firmar desde el primer d&iacute;a. Sin esperas, sin va y viene.">Ready to sign from day one. No waiting, no back-and-forth.</p>
+        <p style="font-size:0.8rem; color:var(--text-light); margin-top:1rem; line-height:1.6;" data-en="Ready to sign from day one." data-es="Listos para firmar desde el primer d&iacute;a.">Ready to sign from day one.</p>
       </div>
     </div>
 
@@ -2389,21 +2423,21 @@
       <p data-en="Agencies: if you need a reliable, CHI-certified Spanish interpreter with demonstrated conference and healthcare experience, I'm available for subcontracting. You can expect professional conduct, complete documentation, and no surprises." data-es="Agencias: si necesitan un intérprete de español confiable, certificado CHI, con experiencia comprobada en conferencias y salud, estoy disponible como subcontratista. Pueden esperar conducta profesional, documentación completa y sin sorpresas.">Agencies: if you need a reliable, CHI-certified Spanish interpreter with demonstrated conference and healthcare experience, I'm available for subcontracting.</p>
       <div class="collab-pillars">
         <div class="collab-pillar">
-          <span class="collab-pillar-icon">🎙</span>
+          <span class="collab-pillar-icon" aria-hidden="true"></span>
           <div>
             <h4 data-en="Booth Partner: RSI and On-Site" data-es="Compañero de cabina: RSI y presencial">Booth Partner: RSI and On-Site</h4>
             <p data-en="Available for conference co-interpretation. English-Spanish. Comfortable with long-form simultaneous across healthcare, nonprofit, legal, and government settings." data-es="Disponible para co-interpretación en conferencias. Inglés-Español. Cómodo con simultánea de larga duración en entornos de salud, sin fines de lucro, legales y gubernamentales.">Available for conference co-interpretation. English-Spanish. Healthcare, nonprofit, legal, and government settings.</p>
           </div>
         </div>
         <div class="collab-pillar">
-          <span class="collab-pillar-icon">🤝</span>
+          <span class="collab-pillar-icon" aria-hidden="true"></span>
           <div>
-            <h4 data-en="Subcontracting: Agencies Welcome" data-es="Subcontratación: Agencias bienvenidas">Subcontracting: Agencies Welcome</h4>
-            <p data-en="CHI-certified, 15+ years, clean documentation. MSA and rate sheet available on request. Professional liability insurance held." data-es="Certificado CHI, más de 15 años de experiencia, documentación completa. MSA y hoja de tarifas disponibles a solicitud. Seguro de responsabilidad profesional vigente.">CHI-certified, 15+ years, full documentation. MSA and rate sheet available on request.</p>
+            <h4 data-en="Subcontracting: Agencies Welcome" data-es="Subcontrataci&oacute;n: Agencias bienvenidas">Subcontracting: Agencies Welcome</h4>
+            <p data-en="CHI-certified, 15+ years, full documentation. Rate sheet available on request. Professional liability insurance held." data-es="Certificado CHI, m&aacute;s de 15 a&ntilde;os de experiencia, documentaci&oacute;n completa. Hoja de tarifas disponible a solicitud. Seguro de responsabilidad profesional vigente.">CHI-certified, 15+ years, full documentation. Rate sheet available on request. Professional liability insurance held.</p>
           </div>
         </div>
         <div class="collab-pillar">
-          <span class="collab-pillar-icon">🌐</span>
+          <span class="collab-pillar-icon" aria-hidden="true"></span>
           <div>
             <h4 data-en="Language Justice Collaboration" data-es="Colaboración en justicia lingüística">Language Justice Collaboration</h4>
             <p data-en="Particularly interested in connecting with interpreters working in community, reproductive justice, environmental justice, and Indigenous-language settings." data-es="Especialmente interesado en conectar con intérpretes que trabajen en entornos comunitarios, de justicia reproductiva, justicia ambiental y lenguas indígenas.">Especially interested in interpreters working in community, reproductive justice, and Indigenous-language settings.</p>
