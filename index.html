@@ -1339,6 +1339,71 @@
       margin-top: 1rem;
       font-style: italic;
     }
+    /* LANGUAGE ACCESS GAP (Homepage) */
+    .gap-section {
+      background: var(--navy-deep);
+      padding: 5rem 4rem;
+    }
+    .gap-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .gap-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .gap-section .gap-cite {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.03em;
+    }
+    .gap-section .gap-cite a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .gap-section .gap-cite a:hover {
+      text-decoration: underline;
+    }
+    .gap-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    .gap-stat {
+      border-top: 1px solid rgba(201,168,76,0.3);
+      padding-top: 1.2rem;
+    }
+    .gap-stat .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+      line-height: 1;
+    }
+    .gap-stat p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+    .gap-cta {
+      margin-top: 2.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+    }
+    @media(max-width:900px) {
+      .gap-section { padding: 3rem 1.5rem; }
+      .gap-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:500px) {
+      .gap-stats { grid-template-columns: 1fr; }
+    }
+
     /* INLINE STAKES CALLOUTS (Services page) */
     .stakes-callout {
       background: rgba(255,255,255,0.02);
@@ -1764,7 +1829,31 @@
     </div>
   </section>
 
-  <!-- Stakes content moved to Services page; Ramirez moved to About page -->
+  <section class="gap-section">
+    <div class="gap-inner">
+      <h2 data-en="The language access gap." data-es="La brecha en el acceso ling&uuml;&iacute;stico.">The language access gap.</h2>
+      <p class="gap-cite" data-en="Source: U.S. Commission on Civil Rights, &ldquo;Language Access for Individuals with Limited English Proficiency,&rdquo; May 2026." data-es="Fuente: Comisi&oacute;n de Derechos Civiles de EE.&nbsp;UU., &ldquo;Language Access for Individuals with Limited English Proficiency,&rdquo; mayo de 2026.">Source: U.S. Commission on Civil Rights, &ldquo;Language Access for Individuals with Limited English Proficiency,&rdquo; May 2026.</p>
+      <div class="gap-stats">
+        <div class="gap-stat">
+          <div class="stat-num" data-en="27M+" data-es="27M+">27M+</div>
+          <p data-en="People in the U.S. have limited English proficiency. That is 8.7% of the population over age 5." data-es="Personas en EE.&nbsp;UU. tienen dominio limitado del ingl&eacute;s. Eso es el 8.7% de la poblaci&oacute;n mayor de 5 a&ntilde;os.">People in the U.S. have limited English proficiency. That is 8.7% of the population over age 5.</p>
+        </div>
+        <div class="gap-stat">
+          <div class="stat-num">25%</div>
+          <p data-en="Of hospitals in high-need areas provide no language assistance at all." data-es="De los hospitales en &aacute;reas de alta necesidad no proporcionan ning&uacute;n tipo de asistencia ling&uuml;&iacute;stica.">Of hospitals in high-need areas provide no language assistance at all.</p>
+        </div>
+        <div class="gap-stat">
+          <div class="stat-num">5&times;</div>
+          <p data-en="LEP individuals are five times more likely to lose Medicaid coverage during renewal." data-es="Las personas con LEP tienen cinco veces m&aacute;s probabilidades de perder la cobertura de Medicaid durante la renovaci&oacute;n.">LEP individuals are five times more likely to lose Medicaid coverage during renewal.</p>
+        </div>
+        <div class="gap-stat">
+          <div class="stat-num">52.5%</div>
+          <p data-en="Of U.S. county websites have no language translation of any kind." data-es="De los sitios web de condados en EE.&nbsp;UU. no tienen ninguna traducci&oacute;n.">Of U.S. county websites have no language translation of any kind.</p>
+        </div>
+      </div>
+      <p class="gap-cta" data-en="The Commission found that inadequate language access leads to misdiagnosis, delayed treatment, loss of benefits, and legal jeopardy. Professional interpretation is not a convenience. It is a civil rights obligation under Title VI." data-es="La Comisi&oacute;n determin&oacute; que el acceso ling&uuml;&iacute;stico inadecuado provoca diagn&oacute;sticos err&oacute;neos, tratamiento retrasado, p&eacute;rdida de beneficios y riesgo legal. La interpretaci&oacute;n profesional no es una conveniencia. Es una obligaci&oacute;n de derechos civiles bajo el T&iacute;tulo VI.">The Commission found that inadequate language access leads to misdiagnosis, delayed treatment, loss of benefits, and legal jeopardy. Professional interpretation is not a convenience. It is a civil rights obligation under Title VI.</p>
+    </div>
+  </section>
 
 
   <section class="difference">
@@ -1834,7 +1923,7 @@
 
     <div class="stakes-callout">
       <h4 data-en="Family members and bilingual staff are not interpreters." data-es="Los familiares y el personal biling&uuml;e no son int&eacute;rpretes.">Family members and bilingual staff are not interpreters.</h4>
-      <p data-en="In a study of pediatric ED encounters, 22% of errors made by ad-hoc interpreters carried potential clinical consequences, compared to 2% for interpreters with 100+ hours of training (Flores et al., Annals of Emergency Medicine 2012; confirmed by systematic review, Lauridsen et al., Archives of Public Health 2024). Beyond accuracy, using untrained staff creates privacy risk and puts organizations in legal exposure. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation." data-es="En un estudio de encuentros en urgencias pedi&aacute;tricas, el 22% de los errores cometidos por int&eacute;rpretes improvisados tuvo posibles consecuencias cl&iacute;nicas, frente al 2% de los int&eacute;rpretes con m&aacute;s de 100 horas de formaci&oacute;n (Flores et al., Annals of Emergency Medicine 2012; confirmado por revisi&oacute;n sistem&aacute;tica, Lauridsen et al., Archives of Public Health 2024). M&aacute;s all&aacute; de la precisi&oacute;n, recurrir a personal no capacitado genera riesgos de confidencialidad y responsabilidad legal para las organizaciones. La Secci&oacute;n 1557 de la ACA exige int&eacute;rpretes calificados en programas con fondos federales. El incumplimiento conlleva acciones de derechos civiles, p&eacute;rdida de financiamiento y litigios.">In a study of pediatric ED encounters, 22% of errors made by ad-hoc interpreters carried potential clinical consequences, compared to 2% for interpreters with 100+ hours of training (Flores et al., Annals of Emergency Medicine 2012; confirmed by systematic review, Lauridsen et al., Archives of Public Health 2024). Beyond accuracy, using untrained staff creates privacy risk and puts organizations in legal exposure. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation.</p>
+      <p data-en="The U.S. Commission on Civil Rights (2026) found that ad hoc interpreters are &ldquo;more likely to make errors than professional interpreters, especially in medical situations.&rdquo; A peer-reviewed study confirmed that 22% of errors made by untrained interpreters in pediatric emergencies carried potential clinical consequences, compared to 2% for professionals with 100+ hours of training (Flores et al., Annals of Emergency Medicine 2012). The Commission also documented cases of children being used to interpret in domestic violence and law enforcement situations, exposing them to secondary trauma. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation." data-es="La Comisi&oacute;n de Derechos Civiles de EE.&nbsp;UU. (2026) determin&oacute; que los int&eacute;rpretes improvisados &ldquo;tienen m&aacute;s probabilidades de cometer errores que los int&eacute;rpretes profesionales, especialmente en situaciones m&eacute;dicas.&rdquo; Un estudio revisado por pares confirm&oacute; que el 22% de los errores cometidos por int&eacute;rpretes no capacitados en urgencias pedi&aacute;tricas tuvo posibles consecuencias cl&iacute;nicas, frente al 2% de los profesionales con m&aacute;s de 100 horas de formaci&oacute;n (Flores et al., Annals of Emergency Medicine 2012). La Comisi&oacute;n tambi&eacute;n document&oacute; casos de ni&ntilde;os utilizados para interpretar en situaciones de violencia dom&eacute;stica y con la polic&iacute;a, exponi&eacute;ndolos a trauma secundario. La Secci&oacute;n 1557 de la ACA exige int&eacute;rpretes calificados en programas con fondos federales. El incumplimiento conlleva acciones de derechos civiles, p&eacute;rdida de financiamiento y litigios.">The U.S. Commission on Civil Rights (2026) found that ad hoc interpreters are &ldquo;more likely to make errors than professional interpreters, especially in medical situations.&rdquo; A peer-reviewed study confirmed that 22% of errors made by untrained interpreters in pediatric emergencies carried potential clinical consequences, compared to 2% for professionals with 100+ hours of training (Flores et al., Annals of Emergency Medicine 2012). The Commission also documented cases of children being used to interpret in domestic violence and law enforcement situations, exposing them to secondary trauma. ACA Section 1557 requires qualified interpreters for federally funded programs. Non-compliance carries civil rights enforcement, funding loss, and litigation.</p>
       <div class="inline-stats">
         <div class="inline-stat">
           <div class="stat-num">22%</div>
@@ -1899,11 +1988,11 @@
 
     <div class="stakes-callout">
       <h4 data-en="AI translation is not interpretation." data-es="La traducci&oacute;n por IA no es interpretaci&oacute;n.">AI translation is not interpretation.</h4>
-      <p data-en="Machine translation fails on register, dialect, and clinical nuance. An ACL 2023 study found that MT systems still produce critical errors in medical contexts. The NCSC has stated that courts should never use machine translation for legal proceedings. And public AI tools store user inputs by default, meaning patient data routed through them may violate HIPAA." data-es="La traducci&oacute;n autom&aacute;tica falla en registro, dialecto y matices cl&iacute;nicos. Un estudio de ACL 2023 determin&oacute; que los sistemas de TA a&uacute;n producen errores cr&iacute;ticos en contextos m&eacute;dicos. El NCSC ha declarado que los tribunales nunca deben usar traducci&oacute;n autom&aacute;tica en procedimientos legales. Y las herramientas p&uacute;blicas de IA almacenan las entradas por defecto, lo que significa que los datos de pacientes procesados a trav&eacute;s de ellas pueden violar HIPAA.">Machine translation fails on register, dialect, and clinical nuance. An ACL 2023 study found that MT systems still produce critical errors in medical contexts. The NCSC has stated that courts should never use machine translation for legal proceedings. And public AI tools store user inputs by default, meaning patient data routed through them may violate HIPAA.</p>
+      <p data-en="The U.S. Commission on Civil Rights (2026) found that AI-based translation &ldquo;suffers from the same tendency to introduce random errors, and moreover, to insert material not present in the original source.&rdquo; One study cited by the Commission found ChatGPT incorrectly translated 35.6% of patient discharge instructions. In 2021, Virginia's Department of Health website told Spanish-speaking readers the COVID-19 vaccine was &ldquo;not necessary&rdquo; due to a machine translation error. HHS regulations now require human review when machine translation is used for text critical to an LEP individual's rights, benefits, or access." data-es="La Comisi&oacute;n de Derechos Civiles de EE.&nbsp;UU. (2026) determin&oacute; que la traducci&oacute;n basada en IA &ldquo;presenta la misma tendencia a introducir errores aleatorios y, adem&aacute;s, a insertar material que no est&aacute; presente en la fuente original.&rdquo; Un estudio citado por la Comisi&oacute;n encontr&oacute; que ChatGPT tradujo incorrectamente el 35.6% de las instrucciones de alta m&eacute;dica. En 2021, el sitio web del Departamento de Salud de Virginia les dijo a los lectores hispanohablantes que la vacuna contra COVID-19 &ldquo;no era necesaria&rdquo; debido a un error de traducci&oacute;n autom&aacute;tica. Las regulaciones del HHS ahora exigen revisi&oacute;n humana cuando se usa traducci&oacute;n autom&aacute;tica en textos cr&iacute;ticos para los derechos, beneficios o acceso de una persona con LEP.">The U.S. Commission on Civil Rights (2026) found that AI-based translation &ldquo;suffers from the same tendency to introduce random errors, and moreover, to insert material not present in the original source.&rdquo; One study cited by the Commission found ChatGPT incorrectly translated 35.6% of patient discharge instructions. In 2021, Virginia's Department of Health website told Spanish-speaking readers the COVID-19 vaccine was &ldquo;not necessary&rdquo; due to a machine translation error. HHS regulations now require human review when machine translation is used for text critical to an LEP individual's rights, benefits, or access.</p>
       <div class="inline-stats">
         <div class="inline-stat">
-          <div class="stat-num" data-en="Never" data-es="Nunca">Never</div>
-          <p class="t" data-en="NCSC guidance: courts should never use machine translation for proceedings." data-es="Directriz del NCSC: los tribunales nunca deben usar traducci&oacute;n autom&aacute;tica en procedimientos.">NCSC guidance: courts should never use machine translation for proceedings.</p>
+          <div class="stat-num">35.6%</div>
+          <p class="t" data-en="Of patient discharge instructions were incorrectly translated by ChatGPT (USCCR 2026, citing JMAI study)." data-es="De las instrucciones de alta m&eacute;dica fueron traducidas incorrectamente por ChatGPT (USCCR 2026, citando estudio de JMAI).">Of patient discharge instructions were incorrectly translated by ChatGPT (USCCR 2026, citing JMAI study).</p>
         </div>
         <div class="inline-stat">
           <div class="stat-num">PHI</div>
