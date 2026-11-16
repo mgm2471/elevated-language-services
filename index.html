@@ -1264,9 +1264,58 @@
     }
 
     /* RESPONSIVE */
+    /* MOBILE NAV */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--navy);
+      transition: all 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0; right: 0;
+      background: rgba(250, 247, 242, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      padding: 1.5rem;
+      z-index: 99;
+      flex-direction: column;
+      gap: 0;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--gold); }
+
     @media (max-width: 900px) {
       nav { padding: 0 1.5rem; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-cta { display: none; }
 
       .hero { grid-template-columns: 1fr; }
       .hero-right { min-height: 320px; }
@@ -1736,12 +1785,23 @@
     <li><a href="#" onclick="showPage('about')" data-en="About" data-es="Sobre mí">About</a></li>
     <li><a href="#" onclick="showPage('contact')" data-en="Contact" data-es="Contacto">Contact</a></li>
   </ul>
-    <div style="display:flex;align-items:center;gap:0.8rem"><div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    <div style="display:flex;align-items:center;gap:0.8rem">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+      </div>
+      <a class="nav-cta" href="#" onclick="showPage('contact')" data-en="Get in Touch" data-es="Cont&aacute;ctame">Get in Touch</a>
+      <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <a class="nav-cta" href="#" onclick="showPage('contact')" data-en="Get in Touch" data-es="Contáctame">Get in Touch</a></div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="showPage('home');closeMobileMenu()" data-en="Home" data-es="Inicio">Home</a>
+  <a href="#" onclick="showPage('services');closeMobileMenu()" data-en="Services" data-es="Servicios">Services</a>
+  <a href="#" onclick="showPage('about');closeMobileMenu()" data-en="About" data-es="Sobre m&iacute;">About</a>
+  <a href="#" onclick="showPage('contact');closeMobileMenu()" data-en="Contact" data-es="Contacto">Contact</a>
+</div>
 
 <!-- =================== HOME PAGE =================== -->
 <div class="page active" id="home">
@@ -2598,6 +2658,15 @@
     document.getElementById(id).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return false;
+  }
+
+  function toggleMobileMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.nav-hamburger').classList.toggle('open');
+  }
+  function closeMobileMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.querySelector('.nav-hamburger').classList.remove('open');
   }
 
   window.addEventListener('scroll', () => {
